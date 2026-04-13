@@ -23,6 +23,18 @@ final class FormBuilder implements FormBuilderInterface
      */
     private array $formConstraints = [];
 
+    /**
+     * @var list<array{key:string, legend:?string, description:?string, attr:array<string, mixed>}>
+     */
+    private array $fieldsetStack = [];
+
+    /**
+     * @var array<string, mixed>
+     */
+    private array $fieldsetTree = [];
+
+    private int $fieldsetCounter = 0;
+
     private mixed $data = [];
 
     public function __construct(
@@ -39,6 +51,11 @@ final class FormBuilder implements FormBuilderInterface
         /** @var FieldTypeInterface $instance */
         $instance = new $type();
         $resolved = $instance->configureOptions($options);
+
+        if ($this->fieldsetStack !== [] && !isset($resolved['fieldset_path'])) {
+            $resolved['fieldset_path'] = $this->fieldsetStack;
+        }
+
         $field = new Field($name, $instance, $resolved);
         $instance->buildField($field, $resolved);
         $this->fields[$name] = $field;
@@ -70,6 +87,29 @@ final class FormBuilder implements FormBuilderInterface
         return $this;
     }
 
+    public function addFieldset(array $options = []): self
+    {
+        $this->fieldsetCounter++;
+
+        $definition = [
+            'key' => (string) ($options['key'] ?? 'fieldset_' . $this->fieldsetCounter),
+            'legend' => isset($options['legend']) ? (string) $options['legend'] : null,
+            'description' => isset($options['description']) ? (string) $options['description'] : null,
+            'attr' => (array) ($options['attr'] ?? []),
+        ];
+
+        $this->registerFieldset($definition);
+        $this->fieldsetStack[] = $definition;
+
+        return $this;
+    }
+
+    public function endFieldset(): self
+    {
+        array_pop($this->fieldsetStack);
+        return $this;
+    }
+
     public function getForm(): FormInterface
     {
         $config = new FormConfig(
@@ -92,6 +132,32 @@ final class FormBuilder implements FormBuilderInterface
             eventDispatcher: $this->eventDispatcher,
             formConstraints: $this->formConstraints,
             data: $this->data,
+            fieldsets: $this->fieldsetTree,
         );
+    }
+
+    /**
+     * @param array{key:string, legend:?string, description:?string, attr:array<string, mixed>} $definition
+     */
+    private function registerFieldset(array $definition): void
+    {
+        $container =& $this->fieldsetTree;
+
+        foreach ($this->fieldsetStack as $parent) {
+            $parentKey = $parent['key'];
+            if (!isset($container[$parentKey])) {
+                $container[$parentKey] = $parent + ['children' => []];
+            }
+
+            if (!isset($container[$parentKey]['children']) || !is_array($container[$parentKey]['children'])) {
+                $container[$parentKey]['children'] = [];
+            }
+
+            $container =& $container[$parentKey]['children'];
+        }
+
+        if (!isset($container[$definition['key']])) {
+            $container[$definition['key']] = $definition + ['children' => []];
+        }
     }
 }

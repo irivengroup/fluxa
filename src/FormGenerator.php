@@ -48,7 +48,7 @@ final class FormGenerator
     private ?\Iriven\PhpFormGenerator\Domain\Form\FormBuilder $builder = null;
     private ?FormInterface $form = null;
 
-    public function __construct(
+        public function __construct(
         private readonly ?FormFactory $factory = null,
     ) {
     }
@@ -56,6 +56,7 @@ final class FormGenerator
     public function open(string $name = 'form', mixed $data = [], array $options = []): self
     {
         $this->builder = ($this->factory ?? new FormFactory())->createBuilder($name, $data, $options);
+        $this->form = null;
         return $this;
     }
 
@@ -70,7 +71,31 @@ final class FormGenerator
 
     public function add(string $name, string $type, array $options = []): self
     {
+        if ($this->fieldsetStack !== []) {
+            $options['fieldset_path'] = $this->fieldsetStack;
+        }
+
         $this->builder?->add($name, $type, $options);
+        return $this;
+    }
+
+    public function addFieldset(array $options = []): self
+    {
+        $this->fieldsetCounter++;
+        $this->fieldsetStack[] = [
+            'key' => (string) ($options['key'] ?? 'fieldset_' . $this->fieldsetCounter),
+            'legend' => isset($options['legend']) ? (string) $options['legend'] : null,
+            'description' => isset($options['description']) ? (string) $options['description'] : null,
+            'attr' => (array) ($options['attr'] ?? []),
+        ];
+
+        return $this;
+    }
+
+    public function endFieldset(): self
+    {
+        array_pop($this->fieldsetStack);
+
         return $this;
     }
 

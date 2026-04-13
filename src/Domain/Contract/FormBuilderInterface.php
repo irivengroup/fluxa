@@ -13,5 +13,7 @@ interface FormBuilderInterface
     public function setData(mixed $data): self;
     public function addEventListener(string $eventName, callable $listener): self;
     public function addFormConstraint(ConstraintInterface $constraint): self;
+    public function addFieldset(array $options = []): self;
+    public function endFieldset(): self;
     public function getForm(): FormInterface;
 }

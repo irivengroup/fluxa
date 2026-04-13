@@ -67,3 +67,49 @@ echo (new HtmlRenderer())->renderForm($form->createView());
 - mapping objet / tableau
 - CSRF optionnel
 - support historique pour les types de champs legacy
+
+
+## Fieldsets
+
+The modern facade preserves legacy-style fieldset grouping:
+
+```php
+use Iriven\PhpFormGenerator\FormGenerator;
+
+$form = (new FormGenerator())
+    ->open('profile')
+    ->addFieldset(['legend' => 'Identity', 'description' => 'Public information'])
+    ->addText('name')
+    ->addEmail('email')
+    ->endFieldset()
+    ->addSubmit('save', ['label' => 'Save'])
+    ->getForm();
+```
+
+Nested fieldsets are supported by calling `addFieldset()` again before `endFieldset()`.
+
+
+## Fieldsets au niveau bas niveau
+
+Le `FormBuilder` supporte désormais nativement les sections `fieldset`, sans passer par la façade rapide.
+
+```php
+use Iriven\PhpFormGenerator\Application\FormFactory;
+use Iriven\PhpFormGenerator\Domain\Field\EmailType;
+use Iriven\PhpFormGenerator\Domain\Field\TextType;
+
+$builder = (new FormFactory())->createBuilder('profile');
+
+$form = $builder
+    ->addFieldset([
+        'legend' => 'Identity',
+        'description' => 'Primary profile information',
+        'attr' => ['class' => 'panel'],
+    ])
+    ->add('name', TextType::class, ['label' => 'Nom'])
+    ->add('email', EmailType::class, ['label' => 'Email'])
+    ->endFieldset()
+    ->getForm();
+```
+
+Les fieldsets peuvent être imbriqués. Ils sont conservés dans la structure du formulaire et rendus même si aucun champ n'est encore ajouté au moment de leur déclaration.

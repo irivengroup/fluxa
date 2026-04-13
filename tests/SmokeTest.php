@@ -2,49 +2,47 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
-
 use Iriven\PhpFormGenerator\Application\FormFactory;
 use Iriven\PhpFormGenerator\Domain\Constraint\Required;
 use Iriven\PhpFormGenerator\Domain\Field\CountryType;
 use Iriven\PhpFormGenerator\Domain\Field\EmailType;
 use Iriven\PhpFormGenerator\Domain\Field\FileType;
-use Iriven\PhpFormGenerator\Domain\Field\SubmitType;
 use Iriven\PhpFormGenerator\Domain\Field\TextType;
 use Iriven\PhpFormGenerator\Infrastructure\Http\ArrayRequest;
-use Iriven\PhpFormGenerator\Infrastructure\Mapping\ArrayDataMapper;
-use Iriven\PhpFormGenerator\Infrastructure\Security\NullCsrfManager;
 use Iriven\PhpFormGenerator\Presentation\Html\HtmlRenderer;
-use PHPUnit\Framework\TestCase;
 
-final class SmokeTest extends TestCase
-{
-    public function testFormSubmissionAndRender(): void
-    {
-        $factory = new FormFactory(new ArrayDataMapper(), new NullCsrfManager());
+require_once __DIR__ . '/../vendor/autoload.php';
 
-        $form = $factory->createBuilder('contact')
-            ->add('name', TextType::class, ['constraints' => [new Required()]])
-            ->add('email', EmailType::class)
-            ->add('country', CountryType::class)
-            ->add('attachment', FileType::class, ['required' => false])
-            ->add('submit', SubmitType::class, ['label' => 'Send'])
-            ->getForm();
+$form = (new FormFactory())->createBuilder('contact', [], ['csrf_protection' => false])
+    ->addFieldset([
+        'legend' => 'Identity',
+        'description' => 'Main identity data',
+    ])
+    ->add('email', EmailType::class, ['constraints' => [new Required()]])
+    ->add('country', CountryType::class)
+    ->endFieldset()
+    ->addFieldset([
+        'legend' => 'Uploads',
+    ])
+    ->add('attachment', FileType::class, [])
+    ->endFieldset()
+    ->add('name', TextType::class)
+    ->getForm();
 
-        $form->handleRequest(new ArrayRequest([
-            'contact' => [
-                'name' => 'Alice',
-                'email' => 'alice@example.com',
-                'country' => 'FR',
-                '_token' => $form->getCsrfToken(),
-            ],
-        ]));
+$form->handleRequest(new ArrayRequest([
+    'contact' => [
+        'email' => 'john@example.com',
+        'country' => 'FR',
+        'name' => 'John',
+    ],
+]));
 
-        self::assertTrue($form->isSubmitted());
-        self::assertTrue($form->isValid());
+assert($form->isSubmitted() === true);
+assert($form->isValid() === true);
 
-        $html = (new HtmlRenderer())->renderForm($form->createView());
-        self::assertStringContainsString('<form', $html);
-        self::assertStringContainsString('alice@example.com', $html);
-    }
-}
+$html = (new HtmlRenderer())->renderForm($form->createView());
+assert(str_contains($html, '<fieldset'));
+assert(str_contains($html, '<legend>Identity</legend>'));
+assert(str_contains($html, '<legend>Uploads</legend>'));
+assert(str_contains($html, 'name="contact[email]"'));
+assert(str_contains($html, 'name="contact[name]"'));

@@ -29,6 +29,7 @@ final class Form implements FormInterface
         private readonly ?EventDispatcher $eventDispatcher = null,
         private array $formConstraints = [],
         private mixed $data = [],
+        private array $fieldsets = [],
         private bool $submitted = false,
         private array $errors = [],
     ) {
@@ -176,6 +177,15 @@ final class Form implements FormInterface
     public function all(): array
     {
         return $this->fields;
+    }
+
+
+    /**
+     * @return array<string, mixed>
+     */
+    public function getFieldsets(): array
+    {
+        return $this->fieldsets;
     }
 
     public function getName(): string

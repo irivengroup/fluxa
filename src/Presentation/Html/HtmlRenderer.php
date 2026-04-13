@@ -30,11 +30,7 @@ final class HtmlRenderer implements RendererInterface
         }
 
         foreach ($view->children as $child) {
-            if (($child->vars['type'] ?? '') === 'hidden') {
-                $html .= $this->renderWidget($child);
-                continue;
-            }
-            $html .= $this->renderRow($child);
+            $html .= $this->renderChild($child);
         }
 
         $html .= '</form>';
@@ -44,6 +40,10 @@ final class HtmlRenderer implements RendererInterface
 
     public function renderRow(FormView $view): string
     {
+        if (($view->vars['type'] ?? '') === 'fieldset') {
+            return $this->renderFieldset($view);
+        }
+
         $html = '<div class="form-row">';
         $html .= $this->renderLabel($view);
         $html .= $this->renderWidget($view);
@@ -54,6 +54,37 @@ final class HtmlRenderer implements RendererInterface
         }
 
         $html .= '</div>';
+
+        return $html;
+    }
+
+
+    private function renderChild(FormView $view): string
+    {
+        return match ((string) ($view->vars['type'] ?? '')) {
+            'hidden' => $this->renderWidget($view),
+            'fieldset' => $this->renderFieldset($view),
+            default => $this->renderRow($view),
+        };
+    }
+
+    private function renderFieldset(FormView $view): string
+    {
+        $html = sprintf('<fieldset%s>', $this->renderAttributes((array) ($view->vars['attr'] ?? [])));
+
+        if (($view->vars['legend'] ?? null) !== null) {
+            $html .= sprintf('<legend>%s</legend>', $this->escaper->escape((string) $view->vars['legend']));
+        }
+
+        if (($view->vars['description'] ?? null) !== null) {
+            $html .= sprintf('<p>%s</p>', $this->escaper->escape((string) $view->vars['description']));
+        }
+
+        foreach ($view->children as $child) {
+            $html .= $this->renderChild($child);
+        }
+
+        $html .= '</fieldset>';
 
         return $html;
     }
