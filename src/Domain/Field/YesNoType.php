@@ -1,14 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Iriven\PhpFormGenerator\Domain\Field;
 
-final class YesNoType extends ChoiceType
+final class YesNoType extends CountryType
 {
-    public function normalizeOptions(array $options): array
-    {
-        $options = parent::normalizeOptions($options);
-        $options['choices'] = $options['choices'] ?? ['Yes' => '1', 'No' => '0'];
-        return $options;
-    }
+    public static function choices(): array { return ['Yes' => '1', 'No' => '0']; }
 }

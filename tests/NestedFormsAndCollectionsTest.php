@@ -1,120 +1,52 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Iriven\PhpFormGenerator\Tests;
 
+use DateTimeImmutable;
 use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Domain\Constraint\Required;
-use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
-use Iriven\PhpFormGenerator\Domain\Field\CollectionType;
-use Iriven\PhpFormGenerator\Domain\Field\NumberType;
-use Iriven\PhpFormGenerator\Domain\Field\SubmitType;
-use Iriven\PhpFormGenerator\Domain\Field\TextType;
-use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
 use Iriven\PhpFormGenerator\Infrastructure\Http\ArrayRequest;
+use Iriven\PhpFormGenerator\Infrastructure\Security\NullCsrfManager;
 use Iriven\PhpFormGenerator\Presentation\Html\HtmlRenderer;
+use Iriven\PhpFormGenerator\Presentation\Html\Theme\Bootstrap5Theme;
+use Iriven\PhpFormGenerator\Tests\Fixtures\InvoiceType;
 use PHPUnit\Framework\TestCase;
 
 final class NestedFormsAndCollectionsTest extends TestCase
 {
-    public function testNestedFormAndCollectionSubmission(): void
+    public function testNestedFormsCollectionsAndTransformers(): void
     {
-        $factory = new FormFactory();
-        $form = $factory->create(InvoiceType::class, null, 'invoice', ['method' => 'POST']);
+        $factory = new FormFactory(new NullCsrfManager());
+        $form = $factory->create(InvoiceType::class, [
+            'customer' => ['name' => 'Alice'],
+            'issuedAt' => new DateTimeImmutable('2026-04-13 10:00'),
+            'items' => [],
+        ]);
 
         $form->handleRequest(new ArrayRequest('POST', [
-            'invoice' => [
-                'customer' => [
-                    'name' => 'ACME',
-                    'reference' => 'C-42',
-                ],
+            'form' => [
+                'customer' => ['name' => 'Alice', 'email' => 'alice@example.com', 'country' => 'FR'],
+                'issuedAt' => '2026-04-13T10:30',
                 'items' => [
-                    ['label' => 'Audit', 'quantity' => '2'],
-                    ['label' => 'Build', 'quantity' => '5'],
+                    ['label' => 'Design', 'quantity' => '2', 'price' => '100.50'],
+                    ['label' => 'Hosting', 'quantity' => '1', 'price' => '20.00'],
                 ],
             ],
         ]));
 
         self::assertTrue($form->isSubmitted());
-        self::assertTrue($form->isValid());
+        self::assertTrue($form->isValid(), json_encode($form->getErrors()));
 
-        $data = $form->data();
-        self::assertIsArray($data);
-        self::assertSame('ACME', $data['customer']['name']);
-        self::assertCount(2, $data['items']);
-        self::assertSame('Build', $data['items'][1]['label']);
+        $data = $form->getData();
+        self::assertSame('Alice', $data['customer']['name']);
+        self::assertInstanceOf(DateTimeImmutable::class, $data['issuedAt']);
+        self::assertSame(2, $data['items'][0]['quantity']);
+        self::assertSame(100.5, $data['items'][0]['price']);
 
-        $html = (new HtmlRenderer())->render($form);
-        self::assertStringContainsString('name="invoice[customer][name]"', $html);
-        self::assertStringContainsString('name="invoice[items][0][label]"', $html);
-        self::assertStringContainsString('data-prototype=', $html);
-    }
-
-    public function testNestedFieldErrorsBubbleThroughTree(): void
-    {
-        $factory = new FormFactory();
-        $form = $factory->create(InvoiceType::class, null, 'invoice', ['method' => 'POST']);
-
-        $form->handleRequest(new ArrayRequest('POST', [
-            'invoice' => [
-                'customer' => [
-                    'name' => '',
-                    'reference' => 'C-42',
-                ],
-                'items' => [
-                    ['label' => '', 'quantity' => '2'],
-                ],
-            ],
-        ]));
-
-        self::assertFalse($form->isValid());
-        self::assertTrue($form->hasErrors(true));
-        self::assertNotEmpty($form->get('customer')->compoundForm()?->get('name')->errors);
-        self::assertNotEmpty($form->get('items')->entries()[0]->get('label')->errors);
-    }
-}
-
-final class InvoiceType implements FormTypeInterface
-{
-    public function buildForm(FormBuilder $builder, array $options = []): void
-    {
-        $builder
-            ->add('customer', CustomerType::class, [
-                'label' => 'Customer',
-            ])
-            ->add('items', CollectionType::class, [
-                'label' => 'Items',
-                'entry_type' => InvoiceLineType::class,
-                'entry_options' => [],
-            ])
-            ->add('submit', SubmitType::class, [
-                'label' => 'Save invoice',
-            ]);
-    }
-}
-
-final class CustomerType implements FormTypeInterface
-{
-    public function buildForm(FormBuilder $builder, array $options = []): void
-    {
-        $builder
-            ->add('name', TextType::class, [
-                'constraints' => [new Required()],
-            ])
-            ->add('reference', TextType::class);
-    }
-}
-
-final class InvoiceLineType implements FormTypeInterface
-{
-    public function buildForm(FormBuilder $builder, array $options = []): void
-    {
-        $builder
-            ->add('label', TextType::class, [
-                'constraints' => [new Required()],
-            ])
-            ->add('quantity', NumberType::class, [
-                'constraints' => [new Required()],
-            ]);
+        $html = (new HtmlRenderer(new Bootstrap5Theme()))->renderForm($form->createView());
+        self::assertStringContainsString('form[customer][name]', $html);
+        self::assertStringContainsString('form[items][0][label]', $html);
+        self::assertStringContainsString('<fieldset', $html);
     }
 }

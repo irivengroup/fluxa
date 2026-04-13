@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Iriven\PhpFormGenerator\Domain\Constraint;
@@ -7,7 +8,7 @@ use Iriven\PhpFormGenerator\Domain\Contract\ConstraintInterface;
 
 final class Email implements ConstraintInterface
 {
-    public function __construct(private readonly string $message = 'Invalid email address.')
+    public function __construct(private readonly string $message = 'This value is not a valid email address.')
     {
     }
 
@@ -17,6 +18,6 @@ final class Email implements ConstraintInterface
             return [];
         }
 
-        return filter_var((string) $value, FILTER_VALIDATE_EMAIL) ? [] : [$this->message];
+        return filter_var($value, FILTER_VALIDATE_EMAIL) ? [] : [$this->message];
     }
 }

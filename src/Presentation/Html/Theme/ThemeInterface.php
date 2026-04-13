@@ -1,7 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Contract;
+namespace Iriven\PhpFormGenerator\Presentation\Html\Theme;
 
 interface ThemeInterface
 {
@@ -10,6 +11,5 @@ interface ThemeInterface
     public function labelClass(): string;
     public function inputClass(): string;
     public function errorClass(): string;
-    public function helpClass(): string;
     public function fieldsetClass(): string;
 }

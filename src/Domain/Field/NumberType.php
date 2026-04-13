@@ -1,21 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Iriven\PhpFormGenerator\Domain\Field;
 
-class NumberType extends AbstractFieldType
+class NumberType extends TextType
 {
-    public function renderType(): string
-    {
-        return 'number';
-    }
-
-    public function normalizeOptions(array $options): array
-    {
-        $options = parent::normalizeOptions($options);
-        $options['attr']['min'] ??= '0';
-        $options['attr']['max'] ??= '100';
-        $options['attr']['step'] ??= '1';
-        return $options;
-    }
+    public static function htmlType(): string { return 'number'; }
 }

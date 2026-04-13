@@ -1,61 +1,43 @@
-# PhpFormGenerator V3.3
+# PhpFormGenerator V3.4
 
-Refonte enterprise du générateur historique avec :
+Framework de formulaires PHP orienté enterprise.
 
-- architecture `Application / Domain / Infrastructure / Presentation`
-- field types legacy conservés
-- `fieldset` natifs
-- formulaires imbriqués (`FormType`)
-- collections récursives (`CollectionType`)
-- mapping array et objet
-- validation et gestion d'erreurs profondes
-- renderer HTML sécurisé
+## Capacités V3.4
 
-## Exemple rapide
+- formulaires imbriqués
+- collections récursives
+- fieldsets
+- transformers réels
+- validation
+- mapping array / objet
+- thèmes HTML `default`, `bootstrap5`, `tailwind`
+- compatibilité avec les field types historiques principaux
+
+## Exemple
 
 ```php
 use Iriven\PhpFormGenerator\Application\FormFactory;
 use Iriven\PhpFormGenerator\Infrastructure\Http\ArrayRequest;
+use Iriven\PhpFormGenerator\Infrastructure\Security\NullCsrfManager;
+use Iriven\PhpFormGenerator\Presentation\Html\HtmlRenderer;
+use Iriven\PhpFormGenerator\Presentation\Html\Theme\Bootstrap5Theme;
+use Iriven\PhpFormGenerator\Tests\Fixtures\InvoiceType;
 
-$factory = new FormFactory();
-$form = $factory->create(App\Form\InvoiceType::class, null, 'invoice', [
-    'method' => 'POST',
+$factory = new FormFactory(csrfManager: new NullCsrfManager());
+$form = $factory->create(InvoiceType::class, [
+    'customer' => ['name' => 'Alice'],
 ]);
 
 $form->handleRequest(new ArrayRequest('POST', [
-    'invoice' => [
-        'customer' => ['name' => 'ACME'],
+    'form' => [
+        'customer' => ['name' => 'Alice'],
+        'issuedAt' => '2026-04-13 10:30',
         'items' => [
-            ['label' => 'Audit', 'quantity' => '2'],
+            ['label' => 'Design', 'quantity' => '2', 'price' => '100.50']
         ],
-    ],
+    ]
 ]));
 
-if ($form->isSubmitted() && $form->isValid()) {
-    $data = $form->data();
-}
+$renderer = new HtmlRenderer(new Bootstrap5Theme());
+echo $renderer->renderForm($form->createView());
 ```
-
-## Builder simple
-
-```php
-use Iriven\PhpFormGenerator\Application\FormGenerator;
-
-$html = (new FormGenerator())
-    ->open('profile')
-    ->addFieldset(['legend' => 'Identity'])
-    ->addText('name')
-    ->addEmail('email')
-    ->endFieldset()
-    ->addSubmit('save', ['label' => 'Save'])
-    ->render();
-```
-
-## Fonctionnalités V3.3
-
-- sous-formulaires via `FormTypeInterface`
-- `CollectionType` avec `entry_type`, `entry_options`, `allow_add`, `allow_delete`, `prototype`
-- rendu récursif des noms HTML (`invoice[customer][name]`)
-- support des fieldsets imbriqués
-- field types legacy disponibles dans `src/Domain/Field`
-- thème HTML par défaut + Bootstrap/Tailwind

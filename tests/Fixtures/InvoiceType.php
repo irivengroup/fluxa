@@ -1,0 +1,37 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Iriven\PhpFormGenerator\Tests\Fixtures;
+
+use Iriven\PhpFormGenerator\Domain\Constraint\Required;
+use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
+use Iriven\PhpFormGenerator\Domain\Field\CollectionType;
+use Iriven\PhpFormGenerator\Domain\Field\DateTimeType;
+use Iriven\PhpFormGenerator\Domain\Field\SubmitType;
+use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
+
+final class InvoiceType implements FormTypeInterface
+{
+    public function buildForm(FormBuilder $builder, array $options = []): void
+    {
+        $builder
+            ->addFieldset(['legend' => 'Invoice'])
+            ->add('customer', CustomerType::class, ['label' => 'Customer'])
+            ->add('issuedAt', DateTimeType::class, ['constraints' => [new Required()]])
+            ->add('items', CollectionType::class, [
+                'entry_type' => InvoiceLineType::class,
+                'entry_options' => [],
+                'allow_add' => true,
+                'allow_delete' => true,
+                'prototype' => true,
+            ])
+            ->endFieldset()
+            ->add('submit', SubmitType::class, ['label' => 'Save']);
+    }
+
+    public function configureOptions(array $options = []): array
+    {
+        return ['method' => 'POST'];
+    }
+}

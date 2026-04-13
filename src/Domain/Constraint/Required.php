@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Iriven\PhpFormGenerator\Domain\Constraint;
@@ -13,7 +14,7 @@ final class Required implements ConstraintInterface
 
     public function validate(mixed $value, array $context = []): array
     {
-        if ($value === null || $value === '' || $value === [] || $value === false) {
+        if ($value === null || $value === '' || $value === []) {
             return [$this->message];
         }
 
