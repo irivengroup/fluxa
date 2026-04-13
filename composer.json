@@ -28,5 +28,11 @@
     "analyse": "phpstan analyse src tests",
     "fix": "php-cs-fixer fix --allow-risky=yes",
     "mutate": "infection --threads=max"
+  },
+  "config": {
+    "allow-plugins": {
+      "infection/extension-installer": true
+    },
+    "sort-packages": true
   }
 }

@@ -76,3 +76,8 @@ echo (new HtmlRenderer())->render($form);
 - build Scrutinizer
 - GitHub Actions
 - base compatible industrialisation
+
+
+## Composer CI note
+
+This project explicitly allows the Composer plugin `infection/extension-installer` via `config.allow-plugins` to avoid CI failures on Composer 2.2+.
