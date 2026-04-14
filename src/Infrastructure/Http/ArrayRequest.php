@@ -8,6 +8,7 @@ use Iriven\PhpFormGenerator\Domain\Contract\RequestInterface;
 
 final class ArrayRequest implements RequestInterface
 {
+    /** @param array<string, mixed> $data */
     public function __construct(private readonly string $method = 'GET', private readonly array $data = [])
     {
     }
@@ -17,6 +18,7 @@ final class ArrayRequest implements RequestInterface
         return strtoupper($this->method);
     }
 
+    /** @return array<string, mixed> */
     public function all(): array
     {
         return $this->data;

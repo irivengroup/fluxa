@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Iriven\PhpFormGenerator\Domain\Field;
 
+use Iriven\PhpFormGenerator\Domain\Contract\DataTransformerInterface;
 use Iriven\PhpFormGenerator\Domain\Transformer\DateTimeTransformer;
 
 class DatetimeType extends AbstractFieldType
@@ -13,6 +14,7 @@ class DatetimeType extends AbstractFieldType
         return 'datetime-local';
     }
 
+    /** @return list<DataTransformerInterface> */
     public static function defaultTransformers(): array
     {
         return [new DateTimeTransformer()];

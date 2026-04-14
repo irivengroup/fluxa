@@ -11,6 +11,7 @@ use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
 
 final class AddressType implements FormTypeInterface
 {
+    /** @param array<string, mixed> $options */
     public function buildForm(FormBuilder $builder, array $options = []): void
     {
         $builder

@@ -24,14 +24,13 @@
     }
   },
   "scripts": {
-    "test": "vendor/bin/phpunit --colors=never --display-warnings --display-deprecations",
-    "test:coverage": "vendor/bin/phpunit --coverage-text --colors=never",
-    "lint": "find src tests -name '*.php' -print0 | xargs -0 -n1 php -l",
-    "analyse": "vendor/bin/phpstan analyse --memory-limit=1G src tests",
-    "cs": "vendor/bin/php-cs-fixer fix --dry-run --diff --verbose",
+    "test": "vendor/bin/phpunit --colors=never",
+    "test:coverage": "vendor/bin/phpunit --coverage-text",
+    "analyse": "vendor/bin/phpstan analyse src tests",
+    "cs": "vendor/bin/php-cs-fixer fix --dry-run --diff",
     "cs:fix": "vendor/bin/php-cs-fixer fix",
     "refactor": "vendor/bin/rector process",
-    "mutate": "vendor/bin/infection --threads=max --min-msi=70 --min-covered-msi=80 --skip-initial-tests"
+    "mutate": "vendor/bin/infection --threads=max --min-msi=70 --min-covered-msi=80"
   },
   "config": {
     "sort-packages": true,

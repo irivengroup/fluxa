@@ -40,13 +40,19 @@ final class Form
      * @param list<Fieldset> $fieldsets
      * @param list<ConstraintInterface> $formConstraints
      */
+    /**
+     * @param array<string, FieldConfig> $fields
+     * @param array<string, mixed> $options
+     * @param list<Fieldset> $fieldsets
+     * @param list<ConstraintInterface> $formConstraints
+     */
     public function __construct(
         private readonly string $name,
         private readonly array $fields,
         private mixed $data = null,
+        private readonly EventDispatcherInterface $eventDispatcher,
         private readonly array $options = [],
         private readonly array $fieldsets = [],
-        private readonly EventDispatcherInterface $eventDispatcher,
         array $formConstraints = [],
     ) {
         $this->formConstraints = $formConstraints;
@@ -170,6 +176,7 @@ final class Form
     }
 
     /** @param array<string, mixed> $raw */
+    /** @param array<string, mixed> $raw @return array<string, mixed> */
     private function submitCompound(FieldConfig $field, array $raw, string $path): array
     {
         $result = [];
@@ -184,6 +191,7 @@ final class Form
     }
 
     /** @param array<int|string, mixed> $raw */
+    /** @param array<int|string, mixed> $raw @return list<mixed> */
     private function submitCollection(FieldConfig $field, array $raw, string $path): array
     {
         $items = [];

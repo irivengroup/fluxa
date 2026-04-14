@@ -18,6 +18,7 @@ final class Callback implements ConstraintInterface
         $this->callback = $callback(...);
     }
 
+    /** @param array<string, mixed> $context @return list<string> */
     public function validate(mixed $value, array $context = []): array
     {
         return ($this->callback)($value, $context);

@@ -57,13 +57,13 @@ final class PropertyAccessor
 
     public function setValue(mixed &$target, string $path, mixed $value): void
     {
-        $segments = explode('.', $path);
-        $last = array_pop($segments);
-
-        if ($last === null) {
+        if ($path === '') {
             $target = $value;
             return;
         }
+
+        $segments = explode('.', $path);
+        $last = (string) array_pop($segments);
 
         $current =& $target;
 

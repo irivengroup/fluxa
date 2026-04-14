@@ -10,9 +10,11 @@ use Iriven\PhpFormGenerator\Domain\Contract\DataTransformerInterface;
 final class FieldConfig
 {
     /**
+     * @param array<string, mixed> $options
      * @param list<ConstraintInterface> $constraints
      * @param list<DataTransformerInterface> $transformers
      * @param array<string, FieldConfig> $children
+     * @param array<string, mixed> $entryOptions
      * @param list<Fieldset> $fieldsets
      */
     public function __construct(

@@ -21,6 +21,7 @@ final class FormFactory
     ) {
     }
 
+    /** @param array<string, mixed> $options */
     public function createBuilder(string $name = 'form', mixed $data = null, array $options = []): FormBuilder
     {
         $options['csrf_manager'] = $options['csrf_manager'] ?? $this->csrfManager ?? new NullCsrfManager();
@@ -29,10 +30,13 @@ final class FormFactory
         return new FormBuilder($name, $data, $options);
     }
 
-    /** @param class-string<FormTypeInterface> $typeClass */
+    /**
+     * @param class-string<FormTypeInterface> $typeClass
+     * @param array<string, mixed> $options
+     */
     public function create(string $typeClass, mixed $data = null, array $options = []): Form
     {
-        $builder = $this->createBuilder($options['name'] ?? 'form', $data, $options);
+        $builder = $this->createBuilder((string) ($options['name'] ?? 'form'), $data, $options);
         $type = new $typeClass();
         $resolver = new OptionsResolver();
         $type->configureOptions($resolver);

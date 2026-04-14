@@ -17,6 +17,7 @@ use Iriven\PhpFormGenerator\Domain\Event\PreSubmitEvent;
 
 final class ProfileType implements FormTypeInterface
 {
+    /** @param array<string, mixed> $options */
     public function buildForm(FormBuilder $builder, array $options = []): void
     {
         $builder

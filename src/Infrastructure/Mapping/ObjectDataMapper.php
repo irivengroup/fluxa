@@ -6,6 +6,7 @@ namespace Iriven\PhpFormGenerator\Infrastructure\Mapping;
 
 final class ObjectDataMapper
 {
+    /** @param array<string, mixed> $values */
     public function map(object $target, array $values): object
     {
         foreach ($values as $key => $value) {

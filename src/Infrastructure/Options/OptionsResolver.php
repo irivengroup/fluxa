@@ -21,30 +21,35 @@ final class OptionsResolver implements OptionsResolverInterface
     /** @var array<string, callable|list<mixed>> */
     private array $allowedValues = [];
 
+    /** @param array<string, mixed> $defaults */
     public function setDefaults(array $defaults): self
     {
         $this->defaults = $defaults + $this->defaults;
         return $this;
     }
 
+    /** @param list<string> $required */
     public function setRequired(array $required): self
     {
         $this->required = array_values(array_unique(array_merge($this->required, $required)));
         return $this;
     }
 
+    /** @param string|list<string> $types */
     public function setAllowedTypes(string $option, string|array $types): self
     {
         $this->allowedTypes[$option] = array_values((array) $types);
         return $this;
     }
 
+    /** @param callable|list<mixed> $values */
     public function setAllowedValues(string $option, callable|array $values): self
     {
         $this->allowedValues[$option] = $values;
         return $this;
     }
 
+    /** @param array<string, mixed> $options @return array<string, mixed> */
     public function resolve(array $options = []): array
     {
         $resolved = $this->defaults;
@@ -93,15 +98,15 @@ final class OptionsResolver implements OptionsResolverInterface
     private function matchesAllowedTypes(mixed $value, array $types): bool
     {
         foreach ($types as $type) {
-            if ($type === 'array' && is_array($value)) return true;
-            if ($type === 'bool' && is_bool($value)) return true;
-            if ($type === 'int' && is_int($value)) return true;
-            if ($type === 'float' && is_float($value)) return true;
-            if ($type === 'numeric' && is_numeric($value)) return true;
-            if ($type === 'string' && is_string($value)) return true;
-            if ($type === 'callable' && is_callable($value)) return true;
-            if (($type === 'null' || $type === 'NULL') && $value === null) return true;
-            if ((class_exists($type) || interface_exists($type)) && $value instanceof $type) return true;
+            if ($type === 'array' && is_array($value)) { return true; }
+            if ($type === 'bool' && is_bool($value)) { return true; }
+            if ($type === 'int' && is_int($value)) { return true; }
+            if ($type === 'float' && is_float($value)) { return true; }
+            if ($type === 'numeric' && is_numeric($value)) { return true; }
+            if ($type === 'string' && is_string($value)) { return true; }
+            if ($type === 'callable' && is_callable($value)) { return true; }
+            if (($type === 'null' || $type === 'NULL') && $value === null) { return true; }
+            if ((class_exists($type) || interface_exists($type)) && $value instanceof $type) { return true; }
         }
 
         return false;

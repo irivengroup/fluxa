@@ -12,6 +12,7 @@ final class Required implements ConstraintInterface
     {
     }
 
+    /** @param array<string, mixed> $context @return list<string> */
     public function validate(mixed $value, array $context = []): array
     {
         if ($value === null || $value === '' || $value === [] || $value === false) {

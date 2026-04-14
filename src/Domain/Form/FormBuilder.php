@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Iriven\PhpFormGenerator\Domain\Form;
 
 use Iriven\PhpFormGenerator\Domain\Contract\ConstraintInterface;
+use Iriven\PhpFormGenerator\Domain\Contract\DataTransformerInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\EventDispatcherInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\EventSubscriberInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
@@ -29,21 +30,28 @@ final class FormBuilder
 
     private EventDispatcherInterface $eventDispatcher;
 
+    /** @param array<string, mixed> $options */
     public function __construct(
         private readonly string $name = 'form',
         private mixed $data = null,
         private array $options = [],
     ) {
-        $this->eventDispatcher = $this->options['event_dispatcher'] ?? new EventDispatcher();
+        $dispatcher = $this->options['event_dispatcher'] ?? null;
+        $this->eventDispatcher = $dispatcher instanceof EventDispatcherInterface ? $dispatcher : new EventDispatcher();
     }
 
+    /** @param class-string $typeClass @param array<string, mixed> $options */
     public function add(string $name, string $typeClass, array $options = []): self
     {
-        $constraints = $options['constraints'] ?? [];
-        $transformers = $options['transformers'] ?? [];
+        /** @var list<ConstraintInterface> $constraints */
+        $constraints = is_array($options['constraints'] ?? null) ? $options['constraints'] : [];
+        /** @var list<DataTransformerInterface> $transformers */
+        $transformers = is_array($options['transformers'] ?? null) ? $options['transformers'] : [];
 
         if (method_exists($typeClass, 'defaultTransformers')) {
-            $transformers = array_merge($typeClass::defaultTransformers(), $transformers);
+            /** @var list<DataTransformerInterface> $defaults */
+            $defaults = $typeClass::defaultTransformers();
+            $transformers = array_merge($defaults, $transformers);
         }
 
         unset($options['constraints'], $options['transformers']);
@@ -69,11 +77,12 @@ final class FormBuilder
         if ($typeClass === CollectionType::class) {
             $collection = true;
             $compound = true;
-            $entryType = $options['entry_type'] ?? null;
-            $entryOptions = $options['entry_options'] ?? [];
+            $entryType = is_string($options['entry_type'] ?? null) ? $options['entry_type'] : null;
+            /** @var array<string, mixed> $entryOptions */
+            $entryOptions = is_array($options['entry_options'] ?? null) ? $options['entry_options'] : [];
         }
 
-        $config = new FieldConfig(
+        $this->fields[$name] = new FieldConfig(
             $name,
             $typeClass,
             $options,
@@ -86,8 +95,6 @@ final class FormBuilder
             $entryOptions,
             [],
         );
-
-        $this->fields[$name] = $config;
 
         if ($this->fieldsetStack !== []) {
             $currentId = $this->fieldsetStack[array_key_last($this->fieldsetStack)];
@@ -102,9 +109,10 @@ final class FormBuilder
         return $this;
     }
 
+    /** @param array<string, mixed> $options */
     public function addFieldset(array $options = []): self
     {
-        $fieldset = new Fieldset('fs_' . (count($this->fieldsets) + 1), $options, []);
+        $fieldset = new Fieldset('fs_' . (count($this->fieldsets) + 1), $options, [], []);
 
         if ($this->fieldsetStack !== []) {
             $parentId = $this->fieldsetStack[array_key_last($this->fieldsetStack)];
@@ -169,9 +177,9 @@ final class FormBuilder
             $this->name,
             $this->fields,
             $this->data,
+            $this->eventDispatcher,
             $options,
             $this->fieldsets,
-            $this->eventDispatcher,
             $this->formConstraints,
         );
     }
