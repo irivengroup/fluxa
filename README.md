@@ -34,3 +34,19 @@ if ($form->isSubmitted() && $form->isValid()) {
     $data = $form->getData();
 }
 ```
+
+
+## Quality and CI
+
+This project ships with a standalone CI setup based on GitHub Actions, PHPUnit, PHPStan, PHP CS Fixer and Scrutinizer.
+
+Local commands:
+
+```bash
+composer install --no-interaction --prefer-dist
+composer dump-autoload -o
+composer lint
+composer test
+composer analyse
+composer cs
+```

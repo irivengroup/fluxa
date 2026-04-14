@@ -17,11 +17,14 @@ build:
   nodes:
     analysis:
       environment:
-        php: 8.2
+        php: 8.3
       dependencies:
         override:
           - composer install --no-interaction --prefer-dist
+          - composer dump-autoload -o
       tests:
         override:
-          - vendor/bin/phpunit --colors=never
+          - composer lint
+          - vendor/bin/phpunit --colors=never --display-warnings --display-deprecations
+          - composer analyse
           - php-scrutinizer-run

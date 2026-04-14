@@ -5,7 +5,10 @@
          colors="true"
          cacheDirectory=".phpunit.cache"
          executionOrder="depends,defects"
-         beStrictAboutTestsThatDoNotTestAnything="true">
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         displayDetailsOnTestsThatTriggerWarnings="true"
+         displayDetailsOnTestsThatTriggerDeprecations="true"
+         failOnRisky="true">
     <testsuites>
         <testsuite name="default">
             <directory>tests</directory>
@@ -15,6 +18,7 @@
     <source>
         <include>
             <directory>src</directory>
+            <directory>tests</directory>
         </include>
     </source>
 
