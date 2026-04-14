@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Iriven\PhpFormGenerator\Tests\Fixtures;
 
 use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
+use Iriven\PhpFormGenerator\Domain\Contract\OptionsResolverInterface;
 use Iriven\PhpFormGenerator\Domain\Field\TextType;
 use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
 
@@ -17,8 +18,7 @@ final class AddressType implements FormTypeInterface
             ->add('city', TextType::class, ['label' => 'City']);
     }
 
-    public function configureOptions(array $options = []): array
+    public function configureOptions(OptionsResolverInterface $resolver): void
     {
-        return $options;
     }
 }

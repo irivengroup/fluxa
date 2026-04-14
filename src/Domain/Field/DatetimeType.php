@@ -2,4 +2,19 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/DateTimeType.php';
+namespace Iriven\PhpFormGenerator\Domain\Field;
+
+use Iriven\PhpFormGenerator\Domain\Transformer\DateTimeTransformer;
+
+class DatetimeType extends AbstractFieldType
+{
+    public static function htmlType(): string
+    {
+        return 'datetime-local';
+    }
+
+    public static function defaultTransformers(): array
+    {
+        return [new DateTimeTransformer()];
+    }
+}

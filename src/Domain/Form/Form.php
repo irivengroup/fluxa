@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Iriven\PhpFormGenerator\Domain\Form;
 
 use Iriven\PhpFormGenerator\Domain\Contract\ConstraintInterface;
+use Iriven\PhpFormGenerator\Domain\Contract\EventDispatcherInterface;
+use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\RequestInterface;
 use Iriven\PhpFormGenerator\Domain\Event\PostSubmitEvent;
 use Iriven\PhpFormGenerator\Domain\Event\PreSetDataEvent;
@@ -14,6 +16,7 @@ use Iriven\PhpFormGenerator\Domain\Event\ValidationErrorEvent;
 use Iriven\PhpFormGenerator\Domain\Validation\Validator;
 use Iriven\PhpFormGenerator\Infrastructure\Mapping\ArrayDataMapper;
 use Iriven\PhpFormGenerator\Infrastructure\Mapping\ObjectDataMapper;
+use Iriven\PhpFormGenerator\Infrastructure\Options\OptionsResolver;
 use Iriven\PhpFormGenerator\Infrastructure\PropertyAccess\PropertyAccessor;
 
 final class Form
@@ -27,9 +30,6 @@ final class Form
     /** @var array<string, list<string>> */
     private array $errors = [];
 
-    /** @var array<string, list<callable>> */
-    private array $eventListeners = [];
-
     /** @var list<ConstraintInterface> */
     private array $formConstraints = [];
 
@@ -38,7 +38,6 @@ final class Form
     /**
      * @param array<string, FieldConfig> $fields
      * @param list<Fieldset> $fieldsets
-     * @param array<string, list<callable>> $eventListeners
      * @param list<ConstraintInterface> $formConstraints
      */
     public function __construct(
@@ -47,10 +46,9 @@ final class Form
         private mixed $data = null,
         private readonly array $options = [],
         private readonly array $fieldsets = [],
-        array $eventListeners = [],
+        private readonly EventDispatcherInterface $eventDispatcher,
         array $formConstraints = [],
     ) {
-        $this->eventListeners = $eventListeners;
         $this->formConstraints = $formConstraints;
         $this->accessor = new PropertyAccessor();
         $this->dispatch('form.pre_set_data', new PreSetDataEvent($this, $this->data));
@@ -196,11 +194,13 @@ final class Form
                 $row = ['value' => $row];
             }
 
-            if ($entryType !== null && is_subclass_of($entryType, 'Iriven\\PhpFormGenerator\\Domain\\Contract\\FormTypeInterface')) {
-                $builder = new FormBuilder($field->name . '_entry', null, $field->entryOptions);
+            if ($entryType !== null && is_subclass_of($entryType, FormTypeInterface::class)) {
+                $builder = new FormBuilder($field->name . '_entry', null, $field->entryOptions + ['event_dispatcher' => $this->eventDispatcher]);
                 $type = new $entryType();
-                $resolved = $type->configureOptions($field->entryOptions);
-                $type->buildForm($builder, $resolved + $field->entryOptions);
+                $resolver = new OptionsResolver();
+                $type->configureOptions($resolver);
+                $resolved = $resolver->resolve($field->entryOptions);
+                $type->buildForm($builder, $resolved);
                 $entryValues = [];
                 foreach ($builder->all() as $childName => $child) {
                     $entryValues[$childName] = $this->submitField($child, $row[$childName] ?? null, $path . '.' . (string) $index . '.' . $childName);
@@ -210,7 +210,8 @@ final class Form
             }
 
             if ($entryType !== null && class_exists($entryType)) {
-                $entryField = new FieldConfig((string) $index, $entryType, $field->entryOptions, $field->constraints, method_exists($entryType, 'defaultTransformers') ? $entryType::defaultTransformers() : []);
+                $transformers = method_exists($entryType, 'defaultTransformers') ? $entryType::defaultTransformers() : [];
+                $entryField = new FieldConfig((string) $index, $entryType, $field->entryOptions, $field->constraints, $transformers);
                 $items[] = $this->submitField($entryField, $row, $path . '.' . (string) $index);
                 continue;
             }
@@ -364,11 +365,13 @@ final class Form
             if (is_array($value)) {
                 foreach ($value as $index => $row) {
                     $entryChildren = [];
-                    if ($field->entryType !== null && is_subclass_of($field->entryType, 'Iriven\\PhpFormGenerator\\Domain\\Contract\\FormTypeInterface')) {
-                        $builder = new FormBuilder($name . '_entry', null, $field->entryOptions);
+                    if ($field->entryType !== null && is_subclass_of($field->entryType, FormTypeInterface::class)) {
+                        $builder = new FormBuilder($name . '_entry', null, $field->entryOptions + ['event_dispatcher' => $this->eventDispatcher]);
                         $entry = new ($field->entryType)();
-                        $resolved = $entry->configureOptions($field->entryOptions);
-                        $entry->buildForm($builder, $resolved + $field->entryOptions);
+                        $resolver = new OptionsResolver();
+                        $entry->configureOptions($resolver);
+                        $resolved = $resolver->resolve($field->entryOptions);
+                        $entry->buildForm($builder, $resolved);
 
                         foreach ($builder->all() as $childName => $child) {
                             $entryChildren[] = $this->createFieldView(
@@ -395,11 +398,13 @@ final class Form
                 }
             }
 
-            if (($field->options['prototype'] ?? false) === true && $field->entryType !== null && is_subclass_of($field->entryType, 'Iriven\\PhpFormGenerator\\Domain\\Contract\\FormTypeInterface')) {
-                $builder = new FormBuilder($name . '_prototype', null, $field->entryOptions);
+            if (($field->options['prototype'] ?? false) === true && $field->entryType !== null && is_subclass_of($field->entryType, FormTypeInterface::class)) {
+                $builder = new FormBuilder($name . '_prototype', null, $field->entryOptions + ['event_dispatcher' => $this->eventDispatcher]);
                 $entry = new ($field->entryType)();
-                $resolved = $entry->configureOptions($field->entryOptions);
-                $entry->buildForm($builder, $resolved + $field->entryOptions);
+                $resolver = new OptionsResolver();
+                $entry->configureOptions($resolver);
+                $resolved = $resolver->resolve($field->entryOptions);
+                $entry->buildForm($builder, $resolved);
                 $prototypeChildren = [];
                 foreach ($builder->all() as $childName => $child) {
                     $prototypeChildren[] = $this->createFieldView(
@@ -438,8 +443,6 @@ final class Form
 
     public function dispatch(string $eventName, object $event): void
     {
-        foreach ($this->eventListeners[$eventName] ?? [] as $listener) {
-            $listener($event);
-        }
+        $this->eventDispatcher->dispatch($eventName, $event);
     }
 }

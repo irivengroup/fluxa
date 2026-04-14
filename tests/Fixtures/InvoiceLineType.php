@@ -6,6 +6,7 @@ namespace Iriven\PhpFormGenerator\Tests\Fixtures;
 
 use Iriven\PhpFormGenerator\Domain\Constraint\Required;
 use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
+use Iriven\PhpFormGenerator\Domain\Contract\OptionsResolverInterface;
 use Iriven\PhpFormGenerator\Domain\Field\FloatType;
 use Iriven\PhpFormGenerator\Domain\Field\IntegerType;
 use Iriven\PhpFormGenerator\Domain\Field\TextType;
@@ -21,8 +22,7 @@ final class InvoiceLineType implements FormTypeInterface
             ->add('price', FloatType::class);
     }
 
-    public function configureOptions(array $options = []): array
+    public function configureOptions(OptionsResolverInterface $resolver): void
     {
-        return [];
     }
 }

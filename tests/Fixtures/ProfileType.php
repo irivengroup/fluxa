@@ -7,6 +7,7 @@ namespace Iriven\PhpFormGenerator\Tests\Fixtures;
 use Iriven\PhpFormGenerator\Domain\Constraint\Callback;
 use Iriven\PhpFormGenerator\Domain\Constraint\Required;
 use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
+use Iriven\PhpFormGenerator\Domain\Contract\OptionsResolverInterface;
 use Iriven\PhpFormGenerator\Domain\Event\FormEvents;
 use Iriven\PhpFormGenerator\Domain\Field\CheckboxType;
 use Iriven\PhpFormGenerator\Domain\Field\CollectionType;
@@ -57,11 +58,11 @@ final class ProfileType implements FormTypeInterface
             });
     }
 
-    public function configureOptions(array $options = []): array
+    public function configureOptions(OptionsResolverInterface $resolver): void
     {
-        return [
+        $resolver->setDefaults([
             'method' => 'POST',
             'csrf_protection' => false,
-        ] + $options;
+        ]);
     }
 }

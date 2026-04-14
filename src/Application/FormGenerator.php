@@ -12,7 +12,7 @@ use Iriven\PhpFormGenerator\Domain\Field\CollectionType;
 use Iriven\PhpFormGenerator\Domain\Field\ColorType;
 use Iriven\PhpFormGenerator\Domain\Field\CountryType;
 use Iriven\PhpFormGenerator\Domain\Field\DatalistType;
-use Iriven\PhpFormGenerator\Domain\Field\DateTimeType;
+use Iriven\PhpFormGenerator\Domain\Field\DatetimeType;
 use Iriven\PhpFormGenerator\Domain\Field\DateType;
 use Iriven\PhpFormGenerator\Domain\Field\EditorType;
 use Iriven\PhpFormGenerator\Domain\Field\EmailType;
@@ -70,7 +70,7 @@ final class FormGenerator
     public function addVideo(string $name, array $options = []): self { return $this->add($name, VideoType::class, $options); }
     public function addCountries(string $name, array $options = []): self { return $this->add($name, CountryType::class, $options); }
     public function addCountry(string $name, array $options = []): self { return $this->addCountries($name, $options); }
-    public function addDateTime(string $name, array $options = []): self { return $this->add($name, DateTimeType::class, $options); }
+    public function addDateTime(string $name, array $options = []): self { return $this->add($name, DatetimeType::class, $options); }
     public function addDate(string $name, array $options = []): self { return $this->add($name, DateType::class, $options); }
     public function addTime(string $name, array $options = []): self { return $this->add($name, TimeType::class, $options); }
     public function addMonth(string $name, array $options = []): self { return $this->add($name, MonthType::class, $options); }

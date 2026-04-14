@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace Iriven\PhpFormGenerator\Domain\Form;
 
 use Iriven\PhpFormGenerator\Domain\Contract\ConstraintInterface;
+use Iriven\PhpFormGenerator\Domain\Contract\EventDispatcherInterface;
+use Iriven\PhpFormGenerator\Domain\Contract\EventSubscriberInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
-use Iriven\PhpFormGenerator\Domain\Event\FormEvents;
 use Iriven\PhpFormGenerator\Domain\Field\CollectionType;
+use Iriven\PhpFormGenerator\Infrastructure\Event\EventDispatcher;
+use Iriven\PhpFormGenerator\Infrastructure\Options\OptionsResolver;
 use Iriven\PhpFormGenerator\Infrastructure\Security\NullCsrfManager;
 
 final class FormBuilder
@@ -21,17 +24,17 @@ final class FormBuilder
     /** @var list<string> */
     private array $fieldsetStack = [];
 
-    /** @var array<string, list<callable>> */
-    private array $eventListeners = [];
-
     /** @var list<ConstraintInterface> */
     private array $formConstraints = [];
+
+    private EventDispatcherInterface $eventDispatcher;
 
     public function __construct(
         private readonly string $name = 'form',
         private mixed $data = null,
         private array $options = [],
     ) {
+        $this->eventDispatcher = $this->options['event_dispatcher'] ?? new EventDispatcher();
     }
 
     public function add(string $name, string $typeClass, array $options = []): self
@@ -52,12 +55,15 @@ final class FormBuilder
         $entryOptions = [];
 
         if (is_subclass_of($typeClass, FormTypeInterface::class)) {
-            $subBuilder = new self($name, null, $options);
+            $subBuilder = new self($name, null, $options + ['event_dispatcher' => $this->eventDispatcher]);
             $type = new $typeClass();
-            $resolved = $type->configureOptions($options);
-            $type->buildForm($subBuilder, $resolved + $options);
+            $resolver = new OptionsResolver();
+            $type->configureOptions($resolver);
+            $resolved = $resolver->resolve($options);
+            $type->buildForm($subBuilder, $resolved);
             $compound = true;
             $children = $subBuilder->all();
+            $options = $resolved;
         }
 
         if ($typeClass === CollectionType::class) {
@@ -123,19 +129,21 @@ final class FormBuilder
         return $this;
     }
 
-    /** @param ConstraintInterface $constraint */
     public function addFormConstraint(ConstraintInterface $constraint): self
     {
         $this->formConstraints[] = $constraint;
         return $this;
     }
 
-    /** @param callable $listener */
     public function addEventListener(string $eventName, callable $listener): self
     {
-        $this->eventListeners[$eventName] ??= [];
-        $this->eventListeners[$eventName][] = $listener;
+        $this->eventDispatcher->addListener($eventName, $listener);
+        return $this;
+    }
 
+    public function addEventSubscriber(EventSubscriberInterface $subscriber): self
+    {
+        $this->eventDispatcher->addSubscriber($subscriber);
         return $this;
     }
 
@@ -154,6 +162,7 @@ final class FormBuilder
             'csrf_field_name' => '_token',
             'csrf_token_id' => $this->name,
             'csrf_manager' => new NullCsrfManager(),
+            'event_dispatcher' => $this->eventDispatcher,
         ];
 
         return new Form(
@@ -162,7 +171,7 @@ final class FormBuilder
             $this->data,
             $options,
             $this->fieldsets,
-            $this->eventListeners,
+            $this->eventDispatcher,
             $this->formConstraints,
         );
     }

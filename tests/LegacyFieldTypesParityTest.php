@@ -12,7 +12,7 @@ final class LegacyFieldTypesParityTest extends TestCase
     {
         $classes = [
             'AudioType','ButtonType','CaptchaType','CheckboxType','ColorType','CountryType','DatalistType',
-            'DateType','DateTimeType','DatetimeLocalType','EditorType','EmailType','FileType','FloatType',
+            'DateType','DatetimeType','DatetimeLocalType','EditorType','EmailType','FileType','FloatType',
             'HiddenType','ImageType','IntegerType','MonthType','NumberType','PasswordType','PhoneType',
             'RadioType','RangeType','ResetType','SearchType','SelectType','SubmitType','TextType',
             'TextareaType','TimeType','UrlType','VideoType','WeekType','YesNoType','CollectionType'
@@ -23,13 +23,10 @@ final class LegacyFieldTypesParityTest extends TestCase
         }
     }
 
-    public function testLegacyNameVariantsResolveToCanonicalTypes(): void
+    public function testNormalizedNamesResolve(): void
     {
-        self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\DateTimeType'));
         self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\DatetimeType'));
         self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\DatetimeLocalType'));
-
         self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\TextareaType'));
-        self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\TextAreaType'));
     }
 }
