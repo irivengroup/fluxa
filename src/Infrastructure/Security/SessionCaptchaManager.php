@@ -9,8 +9,10 @@ use RuntimeException;
 
 final class SessionCaptchaManager implements CaptchaManagerInterface
 {
-    public function __construct()
-    {
+    public function __construct(
+        private readonly int $ttlSeconds = 300,
+        private readonly int $maxAttempts = 5,
+    ) {
         $this->ensureSessionStarted();
         $_SESSION['_pfg_captcha'] ??= [];
     }
@@ -23,7 +25,11 @@ final class SessionCaptchaManager implements CaptchaManagerInterface
         $length = random_int($minLength, $maxLength);
         $code = $this->generateCaseSensitiveCode($length);
 
-        $_SESSION['_pfg_captcha'][$key] = $code;
+        $_SESSION['_pfg_captcha'][$key] = [
+            'code' => $code,
+            'expires_at' => time() + max(30, $this->ttlSeconds),
+            'attempts_left' => max(1, $this->maxAttempts),
+        ];
 
         return $code;
     }
@@ -34,10 +40,45 @@ final class SessionCaptchaManager implements CaptchaManagerInterface
             return false;
         }
 
-        $expected = $_SESSION['_pfg_captcha'][$key] ?? null;
-        unset($_SESSION['_pfg_captcha'][$key]);
+        $challenge = $_SESSION['_pfg_captcha'][$key] ?? null;
+        if (!is_array($challenge)) {
+            return false;
+        }
 
-        return is_string($expected) && hash_equals($expected, $input);
+        $expected = $challenge['code'] ?? null;
+        $expiresAt = $challenge['expires_at'] ?? null;
+        $attemptsLeft = $challenge['attempts_left'] ?? null;
+
+        if (!is_string($expected) || !is_int($expiresAt) || !is_int($attemptsLeft)) {
+            unset($_SESSION['_pfg_captcha'][$key]);
+            return false;
+        }
+
+        if ($expiresAt < time()) {
+            unset($_SESSION['_pfg_captcha'][$key]);
+            return false;
+        }
+
+        if ($attemptsLeft <= 0) {
+            unset($_SESSION['_pfg_captcha'][$key]);
+            return false;
+        }
+
+        $isValid = hash_equals($expected, $input);
+
+        if ($isValid) {
+            unset($_SESSION['_pfg_captcha'][$key]);
+            return true;
+        }
+
+        $challenge['attempts_left'] = $attemptsLeft - 1;
+        if ($challenge['attempts_left'] <= 0) {
+            unset($_SESSION['_pfg_captcha'][$key]);
+        } else {
+            $_SESSION['_pfg_captcha'][$key] = $challenge;
+        }
+
+        return false;
     }
 
     private function ensureSessionStarted(): void

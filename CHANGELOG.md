@@ -1,6 +1,7 @@
 ## Unreleased
 
 ### Added
+- Hardened captcha handling with mixed-case generation, TTL expiration, max-attempt invalidation, and extracted SVG rendering into `CaptchaSvgRenderer`.
 - Added basic i18n system with TranslatorInterface and ArrayTranslator.
 
 ## Unreleased

@@ -837,3 +837,25 @@ Cela réduit la responsabilité directe des classes façade et prépare les proc
 - la construction de vue à `FormViewBuilder`
 
 La classe `Form` conserve l’API publique mais n’embarque plus directement toute la logique métier interne.
+
+### Captcha hardening
+
+The native captcha subsystem now includes:
+- mandatory mixed-case generation
+- session-based expiration (TTL)
+- max-attempt invalidation
+- extracted `CaptchaSvgRenderer` for visual challenge rendering
+- stronger noisy SVG output with additional lines, paths, and dots
+
+Default runtime behavior:
+- TTL: 300 seconds
+- max attempts: 5
+
+`SessionCaptchaManager` can also be instantiated explicitly with custom limits:
+
+```php
+$manager = new \Iriven\PhpFormGenerator\Infrastructure\Security\SessionCaptchaManager(
+    ttlSeconds: 180,
+    maxAttempts: 3,
+);
+```
