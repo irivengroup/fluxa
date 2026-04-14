@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Iriven\PhpFormGenerator\Application;
 
+use Iriven\PhpFormGenerator\Domain\Contract\CaptchaManagerInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\CsrfManagerInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\EventDispatcherInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
@@ -12,12 +13,14 @@ use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
 use Iriven\PhpFormGenerator\Infrastructure\Event\EventDispatcher;
 use Iriven\PhpFormGenerator\Infrastructure\Options\OptionsResolver;
 use Iriven\PhpFormGenerator\Infrastructure\Security\NullCsrfManager;
+use Iriven\PhpFormGenerator\Infrastructure\Security\SessionCaptchaManager;
 
 final class FormFactory
 {
     public function __construct(
         private readonly ?CsrfManagerInterface $csrfManager = null,
         private readonly ?EventDispatcherInterface $eventDispatcher = null,
+        private readonly ?CaptchaManagerInterface $captchaManager = null,
     ) {
     }
 
@@ -26,6 +29,7 @@ final class FormFactory
     {
         $options['csrf_manager'] = $options['csrf_manager'] ?? $this->csrfManager ?? new NullCsrfManager();
         $options['event_dispatcher'] = $options['event_dispatcher'] ?? $this->eventDispatcher ?? new EventDispatcher();
+        $options['captcha_manager'] = $options['captcha_manager'] ?? $this->captchaManager ?? new SessionCaptchaManager();
 
         return new FormBuilder($name, $data, $options);
     }

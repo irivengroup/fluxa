@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Iriven\PhpFormGenerator\Presentation\Html;
 
 use Iriven\PhpFormGenerator\Domain\Field\AbstractFieldType;
+use Iriven\PhpFormGenerator\Domain\Field\CaptchaType;
 use Iriven\PhpFormGenerator\Domain\Field\CountryType;
 use Iriven\PhpFormGenerator\Domain\Field\YesNoType;
 use Iriven\PhpFormGenerator\Domain\Form\Fieldset;
@@ -165,6 +166,16 @@ final class HtmlRenderer
         $htmlType = class_exists($typeClass) && is_subclass_of($typeClass, AbstractFieldType::class)
             ? $typeClass::htmlType()
             : 'text';
+
+        if ($htmlType === 'captcha') {
+            $htmlType = 'text';
+            $attr['inputmode'] = 'text';
+            $attr['maxlength'] = (string) ($view->vars['max_length'] ?? 8);
+            $attr['minlength'] = (string) ($view->vars['min_length'] ?? 5);
+            $attr['autocomplete'] = 'off';
+            $attr['autocapitalize'] = 'off';
+            $attr['spellcheck'] = 'false';
+        }
 
         if ($htmlType === 'textarea') {
             $attr['class'] = trim(($attr['class'] ?? '') . ' ' . $this->theme->inputClass());

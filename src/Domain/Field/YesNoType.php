@@ -7,7 +7,7 @@ namespace Iriven\PhpFormGenerator\Domain\Field;
 class YesNoType extends SelectType
 {
     /**
-     * @return array<int, string>
+     * @return array<string, string>
      */
     public static function choices(): array
     {

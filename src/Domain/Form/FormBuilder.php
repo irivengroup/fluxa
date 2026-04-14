@@ -9,11 +9,13 @@ use Iriven\PhpFormGenerator\Domain\Contract\DataTransformerInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\EventDispatcherInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\EventSubscriberInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
+use Iriven\PhpFormGenerator\Domain\Field\CaptchaType;
 use Iriven\PhpFormGenerator\Domain\Field\CollectionType;
 use Iriven\PhpFormGenerator\Domain\Field\FileType;
 use Iriven\PhpFormGenerator\Infrastructure\Event\EventDispatcher;
 use Iriven\PhpFormGenerator\Infrastructure\Options\OptionsResolver;
 use Iriven\PhpFormGenerator\Infrastructure\Security\NullCsrfManager;
+use Iriven\PhpFormGenerator\Infrastructure\Security\SessionCaptchaManager;
 
 final class FormBuilder
 {
@@ -39,6 +41,9 @@ final class FormBuilder
     ) {
         $dispatcher = $this->options['event_dispatcher'] ?? null;
         $this->eventDispatcher = $dispatcher instanceof EventDispatcherInterface ? $dispatcher : new EventDispatcher();
+        if (!isset($this->options['captcha_manager'])) {
+            $this->options['captcha_manager'] = new SessionCaptchaManager();
+        }
     }
 
     /** @param array<string, mixed> $options */
@@ -92,6 +97,15 @@ final class FormBuilder
             $entryType = is_string($options['entry_type'] ?? null) ? $options['entry_type'] : null;
             /** @var array<string, mixed> $entryOptions */
             $entryOptions = is_array($options['entry_options'] ?? null) ? $options['entry_options'] : [];
+        }
+
+        if (is_a($typeClass, CaptchaType::class, true)) {
+            $options['min_length'] = max(5, (int) ($options['min_length'] ?? 5));
+            $options['max_length'] = min(8, max((int) ($options['min_length'] ?? 5), (int) ($options['max_length'] ?? 8)));
+            $options['case_sensitive'] = true;
+            $options['pattern'] = '[A-Za-z0-9]{' . $options['min_length'] . ',' . $options['max_length'] . '}';
+            $options['autocomplete'] = 'off';
+            $options['spellcheck'] = 'false';
         }
 
         if (is_a($typeClass, FileType::class, true)) {
@@ -200,8 +214,8 @@ final class FormBuilder
             $this->name,
             $this->fields,
             $this->eventDispatcher,
-            $this->data,
             $options,
+            $this->data,
             $this->fieldsets,
             $this->formConstraints,
         );

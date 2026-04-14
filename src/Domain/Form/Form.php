@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Iriven\PhpFormGenerator\Domain\Form;
 
+use Iriven\PhpFormGenerator\Domain\Contract\CaptchaManagerInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\ConstraintInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\EventDispatcherInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
@@ -50,8 +51,8 @@ final class Form
         private readonly string $name,
         private readonly array $fields,
         private readonly EventDispatcherInterface $eventDispatcher,
-        private mixed $data = null,
         private readonly array $options = [],
+        private mixed $data = null,
         private readonly array $fieldsets = [],
         array $formConstraints = [],
     ) {
@@ -170,6 +171,10 @@ final class Form
             $value = $transformer->reverseTransform($value);
         }
 
+        if (is_a($field->typeClass, 'Iriven\\PhpFormGenerator\\Domain\\Field\\CaptchaType', true)) {
+            $this->validateCaptchaField($field, is_string($raw) ? $raw : null, $path);
+        }
+
         $this->applyConstraintErrors($path, $value, $field->constraints);
 
         return $value;
@@ -257,6 +262,32 @@ final class Form
         $this->errors[$path] = $errors;
         $this->valid = false;
         $this->dispatch('form.validation_error', new ValidationErrorEvent($this, $value, ['path' => $path, 'errors' => $errors]));
+    }
+
+
+    private function validateCaptchaField(FieldConfig $field, ?string $input, string $path): void
+    {
+        $captchaManager = $this->options['captcha_manager'] ?? null;
+        if (!$captchaManager instanceof CaptchaManagerInterface) {
+            $this->errors[$path][] = 'Captcha manager is not configured.';
+            $this->valid = false;
+            return;
+        }
+
+        $minLength = max(5, (int) ($field->options['min_length'] ?? 5));
+        $maxLength = min(8, max($minLength, (int) ($field->options['max_length'] ?? 8)));
+
+        if ($input === null || $input === '' || preg_match('/^[A-Za-z0-9]{' . $minLength . ',' . $maxLength . '}$/', $input) !== 1) {
+            $this->errors[$path][] = sprintf('Captcha must be alphanumeric and contain between %d and %d characters.', $minLength, $maxLength);
+            $this->valid = false;
+            return;
+        }
+
+        $key = $this->name . '.' . $field->name;
+        if (!$captchaManager->isCodeValid($key, $input)) {
+            $this->errors[$path][] = 'Invalid captcha.';
+            $this->valid = false;
+        }
     }
 
     private function validateFormConstraints(): void
@@ -372,6 +403,19 @@ final class Form
         $vars['attr'] = $field->options['attr'] ?? [];
         $vars['type_class'] = $field->typeClass;
 
+        if (is_a($field->typeClass, 'Iriven\\PhpFormGenerator\\Domain\\Field\\CaptchaType', true)) {
+            $captchaManager = $this->options['captcha_manager'] ?? null;
+            if ($captchaManager instanceof CaptchaManagerInterface) {
+                $minLength = max(5, (int) ($field->options['min_length'] ?? 5));
+                $maxLength = min(8, max($minLength, (int) ($field->options['max_length'] ?? 8)));
+                $captchaKey = $this->name . '.' . $name;
+                $code = $captchaManager->generateCode($captchaKey, $minLength, $maxLength);
+                $vars['captcha_key'] = $captchaKey;
+                $vars['captcha_svg'] = $this->buildCaptchaSvg($code, $id . '_captcha');
+                $vars['help'] = $field->options['help'] ?? sprintf('Enter the case-sensitive code shown above (%d to %d characters).', $minLength, $maxLength);
+            }
+        }
+
         if ($field->collection) {
             $children = [];
             if (is_array($value)) {
@@ -451,6 +495,60 @@ final class Form
         }
 
         return new FormView($name, $fullName, $id, $field->typeClass, $value, $vars, [], $this->errors[$errorPath] ?? []);
+    }
+
+    private function buildCaptchaSvg(string $code, string $id): string
+    {
+        $width = 170;
+        $height = 56;
+        $chars = preg_split('//u', $code, -1, PREG_SPLIT_NO_EMPTY) ?: [];
+        $parts = [];
+        foreach ($chars as $index => $char) {
+            $x = 18 + ($index * 18);
+            $y = random_int(32, 42);
+            $rotate = random_int(-22, 22);
+            $fontSize = random_int(20, 28);
+            $parts[] = sprintf(
+                '<text x="%d" y="%d" font-size="%d" transform="rotate(%d %d %d)" fill="#1f2937">%s</text>',
+                $x,
+                $y,
+                $fontSize,
+                $rotate,
+                $x,
+                $y,
+                htmlspecialchars($char, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')
+            );
+        }
+
+        $noise = '';
+        for ($i = 0; $i < 6; $i++) {
+            $noise .= sprintf(
+                '<line x1="%d" y1="%d" x2="%d" y2="%d" stroke="#9ca3af" stroke-width="1" opacity="0.65" />',
+                random_int(0, $width),
+                random_int(0, $height),
+                random_int(0, $width),
+                random_int(0, $height)
+            );
+        }
+        for ($i = 0; $i < 20; $i++) {
+            $noise .= sprintf(
+                '<circle cx="%d" cy="%d" r="%d" fill="#d1d5db" opacity="0.45" />',
+                random_int(0, $width),
+                random_int(0, $height),
+                random_int(1, 2)
+            );
+        }
+
+        return sprintf(
+            '<svg id="%s" xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d" role="img" aria-label="Captcha challenge"><rect width="100%%" height="100%%" rx="6" fill="#f3f4f6" />%s<g font-family="monospace" font-weight="700" letter-spacing="2">%s</g></svg>',
+            htmlspecialchars($id, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'),
+            $width,
+            $height,
+            $width,
+            $height,
+            $noise,
+            implode('', $parts)
+        );
     }
 
     public function dispatch(string $eventName, object $event): void
