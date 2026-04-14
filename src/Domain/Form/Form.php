@@ -49,8 +49,8 @@ final class Form
     public function __construct(
         private readonly string $name,
         private readonly array $fields,
-        private mixed $data = null,
         private readonly EventDispatcherInterface $eventDispatcher,
+        private mixed $data = null,
         private readonly array $options = [],
         private readonly array $fieldsets = [],
         array $formConstraints = [],

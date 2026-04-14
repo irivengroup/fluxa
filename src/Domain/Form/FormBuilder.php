@@ -10,6 +10,7 @@ use Iriven\PhpFormGenerator\Domain\Contract\EventDispatcherInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\EventSubscriberInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
 use Iriven\PhpFormGenerator\Domain\Field\CollectionType;
+use Iriven\PhpFormGenerator\Domain\Field\FileType;
 use Iriven\PhpFormGenerator\Infrastructure\Event\EventDispatcher;
 use Iriven\PhpFormGenerator\Infrastructure\Options\OptionsResolver;
 use Iriven\PhpFormGenerator\Infrastructure\Security\NullCsrfManager;
@@ -38,6 +39,14 @@ final class FormBuilder
     ) {
         $dispatcher = $this->options['event_dispatcher'] ?? null;
         $this->eventDispatcher = $dispatcher instanceof EventDispatcherInterface ? $dispatcher : new EventDispatcher();
+    }
+
+    /** @param array<string, mixed> $options */
+    public function mergeOptions(array $options): self
+    {
+        $this->options = array_replace_recursive($this->options, $options);
+
+        return $this;
     }
 
     /**
@@ -83,6 +92,17 @@ final class FormBuilder
             $entryType = is_string($options['entry_type'] ?? null) ? $options['entry_type'] : null;
             /** @var array<string, mixed> $entryOptions */
             $entryOptions = is_array($options['entry_options'] ?? null) ? $options['entry_options'] : [];
+        }
+
+        if (is_a($typeClass, FileType::class, true)) {
+            /** @var array<string, mixed> $attr */
+            $attr = is_array($this->options['attr'] ?? null) ? $this->options['attr'] : [];
+            $attr['enctype'] = 'multipart/form-data';
+            $this->options['attr'] = $attr;
+
+            if (!isset($this->options['method'])) {
+                $this->options['method'] = 'POST';
+            }
         }
 
         $this->fields[$name] = new FieldConfig(
@@ -179,8 +199,8 @@ final class FormBuilder
         return new Form(
             $this->name,
             $this->fields,
-            $this->data,
             $this->eventDispatcher,
+            $this->data,
             $options,
             $this->fieldsets,
             $this->formConstraints,

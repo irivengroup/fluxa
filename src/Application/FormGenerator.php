@@ -54,6 +54,8 @@ final class FormGenerator
     /** @param array<string, mixed> $options */
     public function open(array $options = []): self
     {
+        $this->builder->mergeOptions($options);
+
         return $this;
     }
 
