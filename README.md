@@ -323,3 +323,7 @@ It also adds a form-level validation rule to verify password confirmation.
 The line items use `InvoiceLineType`, and the customer section uses `CustomerType`.
 
 The generated `FormView` now exposes the root options through both `vars` and `options` for backward-compatible inspection in tests, integrations, and custom renderers.
+
+Additional hardening:
+- `YesNoType` now exposes string choice keys consistently.
+- captcha length normalization no longer triggers PHPStan false positives.

@@ -1,5 +1,9 @@
 ## Unreleased
 
+### Fixed
+- Fixed PHPStan issues in `YesNoType::choices()` and captcha length normalization in `FormBuilder`.
+
+
 ### Added
 - Added reusable application form types: `ContactType`, `InvoiceType`, `RegistrationType`, `CustomerType`, and `InvoiceLineType`.
 

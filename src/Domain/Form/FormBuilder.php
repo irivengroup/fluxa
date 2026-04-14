@@ -104,8 +104,8 @@ final class FormBuilder
         }
 
         if (is_a($typeClass, CaptchaType::class, true)) {
-            $options['min_length'] = max(5, (int) ($options['min_length'] ?? 5));
-            $options['max_length'] = min(8, max((int) ($options['min_length'] ?? 5), (int) ($options['max_length'] ?? 8)));
+            $options['min_length'] = max(5, (int) $options['min_length']);
+            $options['max_length'] = min(8, max((int) $options['min_length'], (int) $options['max_length']));
             $options['case_sensitive'] = true;
             $options['pattern'] = '[A-Za-z0-9]{' . $options['min_length'] . ',' . $options['max_length'] . '}';
             $options['autocomplete'] = 'off';
