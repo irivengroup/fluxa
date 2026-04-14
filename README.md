@@ -1,3 +1,7 @@
+# PhpFormGenerator
+
+Standalone PHP form framework with no dependency on any external application framework.
+
 # PhpFormGenerator V3.5
 
 Enterprise-grade PHP form framework with:

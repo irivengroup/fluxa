@@ -4,9 +4,7 @@
   "type": "library",
   "license": "MIT",
   "require": {
-    "php": "^8.2",
-    "symfony/event-dispatcher": "^7.4",
-    "symfony/options-resolver": "^7.4"
+    "php": "^8.2"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.95",
@@ -18,10 +16,7 @@
   "autoload": {
     "psr-4": {
       "Iriven\\PhpFormGenerator\\": "src/"
-    },
-    "files": [
-      "src/legacy_aliases.php"
-    ]
+    }
   },
   "autoload-dev": {
     "psr-4": {

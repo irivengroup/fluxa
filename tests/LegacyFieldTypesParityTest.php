@@ -23,13 +23,13 @@ final class LegacyFieldTypesParityTest extends TestCase
         }
     }
 
-    public function testCaseInsensitiveLegacyAliasesResolveToCanonicalType(): void
+    public function testLegacyNameVariantsResolveToCanonicalTypes(): void
     {
         self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\DateTimeType'));
-        self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\DatetimeType', false));
+        self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\DatetimeType'));
         self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\DatetimeLocalType'));
 
         self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\TextareaType'));
-        self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\TextAreaType', false));
+        self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\TextAreaType'));
     }
 }
