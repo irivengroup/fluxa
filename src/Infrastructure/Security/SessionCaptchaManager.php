@@ -60,7 +60,9 @@ final class SessionCaptchaManager implements CaptchaManagerInterface
             ));
         }
 
-        if (session_start() !== true || session_status() !== PHP_SESSION_ACTIVE) {
+        session_start();
+
+        if (session_status() !== PHP_SESSION_ACTIVE) {
             throw new RuntimeException('Unable to start session for captcha storage.');
         }
     }

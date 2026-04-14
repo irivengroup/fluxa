@@ -766,3 +766,14 @@ Highlights:
 - unsupported `class-string` style annotations were simplified where necessary
 - builder and resolver contracts now use parser-friendly string annotations
 - related constraint and extension annotations were normalized consistently across the project
+
+### Enum and session reliability pass
+
+The project now handles both enum families correctly:
+- backed enums via `BackedEnum::from(...)`
+- pure enums via `UnitEnum::cases()` and case-name matching
+
+Session-based security managers were also hardened further:
+- `session_start()` is now called explicitly
+- session activation is verified separately afterward
+- no boolean expression relies on assumptions that confuse static analyzers

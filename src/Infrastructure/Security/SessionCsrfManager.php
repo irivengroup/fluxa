@@ -49,7 +49,9 @@ final class SessionCsrfManager implements CsrfManagerInterface
             ));
         }
 
-        if (session_start() !== true || session_status() !== PHP_SESSION_ACTIVE) {
+        session_start();
+
+        if (session_status() !== PHP_SESSION_ACTIVE) {
             throw new RuntimeException('Unable to start session for CSRF storage.');
         }
     }

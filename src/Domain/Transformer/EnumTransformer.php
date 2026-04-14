@@ -7,6 +7,7 @@ namespace Iriven\PhpFormGenerator\Domain\Transformer;
 use BackedEnum;
 use InvalidArgumentException;
 use Iriven\PhpFormGenerator\Domain\Contract\DataTransformerInterface;
+use UnitEnum;
 
 final class EnumTransformer implements DataTransformerInterface
 {
@@ -19,7 +20,7 @@ final class EnumTransformer implements DataTransformerInterface
 
     public function transform(mixed $value): mixed
     {
-        return $value instanceof BackedEnum ? $value->value : $value;
+        return $value instanceof BackedEnum ? $value->value : ($value instanceof UnitEnum ? $value->name : $value);
     }
 
     public function reverseTransform(mixed $value): mixed
@@ -28,7 +29,7 @@ final class EnumTransformer implements DataTransformerInterface
             return null;
         }
 
-        if ($value instanceof BackedEnum) {
+        if ($value instanceof UnitEnum) {
             return $value;
         }
 
@@ -36,6 +37,26 @@ final class EnumTransformer implements DataTransformerInterface
             throw new InvalidArgumentException('Enum class does not exist: ' . $this->enumClass);
         }
 
-        return $this->enumClass::from($value);
+        if (is_subclass_of($this->enumClass, BackedEnum::class)) {
+            /** @var class-string<BackedEnum> $backedEnumClass */
+            $backedEnumClass = $this->enumClass;
+
+            return $backedEnumClass::from($value);
+        }
+
+        /** @var class-string<UnitEnum> $unitEnumClass */
+        $unitEnumClass = $this->enumClass;
+
+        foreach ($unitEnumClass::cases() as $case) {
+            if ($case->name === (string) $value) {
+                return $case;
+            }
+        }
+
+        throw new InvalidArgumentException(sprintf(
+            'Value "%s" is not a valid case name for enum %s.',
+            (string) $value,
+            $this->enumClass
+        ));
     }
 }
