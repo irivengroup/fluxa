@@ -175,8 +175,10 @@ final class Form
         return $value;
     }
 
-    /** @param array<string, mixed> $raw */
-    /** @param array<string, mixed> $raw @return array<string, mixed> */
+    /**
+     * @param array<string, mixed> $raw
+     * @return array<string, mixed>
+     */
     private function submitCompound(FieldConfig $field, array $raw, string $path): array
     {
         $result = [];
@@ -190,8 +192,10 @@ final class Form
         return $result;
     }
 
-    /** @param array<int|string, mixed> $raw */
-    /** @param array<int|string, mixed> $raw @return list<mixed> */
+    /**
+     * @param array<int|string, mixed> $raw
+     * @return list<mixed>
+     */
     private function submitCollection(FieldConfig $field, array $raw, string $path): array
     {
         $items = [];

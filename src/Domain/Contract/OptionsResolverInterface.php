@@ -18,6 +18,9 @@ interface OptionsResolverInterface
     /** @param callable|list<mixed> $values */
     public function setAllowedValues(string $option, callable|array $values): self;
 
-    /** @param array<string, mixed> $options @return array<string, mixed> */
+    /**
+     * @param array<string, mixed> $options
+     * @return array<string, mixed>
+     */
     public function resolve(array $options = []): array;
 }

@@ -134,7 +134,10 @@ final class FormGenerator
     public function endFieldset(): self { $this->builder->endFieldset(); return $this; }
     public function getForm(): Form { return $this->builder->getForm(); }
 
-    /** @param class-string $typeClass @param array<string, mixed> $options */
+    /**
+     * @param class-string $typeClass
+     * @param array<string, mixed> $options
+     */
     private function add(string $name, string $typeClass, array $options = []): self
     {
         $this->builder->add($name, $typeClass, $options);

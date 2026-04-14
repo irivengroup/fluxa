@@ -40,7 +40,10 @@ final class FormBuilder
         $this->eventDispatcher = $dispatcher instanceof EventDispatcherInterface ? $dispatcher : new EventDispatcher();
     }
 
-    /** @param class-string $typeClass @param array<string, mixed> $options */
+    /**
+     * @param class-string $typeClass
+     * @param array<string, mixed> $options
+     */
     public function add(string $name, string $typeClass, array $options = []): self
     {
         /** @var list<ConstraintInterface> $constraints */

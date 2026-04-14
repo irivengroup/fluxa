@@ -48,8 +48,10 @@ final class HtmlRenderer
         return $html . '</form>';
     }
 
-    /** @param array<string, FormView> $grouped @param array<string, bool> $used */
-    /** @param array<string, FormView> $grouped @param array<string, bool> $used */
+    /**
+     * @param array<string, FormView> $grouped
+     * @param array<string, bool> $used
+     */
     private function renderFieldset(Fieldset $fieldset, array $grouped, array &$used): string
     {
         $html = '<fieldset class="' . $this->e($this->theme->fieldsetClass()) . '">';

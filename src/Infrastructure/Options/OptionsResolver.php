@@ -49,7 +49,10 @@ final class OptionsResolver implements OptionsResolverInterface
         return $this;
     }
 
-    /** @param array<string, mixed> $options @return array<string, mixed> */
+    /**
+     * @param array<string, mixed> $options
+     * @return array<string, mixed>
+     */
     public function resolve(array $options = []): array
     {
         $resolved = $this->defaults;
