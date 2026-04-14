@@ -715,3 +715,5 @@ $builder
 ```
 
 Le moteur de résolution interne normalise ces valeurs avant instanciation.
+
+Extension contracts now use explicit `array<string, mixed>` option typing for better static-analysis compatibility.

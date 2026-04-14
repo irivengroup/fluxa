@@ -18,14 +18,16 @@ interface FieldTypeExtensionInterface
     public function extendOptions(array $options): array;
 
     /**
-     * @param list<ConstraintInterface> $constraints
-     * @return list<ConstraintInterface>
-     */
-    public function extendConstraints(array $constraints, array $options): array;
+ * @param list<ConstraintInterface> $constraints
+ * @param array<string, mixed> $options
+ * @return list<ConstraintInterface>
+ */
+public function extendConstraints(array $constraints, array $options): array;
 
     /**
-     * @param list<DataTransformerInterface> $transformers
-     * @return list<DataTransformerInterface>
-     */
-    public function extendTransformers(array $transformers, array $options): array;
+ * @param list<DataTransformerInterface> $transformers
+ * @param array<string, mixed> $options
+ * @return list<DataTransformerInterface>
+ */
+public function extendTransformers(array $transformers, array $options): array;
 }
