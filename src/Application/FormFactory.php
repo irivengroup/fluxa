@@ -11,6 +11,7 @@ use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
 use Iriven\PhpFormGenerator\Domain\Form\Form;
 use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
 use Iriven\PhpFormGenerator\Infrastructure\Event\EventDispatcher;
+use Iriven\PhpFormGenerator\Infrastructure\Extension\ExtensionRegistry;
 use Iriven\PhpFormGenerator\Infrastructure\Options\OptionsResolver;
 use Iriven\PhpFormGenerator\Infrastructure\Type\TypeResolver;
 use Iriven\PhpFormGenerator\Infrastructure\Security\NullCsrfManager;
@@ -22,6 +23,7 @@ final class FormFactory
         private readonly ?CsrfManagerInterface $csrfManager = null,
         private readonly ?EventDispatcherInterface $eventDispatcher = null,
         private readonly ?CaptchaManagerInterface $captchaManager = null,
+        private readonly ?ExtensionRegistry $extensionRegistry = null,
     ) {
     }
 
@@ -32,6 +34,7 @@ final class FormFactory
         $options['event_dispatcher'] = $options['event_dispatcher'] ?? $this->eventDispatcher ?? new EventDispatcher();
         $options['captcha_manager'] = $options['captcha_manager'] ?? $this->captchaManager ?? new SessionCaptchaManager();
         $options['csrf_protection'] = $options['csrf_protection'] ?? true;
+        $options['extension_registry'] = $options['extension_registry'] ?? $this->extensionRegistry ?? new ExtensionRegistry();
 
         return new FormBuilder($name, $data, $options);
     }

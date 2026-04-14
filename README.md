@@ -561,3 +561,136 @@ Legacy compatibility is preserved through the `SelectType` hierarchy.
 
 `ChoiceType` has been removed, and all internal references were normalized to the `SelectType` hierarchy.
 This keeps the field model simpler while preserving the expected behavior for country and yes/no select-style fields.
+
+## Cas complets
+
+### Formulaire de contact complet
+
+```php
+use Iriven\PhpFormGenerator\Application\FormFactory;
+use Iriven\PhpFormGenerator\Application\FormType\ContactType;
+use Iriven\PhpFormGenerator\Infrastructure\Http\NativeRequest;
+
+$factory = new FormFactory();
+$form = $factory->create(ContactType::class);
+
+$request = new NativeRequest($_SERVER['REQUEST_METHOD'], $_POST, $_FILES);
+$form->handleRequest($request);
+
+if ($form->isSubmitted() && $form->isValid()) {
+    $data = $form->getData();
+    // $data['name'], $data['email'], $data['message'], etc.
+}
+
+echo (new \Iriven\PhpFormGenerator\Presentation\Html\HtmlRenderer())->renderForm($form->createView());
+```
+
+### Formulaire d'inscription avec validation métier
+
+```php
+use Iriven\PhpFormGenerator\Application\FormFactory;
+use Iriven\PhpFormGenerator\Application\FormType\RegistrationType;
+use Iriven\PhpFormGenerator\Infrastructure\Http\ArrayRequest;
+
+$factory = new FormFactory();
+$form = $factory->create(RegistrationType::class);
+
+$form->handleRequest(new ArrayRequest('POST', [
+    'form' => [
+        'email' => 'john@example.com',
+        'password' => 'Secret123',
+        'confirmPassword' => 'Secret123',
+        'acceptTerms' => true,
+        'captcha' => 'AbC123',
+    ],
+]));
+
+if ($form->isSubmitted() && $form->isValid()) {
+    $data = $form->getData();
+}
+```
+
+### Facture avec lignes dynamiques
+
+```php
+use Iriven\PhpFormGenerator\Application\FormFactory;
+use Iriven\PhpFormGenerator\Application\FormType\InvoiceType;
+
+$factory = new FormFactory();
+$form = $factory->create(InvoiceType::class);
+
+if ($form->isSubmitted() && $form->isValid()) {
+    $invoice = $form->getData();
+}
+```
+
+## V3.7 — nouveautés intégrées
+
+### Validation groups
+Vous pouvez maintenant piloter l’exécution des contraintes via `validation_groups` sur le formulaire ou sur un champ via `GroupedConstraint`.
+
+```php
+use Iriven\PhpFormGenerator\Domain\Constraint\GroupedConstraint;
+use Iriven\PhpFormGenerator\Domain\Constraint\Required;
+
+$builder->add('vatNumber', TextType::class, [
+    'constraints' => [
+        new GroupedConstraint(new Required(), ['Business']),
+    ],
+]);
+```
+
+### Contraintes conditionnelles
+La contrainte `When` permet de n’exécuter une ou plusieurs contraintes que si une condition est vraie.
+
+```php
+use Iriven\PhpFormGenerator\Domain\Constraint\When;
+use Iriven\PhpFormGenerator\Domain\Constraint\Required;
+
+$builder->add('phone', TextType::class, [
+    'constraints' => [
+        new When(
+            static fn (mixed $value, array $context): bool => ($context['data']['contactByPhone'] ?? false) === true,
+            [new Required('Phone is required.')],
+        ),
+    ],
+]);
+```
+
+### Extensions
+Le noyau supporte maintenant un système d’extensions pour enrichir les field types et les formulaires sans modifier le cœur.
+
+```php
+use Iriven\PhpFormGenerator\Application\FormFactory;
+use Iriven\PhpFormGenerator\Infrastructure\Extension\ExtensionRegistry;
+use Iriven\PhpFormGenerator\Infrastructure\Extension\TrimTextFieldExtension;
+
+$registry = new ExtensionRegistry();
+$registry->addFieldTypeExtension(new TrimTextFieldExtension());
+
+$factory = new FormFactory(extensionRegistry: $registry);
+```
+
+### Upload pipeline natif
+Le projet inclut désormais :
+- `NativeRequest` pour fusionner `$_POST` et `$_FILES`
+- `UploadedFile` comme valeur objet
+- `LocalUploadedFileStorage` pour stocker physiquement un fichier validé
+
+```php
+use Iriven\PhpFormGenerator\Infrastructure\File\LocalUploadedFileStorage;
+
+$storage = new LocalUploadedFileStorage(__DIR__ . '/uploads');
+$path = $storage->store($uploadedFile, 'invoices');
+```
+
+### Enum transformer
+Le transformeur `EnumTransformer` permet de mapper proprement une valeur scalar vers une enum PHP backed.
+
+```php
+use App\Enum\LeadStatus;
+use Iriven\PhpFormGenerator\Domain\Transformer\EnumTransformer;
+
+$transformer = new EnumTransformer(LeadStatus::class);
+$status = $transformer->reverseTransform('new');
+```

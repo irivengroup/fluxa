@@ -1,5 +1,18 @@
 ## Unreleased
 
+### Added
+- V3.7 validation features: `GroupedConstraint` and `When`.
+- V3.7 extension system with `FieldTypeExtensionInterface`, `FormExtensionInterface`, and `ExtensionRegistry`.
+- Native upload pipeline with `NativeRequest`, `UploadedFile`, and `LocalUploadedFileStorage`.
+- `EnumTransformer` and `StringTrimTransformer`.
+- Additional README usage scenarios and end-to-end examples.
+
+### Changed
+- `FormFactory` and `FormBuilder` now support extension registries.
+- Validation now supports group-aware constraint filtering.
+
+## Unreleased
+
 ### Fixed
 - Fixed `YesNoType::choices()` to return a true `array<string, string>` shape for PHPStan compliance.
 - Fixed PHPStan issues in `YesNoType::choices()` and captcha length normalization in `FormBuilder`.

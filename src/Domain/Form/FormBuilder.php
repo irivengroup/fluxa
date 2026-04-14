@@ -14,6 +14,7 @@ use Iriven\PhpFormGenerator\Domain\Field\CollectionType;
 use Iriven\PhpFormGenerator\Domain\Constraint\MimeType;
 use Iriven\PhpFormGenerator\Domain\Field\FileType;
 use Iriven\PhpFormGenerator\Infrastructure\Event\EventDispatcher;
+use Iriven\PhpFormGenerator\Infrastructure\Extension\ExtensionRegistry;
 use Iriven\PhpFormGenerator\Infrastructure\Options\OptionsResolver;
 use Iriven\PhpFormGenerator\Infrastructure\Security\NullCsrfManager;
 use Iriven\PhpFormGenerator\Infrastructure\Security\SessionCaptchaManager;
@@ -34,6 +35,7 @@ final class FormBuilder
     private array $formConstraints = [];
 
     private EventDispatcherInterface $eventDispatcher;
+    private ExtensionRegistry $extensionRegistry;
 
     /** @param array<string, mixed> $options */
     public function __construct(
@@ -46,6 +48,8 @@ final class FormBuilder
         if (!isset($this->options['captcha_manager'])) {
             $this->options['captcha_manager'] = new SessionCaptchaManager();
         }
+        $registry = $this->options['extension_registry'] ?? null;
+        $this->extensionRegistry = $registry instanceof ExtensionRegistry ? $registry : new ExtensionRegistry();
     }
 
     /** @param array<string, mixed> $options */
@@ -68,6 +72,7 @@ final class FormBuilder
         $typeClass = TypeResolver::resolveFieldType($typeClass);
         /** @var list<ConstraintInterface> $constraints */
         $constraints = is_array($options['constraints'] ?? null) ? $options['constraints'] : [];
+        $options['validation_groups'] = $options['validation_groups'] ?? ['Default'];
         /** @var list<DataTransformerInterface> $transformers */
         $transformers = is_array($options['transformers'] ?? null) ? $options['transformers'] : [];
 
@@ -75,6 +80,12 @@ final class FormBuilder
             /** @var list<DataTransformerInterface> $defaults */
             $defaults = $typeClass::defaultTransformers();
             $transformers = array_merge($defaults, $transformers);
+        }
+
+        foreach ($this->extensionRegistry->fieldExtensionsFor($typeClass) as $extension) {
+            $options = $extension->extendOptions($options);
+            $constraints = $extension->extendConstraints($constraints, $options);
+            $transformers = $extension->extendTransformers($transformers, $options);
         }
 
         unset($options['constraints'], $options['transformers']);
@@ -86,7 +97,7 @@ final class FormBuilder
         $entryOptions = [];
 
         if (is_subclass_of($typeClass, FormTypeInterface::class)) {
-            $subBuilder = new self($name, null, $options + ['event_dispatcher' => $this->eventDispatcher]);
+            $subBuilder = new self($name, null, $options + ['event_dispatcher' => $this->eventDispatcher, 'extension_registry' => $this->extensionRegistry]);
             $type = new $typeClass();
             $resolver = new OptionsResolver();
             $type->configureOptions($resolver);
@@ -246,6 +257,10 @@ final class FormBuilder
             'csrf_manager' => new NullCsrfManager(),
             'event_dispatcher' => $this->eventDispatcher,
         ];
+
+        foreach ($this->extensionRegistry->formExtensions() as $extension) {
+            $options = $extension->extendFormOptions($options);
+        }
 
         return new Form(
             $this->name,

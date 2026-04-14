@@ -5,11 +5,14 @@ declare(strict_types=1);
 namespace Iriven\PhpFormGenerator\Domain\Transformer;
 
 use BackedEnum;
+use InvalidArgumentException;
 use Iriven\PhpFormGenerator\Domain\Contract\DataTransformerInterface;
 
 final class EnumTransformer implements DataTransformerInterface
 {
-    /** @param class-string<BackedEnum> $enumClass */
+    /**
+     * @param class-string<BackedEnum> $enumClass
+     */
     public function __construct(private readonly string $enumClass)
     {
     }
@@ -23,6 +26,14 @@ final class EnumTransformer implements DataTransformerInterface
     {
         if ($value === null || $value === '') {
             return null;
+        }
+
+        if ($value instanceof BackedEnum) {
+            return $value;
+        }
+
+        if (!enum_exists($this->enumClass)) {
+            throw new InvalidArgumentException('Enum class does not exist: ' . $this->enumClass);
         }
 
         return $this->enumClass::from($value);
