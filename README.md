@@ -734,3 +734,12 @@ echo $translator->trans('required');
 ```
 
 Les messages de validation peuvent être traduits dynamiquement.
+
+### Typage statique du translator
+
+L’interface de traduction et son implémentation native documentent désormais explicitement les paramètres dynamiques passés à `trans()`.
+
+Signature documentée :
+- `array<string, scalar|null> $parameters`
+
+Cela améliore la compatibilité avec PHPStan sans changer l’API publique.
