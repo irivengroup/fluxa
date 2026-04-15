@@ -14,6 +14,7 @@
 - Additional README usage scenarios and end-to-end examples.
 
 ### Changed
+- Reduced `FormBuilder` and `HtmlWidgetRenderer` complexity through real class extraction: field definition, fieldset management, form creation, widget attributes, select widgets, and simple widgets are now delegated to dedicated collaborators.
 - Stabilized the framework by adding translator-aware native constraints, improved accessible HTML output (`aria-invalid`, `aria-describedby`, error/help ids, `role="alert"`), and added targeted regression tests.
 - Extracted submission, validation, and data mapping out of `Form` into `FormSubmissionProcessor`, `FormValidationProcessor`, and `FormDataMappingProcessor`, turning `Form` into a real orchestrator.
 - Performed a real structural decomposition: `HtmlRenderer` now delegates to dedicated fieldset/row/widget renderers, and `Form` now delegates view construction to `FormViewBuilder` and `FormViewFactory`.

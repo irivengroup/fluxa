@@ -907,3 +907,15 @@ The test suite now explicitly reflects the framework's default CSRF policy:
 - or use `NullCsrfManager` explicitly when CSRF is outside the test scope
 
 This avoids false negatives after restoring real default CSRF validation.
+
+### Complexité réduite par décomposition réelle
+
+Cette passe extrait les responsabilités suivantes :
+- `FormBuilderFieldDefinitionFactory`
+- `FormBuilderFieldsetManager`
+- `FormBuilderFormFactory`
+- `HtmlWidgetAttributeBuilder`
+- `HtmlSelectWidgetRenderer`
+- `HtmlSimpleWidgetRenderer`
+
+`FormBuilder` et `HtmlWidgetRenderer` deviennent des façades plus légères.
