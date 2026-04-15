@@ -42,9 +42,9 @@ final class SessionCaptchaManager implements CaptchaManagerInterface
         }
 
         $expected = $_SESSION['_pfg_captcha'][$key] ?? null;
-        $meta = $_SESSION['_pfg_captcha_meta'][$key] ?? null;
+        $meta = $this->metaForKey($key);
 
-        if (!is_string($expected) || !$this->hasValidMeta($meta)) {
+        if (!is_string($expected) || $meta === null) {
             $this->clearChallenge($key);
 
             return false;
@@ -112,6 +112,16 @@ final class SessionCaptchaManager implements CaptchaManagerInterface
     private function clearChallenge(string $key): void
     {
         unset($_SESSION['_pfg_captcha'][$key], $_SESSION['_pfg_captcha_meta'][$key]);
+    }
+
+    /**
+     * @return array{expires_at:int,attempts_left:int}|null
+     */
+    private function metaForKey(string $key): ?array
+    {
+        $meta = $_SESSION['_pfg_captcha_meta'][$key] ?? null;
+
+        return $this->hasValidMeta($meta) ? $meta : null;
     }
 
     private function hasValidMeta(mixed $meta): bool
