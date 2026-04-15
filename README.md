@@ -1062,3 +1062,11 @@ This pass further reduces method size in:
 - `Domain\Transformer\EnumTransformer::reverseTransform()`
 - `Domain\Form\Submission\FieldSubmissionProcessor::submitCollectionItem()`
 - `Presentation\Html\HtmlRenderer::renderForm()`
+
+### Property access decomposition
+
+`PropertyAccessor` is now a thin façade over:
+- `PropertyReader`
+- `PropertyWriter`
+
+This keeps the public API stable while reducing class-level complexity.
