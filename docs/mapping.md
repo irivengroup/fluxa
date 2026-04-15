@@ -1,0 +1,2 @@
+# Mapping
+Support array + object.
