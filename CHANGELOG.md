@@ -1,3 +1,13 @@
+## V4.1.0
+
+### Added
+- Base officielle plugins-ready avec `PluginInterface`, registries de types, `PluginRegistry` et `FormPluginKernel`.
+- Wiki `docs/` enrichi avec architecture V4, plugins officiels, migration 3.x -> 4.x et extensibilité documentée.
+
+### Changed
+- Contrat public V4 clarifié dans la documentation.
+- Documentation d’exploitation recentrée dans le wiki Markdown.
+
 ## V3.9.5
 
 ### Changed

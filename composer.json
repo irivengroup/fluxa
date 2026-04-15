@@ -48,5 +48,8 @@
     }
   },
   "minimum-stability": "stable",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "extra": {
+    "release_name": "V4.1.0 extensibilite officielle complete (plugins-ready)"
+  }
 }

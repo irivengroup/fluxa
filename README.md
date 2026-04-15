@@ -1088,3 +1088,10 @@ Les helpers extraits lors des optimisations sont désormais regroupés par respo
 - `Infrastructure\Catalog`
 - `Infrastructure\PropertyAccess`
 - `Presentation\Html\Support`
+
+
+## Contrat public V4
+
+Les points d’entrée publics supportés sont `FormGenerator`, `FormFactory`, `FormTypeInterface` et, à partir de V4.1.0, la base plugins-ready (`PluginInterface`, registries, `FormPluginKernel`).
+
+La documentation détaillée d’exploitation et d’extension est désormais centralisée dans `docs/index.md`.
