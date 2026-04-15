@@ -891,3 +891,11 @@ Des tests dédiés ont été ajoutés pour :
 - passage du translator dans la validation framework
 
 Translator support now also applies to CSRF request-time validation errors emitted under the `_form` error bag.
+
+### Correctif CSRF par défaut
+
+Quand `csrf_protection` est actif et qu'aucun manager n'est fourni explicitement :
+- le framework utilise maintenant `SessionCsrfManager`
+- `NullCsrfManager` n'est utilisé par défaut que lorsque la protection CSRF est désactivée
+
+Cela aligne le comportement runtime avec l'API publique et les attentes de validation.

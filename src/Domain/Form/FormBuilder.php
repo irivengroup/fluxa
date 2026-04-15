@@ -19,6 +19,7 @@ use Iriven\PhpFormGenerator\Infrastructure\Extension\ExtensionRegistry;
 use Iriven\PhpFormGenerator\Infrastructure\Options\OptionsResolver;
 use Iriven\PhpFormGenerator\Infrastructure\Security\NullCsrfManager;
 use Iriven\PhpFormGenerator\Infrastructure\Security\SessionCaptchaManager;
+use Iriven\PhpFormGenerator\Infrastructure\Security\SessionCsrfManager;
 use Iriven\PhpFormGenerator\Infrastructure\Type\TypeResolver;
 use ReflectionClass;
 
@@ -176,9 +177,14 @@ final class FormBuilder
             'csrf_protection' => true,
             'csrf_field_name' => '_token',
             'csrf_token_id' => $this->name,
-            'csrf_manager' => new NullCsrfManager(),
             'event_dispatcher' => $this->eventDispatcher,
         ];
+
+        if (!array_key_exists('csrf_manager', $options)) {
+            $options['csrf_manager'] = ($options['csrf_protection'] ?? true) === true
+                ? new SessionCsrfManager()
+                : new NullCsrfManager();
+        }
 
         foreach ($this->extensionRegistry->formExtensions() as $extension) {
             $options = $extension->extendFormOptions($options);
