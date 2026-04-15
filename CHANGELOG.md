@@ -31,6 +31,7 @@
 ## Unreleased
 
 ### Fixed
+- Fixed `FormGenerator` syntax and finalized the V3.9.3 public API normalization so tests can exercise the new `attributes`/`options` behavior correctly.
 - Added `ForgotPasswordType` and `ResetPasswordType`, fixed short-name form type resolution for `LoginType` and auth form types, normalized `open()` so `method` and `action` become form configuration values, normalized public field HTML attributes into the internal `attr` bag, and aligned `FormFactory` default CSRF behavior with real token validation.
 - Aligned non-CSRF-focused tests with restored default CSRF validation by either submitting the generated token or explicitly using `NullCsrfManager` where CSRF is outside test scope.
 - Fixed default CSRF behavior: when CSRF protection is enabled and no manager is provided, forms now use `SessionCsrfManager` instead of `NullCsrfManager`, restoring real default token validation.

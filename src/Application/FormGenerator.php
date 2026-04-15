@@ -12,9 +12,9 @@ use Iriven\PhpFormGenerator\Domain\Field\CollectionType;
 use Iriven\PhpFormGenerator\Domain\Field\ColorType;
 use Iriven\PhpFormGenerator\Domain\Field\CountryType;
 use Iriven\PhpFormGenerator\Domain\Field\DatalistType;
+use Iriven\PhpFormGenerator\Domain\Field\DateType;
 use Iriven\PhpFormGenerator\Domain\Field\DatetimeLocalType;
 use Iriven\PhpFormGenerator\Domain\Field\DatetimeType;
-use Iriven\PhpFormGenerator\Domain\Field\DateType;
 use Iriven\PhpFormGenerator\Domain\Field\EditorType;
 use Iriven\PhpFormGenerator\Domain\Field\EmailType;
 use Iriven\PhpFormGenerator\Domain\Field\FileType;
@@ -134,7 +134,7 @@ final class FormGenerator
     public function addCheckbox(string $name, array $choices = [], array $attributes = []): self { return $this->addChoiceField($name, CheckboxType::class, $choices, $attributes); }
     /** @param array<string, string> $choices @param array<string, mixed> $attributes */
     public function addSelect(string $name, array $choices = [], array $attributes = []): self { return $this->addChoiceField($name, SelectType::class, $choices, $attributes); }
-    /** @param array<string, string> $choices @param array<string, mixed> $attributes */
+    /** @param array<string, mixed> $attributes */
     public function addYesNo(string $name, array $attributes = []): self { return $this->add($name, YesNoType::class, $attributes); }
     /** @param array<string, string> $choices @param array<string, mixed> $attributes */
     public function addDatalist(string $name, array $choices = [], array $attributes = []): self { return $this->addChoiceField($name, DatalistType::class, $choices, $attributes); }
@@ -144,7 +144,13 @@ final class FormGenerator
     public function addCollection(string $name, array $attributes = []): self { return $this->add($name, CollectionType::class, $attributes); }
     /** @param array<string, mixed> $attributes */
     public function addFieldset(array $attributes = []): self { $this->builder->addFieldset($attributes); return $this; }
-    public function endFieldset(): self { $this->builder->endFieldset(); return $this; }
+
+    public function endFieldset(): self
+    {
+        $this->builder->endFieldset();
+
+        return $this;
+    }
 
     /** @param array<string, mixed> $attributes */
     public function add(string $name, string $typeClass, array $attributes = []): self
@@ -187,7 +193,7 @@ final class FormGenerator
         $htmlAttributeKeys = [
             'class', 'id', 'style', 'placeholder', 'autocomplete', 'autocapitalize', 'spellcheck',
             'rows', 'cols', 'min', 'max', 'step', 'pattern', 'accept', 'multiple', 'readonly',
-            'disabled', 'size', 'maxlength', 'minlength', 'inputmode', 'list'
+            'disabled', 'size', 'maxlength', 'minlength', 'inputmode', 'list',
         ];
 
         $htmlAttributes = is_array($attributes['attr'] ?? null) ? $attributes['attr'] : [];
@@ -262,3 +268,4 @@ final class FormGenerator
 
         return [$formAttributes, $configurationOptions];
     }
+}

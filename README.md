@@ -963,3 +963,5 @@ The public API now normalizes:
 - HTML field attributes such as `class`, `autocomplete`, `rows`, `placeholder`, and related keys into the internal `attr` bag
 
 Short-name factory resolution for the new auth form types is supported.
+
+The V3.9.3 public API implementation was finalized with a clean `FormGenerator` rewrite to ensure runtime stability and correct `attributes` / `options` normalization.
