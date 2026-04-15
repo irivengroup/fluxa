@@ -16,6 +16,7 @@ use Iriven\PhpFormGenerator\Infrastructure\Options\OptionsResolver;
 use Iriven\PhpFormGenerator\Infrastructure\Type\TypeResolver;
 use Iriven\PhpFormGenerator\Infrastructure\Security\NullCsrfManager;
 use Iriven\PhpFormGenerator\Infrastructure\Security\SessionCaptchaManager;
+use Iriven\PhpFormGenerator\Infrastructure\Security\SessionCsrfManager;
 
 final class FormFactory
 {
@@ -30,7 +31,7 @@ final class FormFactory
     /** @param array<string, mixed> $options */
     public function createBuilder(string $name = 'form', mixed $data = null, array $options = []): FormBuilder
     {
-        $options['csrf_manager'] = $options['csrf_manager'] ?? $this->csrfManager ?? new NullCsrfManager();
+        $options['csrf_manager'] = $options['csrf_manager'] ?? $this->csrfManager ?? (($options['csrf_protection'] ?? true) === true ? new SessionCsrfManager() : new NullCsrfManager());
         $options['event_dispatcher'] = $options['event_dispatcher'] ?? $this->eventDispatcher ?? new EventDispatcher();
         $options['captcha_manager'] = $options['captcha_manager'] ?? $this->captchaManager ?? new SessionCaptchaManager();
         $options['csrf_protection'] = $options['csrf_protection'] ?? true;

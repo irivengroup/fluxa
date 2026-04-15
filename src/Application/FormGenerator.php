@@ -63,8 +63,9 @@ final class FormGenerator
             $options = $normalized['options'];
         }
 
-        $options['csrf_protection'] = $options['csrf_protection'] ?? true;
-        $this->builder->mergeOptions($options + ['attr' => $attributes]);
+        [$formAttributes, $configurationOptions] = $this->normalizeFormOpenArguments($attributes, $options);
+        $configurationOptions['csrf_protection'] = $configurationOptions['csrf_protection'] ?? true;
+        $this->builder->mergeOptions($configurationOptions + ['attr' => $formAttributes]);
 
         return $this;
     }
@@ -183,6 +184,24 @@ final class FormGenerator
             unset($attributes['attributes']);
         }
 
+        $htmlAttributeKeys = [
+            'class', 'id', 'style', 'placeholder', 'autocomplete', 'autocapitalize', 'spellcheck',
+            'rows', 'cols', 'min', 'max', 'step', 'pattern', 'accept', 'multiple', 'readonly',
+            'disabled', 'size', 'maxlength', 'minlength', 'inputmode', 'list'
+        ];
+
+        $htmlAttributes = is_array($attributes['attr'] ?? null) ? $attributes['attr'] : [];
+        foreach ($htmlAttributeKeys as $key) {
+            if (array_key_exists($key, $attributes)) {
+                $htmlAttributes[$key] = $attributes[$key];
+                unset($attributes[$key]);
+            }
+        }
+
+        if ($htmlAttributes !== []) {
+            $attributes['attr'] = $htmlAttributes;
+        }
+
         return $attributes;
     }
 
@@ -198,6 +217,8 @@ final class FormGenerator
             || array_key_exists('captcha_manager', $attributes)
             || array_key_exists('event_dispatcher', $attributes)
             || array_key_exists('extension_registry', $attributes)
+            || array_key_exists('translator', $attributes)
+            || array_key_exists('name', $attributes)
         );
     }
 
@@ -221,4 +242,23 @@ final class FormGenerator
             'options' => $options,
         ];
     }
-}
+
+    /**
+     * @param array<string, mixed> $attributes
+     * @param array<string, mixed> $options
+     * @return array{0: array<string, mixed>, 1: array<string, mixed>}
+     */
+    private function normalizeFormOpenArguments(array $attributes, array $options): array
+    {
+        $formAttributes = $attributes;
+        $configurationOptions = $options;
+
+        foreach (['method', 'action'] as $key) {
+            if (array_key_exists($key, $formAttributes)) {
+                $configurationOptions[$key] = $formAttributes[$key];
+                unset($formAttributes[$key]);
+            }
+        }
+
+        return [$formAttributes, $configurationOptions];
+    }

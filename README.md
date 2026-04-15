@@ -951,3 +951,15 @@ Un `LoginType` applicatif est désormais inclus.
 ### Compatibilité contrôlée
 L'ancien appel `open([...])` reste accepté et normalisé automatiquement lorsqu'il mélange attributs de formulaire et options framework.
 
+### V3.9.3 additions and fixes
+
+Added business form types:
+- `LoginType`
+- `ForgotPasswordType`
+- `ResetPasswordType`
+
+The public API now normalizes:
+- form `method` and `action` as configuration values even when passed in the first `open()` argument
+- HTML field attributes such as `class`, `autocomplete`, `rows`, `placeholder`, and related keys into the internal `attr` bag
+
+Short-name factory resolution for the new auth form types is supported.

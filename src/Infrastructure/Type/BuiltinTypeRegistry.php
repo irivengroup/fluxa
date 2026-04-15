@@ -58,9 +58,12 @@ final class BuiltinTypeRegistry
         return [
             'ContactType' => \Iriven\PhpFormGenerator\Application\FormType\ContactType::class,
             'CustomerType' => \Iriven\PhpFormGenerator\Application\FormType\CustomerType::class,
+            'ForgotPasswordType' => \Iriven\PhpFormGenerator\Application\FormType\ForgotPasswordType::class,
+            'LoginType' => \Iriven\PhpFormGenerator\Application\FormType\LoginType::class,
             'InvoiceLineType' => \Iriven\PhpFormGenerator\Application\FormType\InvoiceLineType::class,
             'InvoiceType' => \Iriven\PhpFormGenerator\Application\FormType\InvoiceType::class,
             'RegistrationType' => \Iriven\PhpFormGenerator\Application\FormType\RegistrationType::class,
+            'ResetPasswordType' => \Iriven\PhpFormGenerator\Application\FormType\ResetPasswordType::class,
         ];
     }
 }
