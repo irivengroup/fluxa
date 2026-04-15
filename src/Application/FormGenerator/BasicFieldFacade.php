@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application;
+namespace Iriven\PhpFormGenerator\Application\FormGenerator;
 
 use Iriven\PhpFormGenerator\Domain\Field\AudioType;
 use Iriven\PhpFormGenerator\Domain\Field\ButtonType;
@@ -36,11 +36,11 @@ use Iriven\PhpFormGenerator\Domain\Field\VideoType;
 use Iriven\PhpFormGenerator\Domain\Field\WeekType;
 use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
 
-final class FormGeneratorBasicFieldFacade
+final class BasicFieldFacade
 {
     public function __construct(
         private readonly FormBuilder $builder,
-        private readonly FormGeneratorAttributeNormalizer $normalizer,
+        private readonly AttributeNormalizer $normalizer,
     ) {
     }
 

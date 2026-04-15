@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application;
+namespace Iriven\PhpFormGenerator\Application\FormGenerator;
 
 use Iriven\PhpFormGenerator\Domain\Field\CheckboxType;
 use Iriven\PhpFormGenerator\Domain\Field\DatalistType;
@@ -10,9 +10,9 @@ use Iriven\PhpFormGenerator\Domain\Field\RadioType;
 use Iriven\PhpFormGenerator\Domain\Field\SelectType;
 use Iriven\PhpFormGenerator\Domain\Field\YesNoType;
 
-final class FormGeneratorChoiceFieldFacade
+final class ChoiceFieldFacade
 {
-    public function __construct(private readonly FormGeneratorBasicFieldFacade $basicFields)
+    public function __construct(private readonly BasicFieldFacade $basicFields)
     {
     }
 

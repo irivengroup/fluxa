@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application;
+namespace Iriven\PhpFormGenerator\Application\FormGenerator;
 
-final class FormGeneratorAttributeNormalizer
+final class AttributeNormalizer
 {
     /**
      * @param array<string, mixed> $attributes

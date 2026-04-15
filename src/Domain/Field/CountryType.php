@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Iriven\PhpFormGenerator\Domain\Field;
 
+use Iriven\PhpFormGenerator\Infrastructure\Catalog\CountryCatalog;
+
 class CountryType extends SelectType
 {
     /**
@@ -12,7 +14,7 @@ class CountryType extends SelectType
      */
     public static function choices(array $options = []): array
     {
-        $provider = new CountryProvider();
+        $provider = new CountryCatalog();
         $countries = $provider->all();
         $region = self::normalizedRegion($options);
 

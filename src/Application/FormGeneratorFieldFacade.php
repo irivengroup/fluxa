@@ -4,18 +4,21 @@ declare(strict_types=1);
 
 namespace Iriven\PhpFormGenerator\Application;
 
+use Iriven\PhpFormGenerator\Application\FormGenerator\AttributeNormalizer;
+use Iriven\PhpFormGenerator\Application\FormGenerator\BasicFieldFacade;
+use Iriven\PhpFormGenerator\Application\FormGenerator\ChoiceFieldFacade;
 use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
 
 final class FormGeneratorFieldFacade
 {
-    private FormGeneratorBasicFieldFacade $basicFields;
-    private FormGeneratorChoiceFieldFacade $choiceFields;
+    private BasicFieldFacade $basicFields;
+    private ChoiceFieldFacade $choiceFields;
 
     public function __construct(FormBuilder $builder)
     {
-        $normalizer = new FormGeneratorAttributeNormalizer();
-        $this->basicFields = new FormGeneratorBasicFieldFacade($builder, $normalizer);
-        $this->choiceFields = new FormGeneratorChoiceFieldFacade($this->basicFields);
+        $normalizer = new AttributeNormalizer();
+        $this->basicFields = new BasicFieldFacade($builder, $normalizer);
+        $this->choiceFields = new ChoiceFieldFacade($this->basicFields);
     }
 
     /** @param array<string, mixed> $attributes */

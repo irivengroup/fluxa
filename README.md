@@ -987,7 +987,7 @@ Choice-based helpers are also exercised with the new explicit signature:
 
 `FormGenerator` has been decomposed into:
 - `FormGeneratorFieldFacade`
-- `FormGeneratorOpenNormalizer`
+- `Application\FormGenerator\OpenNormalizer`
 
 The dedicated legacy API compatibility test suite has been removed. The test directory now targets the new public API only.
 
@@ -1022,15 +1022,15 @@ This pass continues reducing Scrutinizer complexity without changing public beha
 
 `FormSubmissionProcessor` is now split into:
 - `FormSubmissionProcessor` as orchestration layer
-- `FormFieldSubmissionProcessor` for field, compound, and collection submission logic
+- `Domain\Form\Submission\FieldSubmissionProcessor` for field, compound, and collection submission logic
 
 This reduces class-level complexity without changing the public API.
 
 ### V3.9.4 core finish and quality pass
 
 This pass adds:
-- `CountryProvider` extracted from `CountryType`
-- shared `HtmlAttributeRenderer`
+- `CountryCatalog` extracted from `CountryType`
+- shared `Presentation\Html\Support\HtmlAttributeRenderer`
 - refactored `NativeRequest` file normalization
 - leaner `Count` and `Choice` constraints
 - cleaner fixture form type structure for tests
@@ -1044,8 +1044,10 @@ Scrutinizer is now configured to collect PHPUnit coverage through `coverage.clov
 ### FormGenerator field facade decomposition
 
 `FormGeneratorFieldFacade` is now split into:
-- `FormGeneratorBasicFieldFacade`
-- `FormGeneratorChoiceFieldFacade`
-- `FormGeneratorAttributeNormalizer`
+- `Application\FormGenerator\BasicFieldFacade`
+- `Application\FormGenerator\ChoiceFieldFacade`
+- `Application\FormGenerator\AttributeNormalizer`
 
 The public API remains unchanged.
+
+Helper classes created during optimization passes are now grouped by responsibility in dedicated sub-namespaces rather than mixed into field types or top-level application classes.

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Field;
+namespace Iriven\PhpFormGenerator\Infrastructure\Catalog;
 
-final class CountryProvider
+final class CountryCatalog
 {
     /** @return array<string, string> */
     public function all(): array

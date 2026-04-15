@@ -8,17 +8,18 @@ use Iriven\PhpFormGenerator\Domain\Contract\RequestInterface;
 use Iriven\PhpFormGenerator\Domain\Event\PostSubmitEvent;
 use Iriven\PhpFormGenerator\Domain\Event\PreSubmitEvent;
 use Iriven\PhpFormGenerator\Domain\Event\SubmitEvent;
+use Iriven\PhpFormGenerator\Domain\Form\Submission\FieldSubmissionProcessor;
 use Iriven\PhpFormGenerator\Infrastructure\Translation\TranslatorInterface;
 
 final class FormSubmissionProcessor
 {
-    private FormFieldSubmissionProcessor $fieldSubmissionProcessor;
+    private FieldSubmissionProcessor $fieldSubmissionProcessor;
 
     public function __construct(
         private readonly FormValidationProcessor $validationProcessor = new FormValidationProcessor(),
         private readonly FormDataMappingProcessor $mappingProcessor = new FormDataMappingProcessor(),
     ) {
-        $this->fieldSubmissionProcessor = new FormFieldSubmissionProcessor($this->validationProcessor);
+        $this->fieldSubmissionProcessor = new FieldSubmissionProcessor($this->validationProcessor);
     }
 
     public function handleRequest(Form $form, RequestInterface $request): void

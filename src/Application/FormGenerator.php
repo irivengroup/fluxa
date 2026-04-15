@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Iriven\PhpFormGenerator\Application;
 
+use Iriven\PhpFormGenerator\Application\FormGenerator\OpenNormalizer;
 use Iriven\PhpFormGenerator\Domain\Form\Form;
 use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
 
@@ -11,13 +12,13 @@ final class FormGenerator
 {
     private FormBuilder $builder;
     private FormGeneratorFieldFacade $fieldFacade;
-    private FormGeneratorOpenNormalizer $openNormalizer;
+    private OpenNormalizer $openNormalizer;
 
     public function __construct(string $name = 'form')
     {
         $this->builder = new FormBuilder($name);
         $this->fieldFacade = new FormGeneratorFieldFacade($this->builder);
-        $this->openNormalizer = new FormGeneratorOpenNormalizer();
+        $this->openNormalizer = new OpenNormalizer();
     }
 
     /**

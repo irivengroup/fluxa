@@ -2,13 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Form;
+namespace Iriven\PhpFormGenerator\Domain\Form\Submission;
 
 use Iriven\PhpFormGenerator\Domain\Contract\DataTransformerInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
+use Iriven\PhpFormGenerator\Domain\Form\FieldConfig;
+use Iriven\PhpFormGenerator\Domain\Form\Form;
+use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
+use Iriven\PhpFormGenerator\Domain\Form\FormValidationProcessor;
 use Iriven\PhpFormGenerator\Infrastructure\Options\OptionsResolver;
 
-final class FormFieldSubmissionProcessor
+final class FieldSubmissionProcessor
 {
     public function __construct(private readonly FormValidationProcessor $validationProcessor)
     {

@@ -15,12 +15,12 @@
 
 ### Changed
 - Enabled Scrutinizer coverage ingestion via PHPUnit Clover coverage and decomposed `FormGeneratorFieldFacade` into basic fields, choice fields, and attribute normalization collaborators.
-- Added `CountryProvider`, centralized HTML attribute rendering, refactored `NativeRequest` file normalization, simplified `Count` and `Choice` constraints, and cleaned fixture form type structure for the V3.9.4 quality pass.
-- Decomposed `FormSubmissionProcessor` into an orchestrator plus `FormFieldSubmissionProcessor` for field and collection submission logic.
+- Added `CountryCatalog`, centralized HTML attribute rendering, refactored `NativeRequest` file normalization, simplified `Count` and `Choice` constraints, and cleaned fixture form type structure for the V3.9.4 quality pass.
+- Decomposed `FormSubmissionProcessor` into an orchestrator plus `Domain\Form\Submission\FieldSubmissionProcessor` for field and collection submission logic.
 - Applied a second consolidation pass to reduce complexity in `PropertyAccessor::getValue()`, `FormSubmissionProcessor`, `HtmlRowRenderer`, and `CaptchaSvgRenderer`.
 - Applied additional scrutiny-driven refactors to reduce method complexity in attribute building, file field normalization, captcha validation, object assignment, and captcha test structure.
 - Reduced internal complexity by decomposing `OptionsResolver::matchesAllowedTypes()` and `PropertyAccessor::setValue()` into smaller private helpers.
-- Decomposed `FormGenerator` into `FormGeneratorFieldFacade` and `FormGeneratorOpenNormalizer`, and removed the dedicated legacy API compatibility test suite so tests now target the new public API only.
+- Decomposed `FormGenerator` into `FormGeneratorFieldFacade` and `Application\FormGenerator\OpenNormalizer`, and removed the dedicated legacy API compatibility test suite so tests now target the new public API only.
 - Updated PHPStan-facing signatures for choice-based builder helpers and migrated remaining tests/examples from legacy `open([...])` usage to the new `open($attributes, $options)` standard.
 - Added `LoginType`, introduced a clearer public API separating form `attributes` from configuration `options`, separated `choices` from HTML attributes on choice-based builder helpers, ensured hidden field labels are never rendered, and kept controlled compatibility for legacy `open([...])` calls.
 - Reduced `FormBuilder` and `HtmlWidgetRenderer` complexity through real class extraction: field definition, fieldset management, form creation, widget attributes, select widgets, and simple widgets are now delegated to dedicated collaborators.
