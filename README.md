@@ -1070,3 +1070,21 @@ This pass further reduces method size in:
 - `PropertyWriter`
 
 This keeps the public API stable while reducing class-level complexity.
+
+### Préparation release
+
+Pour valider une release propre :
+
+```bash
+composer dump-autoload -o
+vendor/bin/phpstan analyse src tests
+vendor/bin/phpunit --colors=never
+composer test:coverage
+```
+
+Les helpers extraits lors des optimisations sont désormais regroupés par responsabilité :
+- `Application\FormGenerator`
+- `Domain\Form\Submission`
+- `Infrastructure\Catalog`
+- `Infrastructure\PropertyAccess`
+- `Presentation\Html\Support`

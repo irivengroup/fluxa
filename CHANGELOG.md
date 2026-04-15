@@ -1,3 +1,12 @@
+## V3.9.5
+
+### Changed
+- Finalisation de la série 3.9.x avec une passe de stabilisation release-ready.
+- Harmonisation de la documentation de validation release.
+- Ajout d’un fichier `RELEASE_NOTES_V3.9.5.md`.
+- Ajout de `.gitattributes` pour améliorer les exports d’archive.
+- Consolidation finale des helpers extraits par responsabilité.
+
 ## Unreleased
 
 ### Added

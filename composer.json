@@ -30,7 +30,16 @@
     "cs": "vendor/bin/php-cs-fixer fix --dry-run --diff",
     "cs:fix": "vendor/bin/php-cs-fixer fix",
     "refactor": "vendor/bin/rector process",
-    "mutate": "vendor/bin/infection --threads=max --min-msi=70 --min-covered-msi=80"
+    "mutate": "vendor/bin/infection --threads=max --min-msi=70 --min-covered-msi=80",
+    "qa": [
+      "@phpstan analyse src tests",
+      "@phpunit --colors=never"
+    ],
+    "release:check": [
+      "composer dump-autoload -o",
+      "@phpstan analyse src tests",
+      "@phpunit --colors=never"
+    ]
   },
   "config": {
     "sort-packages": true,
