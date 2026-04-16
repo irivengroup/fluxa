@@ -1170,3 +1170,8 @@ Cette version renforce la maintenance de la ligne avancée stable avec de nouvea
 ## V4.4.2 bugfix final et clôture de stabilisation
 
 Cette version applique les derniers correctifs ciblés, renforce la non-régression et clôture proprement la phase de stabilisation de la ligne avancée.
+
+
+## V4.5.0 nouvelles capacités avancées
+
+Cette version rouvre une ligne d’évolution produit avec hooks de rendu, gestionnaire de rendu et documentation avancée orientée usage.

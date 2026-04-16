@@ -63,7 +63,7 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "extra": {
-    "release_name": "V4.4.2 bugfix final et clôture de stabilisation",
-    "release_channel": "stable-advanced-bugfix"
+    "release_name": "V4.5.0 nouvelles capacités avancées",
+    "release_channel": "advanced-feature-line"
   }
 }

@@ -36,4 +36,8 @@ Le schéma exporté couvre désormais aussi :
 ## Stabilisation V4.4.0
 Le format d’export de schéma est désormais traité comme stable dans la ligne avancée.
 
+
+## Orientation V4.5.0
+Le schéma exporté constitue désormais une base exploitable pour intégrations front/API.
+
 [↑ Retour au sommaire docs](index.md)

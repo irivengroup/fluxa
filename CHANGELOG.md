@@ -1,3 +1,16 @@
+## V4.5.0
+
+### Added
+- `src/Application/FormRenderManager.php`
+- `tests/RenderHookRuntimeTest.php`
+- `docs/advanced-rendering.md`
+- `releases.d/RELEASE_NOTES_V4.5.0.md`
+- `validations.d/VALIDATION_MANIFEST_V4.5.0.md`
+
+### Changed
+- Extension des hooks vers le rendu
+- Nouvelle ligne de capacités avancées au-dessus du socle V4.4.x
+
 ## V4.4.2
 
 ### Added

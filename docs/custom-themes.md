@@ -24,4 +24,8 @@ $renderer = (new HtmlRendererFactory($themes))->create('minimal');
 ## Stabilisation V4.4.0
 Les thèmes custom et leur résolution runtime sont promus comme capacités avancées stables.
 
+
+## Orientation V4.5.0
+Les thèmes custom sont conçus pour être combinés avec les hooks de rendu.
+
 [↑ Retour au sommaire docs](index.md)

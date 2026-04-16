@@ -75,4 +75,7 @@
 
 > V4.4.2 clôture la stabilisation de la ligne avancée avant une future V4.5.0.
 
+
+- [Advanced Rendering](advanced-rendering.md)
+
 [↑ Parent : racine docs](index.md)

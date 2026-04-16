@@ -1,6 +1,6 @@
 [↑ Retour au sommaire docs](index.md)
 
-> Breadcrumb: [Docs](index.md) / hooks.md
+> Breadcrumb: [Docs](index.md) / Hooks
 
 # Hooks
 
@@ -47,5 +47,11 @@ $form = $factory->createBuilder('demo')->getForm();
 ## Hardening V4.3.5
 - compléments documentaires sur le lifecycle
 - séparation explicite entre hooks lifecycle et hooks de schéma
+
+
+## Hooks avancés V4.5.0
+- `before_render`
+- `after_render`
+- contexte de rendu enrichi via `FormRenderManager`
 
 [↑ Retour au sommaire docs](index.md)
