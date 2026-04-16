@@ -18,13 +18,16 @@ final class HookIndustrializationRuntimeTest extends TestCase
     public function testMultipleHooksRunInRegistrationOrder(): void
     {
         $messages = [];
+
         $kernel = new FormHookKernel();
-        $kernel->register(new class(&$messages) implements FormHookInterface {
+        $kernel->register(new class($messages) implements FormHookInterface {
+            /** @param array<int, string> $messages */
             public function __construct(private array &$messages) {}
             public static function getName(): string { return 'post_submit'; }
             public function __invoke(Form $form, array $context = []): void { $this->messages[] = 'first'; }
         });
-        $kernel->register(new class(&$messages) implements FormHookInterface {
+        $kernel->register(new class($messages) implements FormHookInterface {
+            /** @param array<int, string> $messages */
             public function __construct(private array &$messages) {}
             public static function getName(): string { return 'post_submit'; }
             public function __invoke(Form $form, array $context = []): void { $this->messages[] = 'second'; }
