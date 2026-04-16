@@ -8,10 +8,12 @@ use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\OptionsResolverInterface;
 use Iriven\PhpFormGenerator\Domain\Field\EmailType;
 use Iriven\PhpFormGenerator\Domain\Field\SubmitType;
+use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
 
 final class NewsletterType implements FormTypeInterface
 {
-    public function buildForm($builder, array $options = []): void
+    /** @param array<string, mixed> $options */
+    public function buildForm(FormBuilder $builder, array $options = []): void
     {
         $builder
             ->add('email', EmailType::class, ['required' => true])

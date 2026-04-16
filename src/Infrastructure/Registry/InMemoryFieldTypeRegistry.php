@@ -12,6 +12,9 @@ final class InMemoryFieldTypeRegistry implements FieldTypeRegistryInterface
     /** @var array<string, string> */
     private array $types = [];
 
+    /**
+     * @param array<string, string> $initial
+     */
     public function __construct(
         array $initial = [],
         private readonly bool $allowOverride = true,
