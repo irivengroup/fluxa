@@ -9,8 +9,10 @@ use RuntimeException;
 
 final class SessionCaptchaManager implements CaptchaManagerInterface
 {
-    public function __construct()
-    {
+    public function __construct(
+        private readonly int $ttlSeconds = 300,
+        private readonly int $maxAttempts = 5,
+    ) {
         $this->ensureSessionStarted();
         $_SESSION['_pfg_captcha'] ??= [];
         $_SESSION['_pfg_captcha_meta'] ??= [];
@@ -34,8 +36,8 @@ final class SessionCaptchaManager implements CaptchaManagerInterface
 
         $_SESSION['_pfg_captcha'][$key] = $code;
         $_SESSION['_pfg_captcha_meta'][$key] = [
-            'expires_at' => time() + 300,
-            'attempts_left' => 5,
+            'expires_at' => time() + max(1, $this->ttlSeconds),
+            'attempts_left' => max(1, $this->maxAttempts),
         ];
 
         return $code;
