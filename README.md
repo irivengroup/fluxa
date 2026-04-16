@@ -1120,3 +1120,13 @@ La validation finale du projet s’appuie sur :
 - la checklist `docs/release-checklist.md`
 
 La documentation d’exploitation détaillée reste centralisée dans `docs/index.md`.
+
+
+## V4.2.0 stable
+
+Cette version constitue la publication stable plugins-ready du projet. La documentation d’exploitation détaillée, la matrice de support et le contrat public sont centralisés dans `docs/`.
+
+## V4.2.1 maintenance stable
+
+La ligne `V4.2.x` est une ligne de maintenance stable.
+Les corrections doivent préserver le contrat public documenté, renforcer la non-régression et mettre à jour uniquement les rubriques concernées dans `docs/`.

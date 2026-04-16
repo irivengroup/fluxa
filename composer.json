@@ -47,6 +47,11 @@
     ],
     "rc:check": [
       "@validate:full"
+    ],
+    "maintenance:check": [
+      "composer dump-autoload -o",
+      "@phpstan analyse src tests",
+      "@phpunit --colors=never"
     ]
   },
   "config": {
@@ -58,6 +63,7 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "extra": {
-    "release_name": "V4.1.4 validation complète, hardening final et tag release candidate"
+    "release_name": "V4.2.1 maintenance stable patch complet",
+    "release_channel": "stable-maintenance"
   }
 }

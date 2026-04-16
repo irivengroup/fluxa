@@ -1,3 +1,27 @@
+## V4.2.1
+
+### Added
+- `docs/maintenance-policy.md`
+- `docs/bugfix-workflow.md`
+- `RELEASE_NOTES_V4.2.1.md`
+- `VALIDATION_MANIFEST_V4.2.1.md`
+
+### Changed
+- Formalisation de la ligne V4.2.x comme ligne de maintenance stable.
+- Clarification du workflow de correction et de la discipline de non-régression.
+
+## V4.2.0
+
+### Added
+- `docs/support-matrix.md`
+- `docs/public-api.md`
+- `RELEASE_NOTES_V4.2.0.md`
+
+### Changed
+- Stabilisation finale de la ligne V4 comme publication stable plugins-ready.
+- Clarification de la surface publique officiellement supportée.
+- Packaging final et documentation de publication consolidés.
+
 ## V4.1.4
 
 ### Added

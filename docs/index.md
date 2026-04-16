@@ -24,3 +24,13 @@
 - [Publication d’un plugin](plugin-publishing.md)
 
 > V4.1.4 ajoute la checklist de release finale et la documentation de publication de plugin.
+
+- [Matrice de support](support-matrix.md)
+- [API publique](public-api.md)
+
+> V4.2.0 marque la publication stable plugins-ready avec matrice de support et clarification de l’API publique.
+
+- [Politique de maintenance](maintenance-policy.md)
+- [Workflow de correction](bugfix-workflow.md)
+
+> V4.2.1 formalise la maintenance stable, le workflow de correction et la discipline de non-régression.
