@@ -7,6 +7,7 @@ namespace Iriven\PhpFormGenerator\Infrastructure\Schema;
 use Iriven\PhpFormGenerator\Domain\Contract\SchemaExporterInterface;
 use Iriven\PhpFormGenerator\Domain\Form\FieldConfig;
 use Iriven\PhpFormGenerator\Domain\Form\Form;
+use Iriven\PhpFormGenerator\Infrastructure\Type\TypeResolver;
 
 final class ArraySchemaExporter implements SchemaExporterInterface
 {
@@ -39,8 +40,13 @@ final class ArraySchemaExporter implements SchemaExporterInterface
             $children[$name] = $this->exportField($child);
         }
 
+        $entryType = $field->entryType;
+        if (is_string($entryType) && $entryType !== '') {
+            $entryType = TypeResolver::resolveFieldType($entryType);
+        }
+
         return [
-            'type' => $field->typeClass,
+            'type' => TypeResolver::resolveFieldType($field->typeClass),
             'label' => $field->options['label'] ?? null,
             'required' => (bool) ($field->options['required'] ?? false),
             'help' => $field->options['help'] ?? null,
@@ -53,7 +59,7 @@ final class ArraySchemaExporter implements SchemaExporterInterface
             ),
             'compound' => $field->compound,
             'collection' => $field->collection,
-            'entry_type' => $field->entryType,
+            'entry_type' => $entryType,
             'entry_options' => $field->entryOptions,
             'children' => $children,
         ];
