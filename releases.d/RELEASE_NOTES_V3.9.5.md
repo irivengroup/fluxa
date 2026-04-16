@@ -1,3 +1,7 @@
+[↑ Retour aux release notes](../RELEASE_NOTES.md)
+
+> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V3.9.5.md
+
 # V3.9.5 – Stabilisation finale et préparation release
 
 Cette version finalise la série 3.9.x avec une passe de stabilisation centrée sur la qualité, la cohérence d’architecture et la préparation d’une release propre.
@@ -24,3 +28,5 @@ composer test:coverage
 - Mapping / accès propriété : `Infrastructure\Mapping`, `Infrastructure\PropertyAccess`
 - Catalogues / sécurité / options : `Infrastructure\Catalog`, `Infrastructure\Security`, `Infrastructure\Options`
 - Rendu HTML : `Presentation\Html`, `Presentation\Html\Support`
+
+[↑ Retour aux release notes](../RELEASE_NOTES.md)

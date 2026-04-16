@@ -2,7 +2,7 @@
 
 - OK: README.md
 - OK: CHANGELOG.md
-- OK: RELEASE_NOTES_V4.1.4_RC.md
+- OK: releases.d/RELEASE_NOTES_V4.1.4_RC.md
 - OK: docs/index.md
 - OK: docs/release-checklist.md
 - OK: docs/plugin-publishing.md

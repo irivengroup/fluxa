@@ -1,3 +1,7 @@
+[↑ Retour aux release notes](../RELEASE_NOTES.md)
+
+> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V4.3.3.md
+
 # V4.3.3 – Industrialisation hooks, thèmes custom et stabilisation feature line
 
 ## Objectif
@@ -9,3 +13,5 @@ Solidifier la feature line V4.3.x autour des hooks et des thèmes custom avant d
 - contexte hook homogène
 - thèmes custom validés par tests
 - documentation wiki avec breadcrumbs et liens parent
+
+[↑ Retour aux release notes](../RELEASE_NOTES.md)

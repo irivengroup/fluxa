@@ -1,3 +1,7 @@
+[↑ Retour aux release notes](../RELEASE_NOTES.md)
+
+> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V4.1.3_RC1.md
+
 # V4.1.3 RC1 – Consolidation plugins, non-régression et release candidate
 
 ## Objectif
@@ -18,3 +22,5 @@ vendor/bin/phpunit --colors=never
 composer test:coverage
 composer release:check
 ```
+
+[↑ Retour aux release notes](../RELEASE_NOTES.md)

@@ -1,3 +1,7 @@
+[↑ Retour aux release notes](../RELEASE_NOTES.md)
+
+> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V4.2.2.md
+
 # V4.2.2 – Bugfix & non-régression terrain
 
 ## Objectif
@@ -15,3 +19,5 @@ composer maintenance:check
 vendor/bin/phpunit --colors=never
 vendor/bin/phpstan analyse src tests
 ```
+
+[↑ Retour aux release notes](../RELEASE_NOTES.md)

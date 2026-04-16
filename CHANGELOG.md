@@ -3,9 +3,10 @@
 ### Added
 - Industrialization tests for hook ordering, failure handling and normalized context
 - Custom theme runtime tests
-- `RELEASE_NOTES_V4.3.3.md`
+- `releases.d/RELEASE_NOTES_V4.3.3.md`
 
 ### Changed
+- Centralized release notes in `releases.d/` and introduced a root `RELEASE_NOTES.md` index with backlinks from each release note.
 - Hook kernel now supports configurable exception swallowing and normalized context
 - Documentation files now include parent links and breadcrumbs
 - Feature line documentation clarified for custom themes and lifecycle hooks
@@ -18,7 +19,7 @@
 - `HtmlRendererFactory`
 - Runtime tests for themes
 - Lifecycle runtime tests for hooks
-- `RELEASE_NOTES_V4.3.2.md`
+- `releases.d/RELEASE_NOTES_V4.3.2.md`
 
 ### Changed
 - Hooks are now dispatched across the complete form lifecycle.
@@ -35,7 +36,7 @@
 - `SchemaExporterInterface`
 - `FormSchemaManager`
 - Documentation feature line (`docs/feature-line-v4_3.md`, `docs/hooks.md`, `docs/themes.md`, `docs/schema.md`)
-- `RELEASE_NOTES_V4.3.0.md`
+- `releases.d/RELEASE_NOTES_V4.3.0.md`
 
 ### Changed
 - Ouverture d’une nouvelle feature line sans modification du contrat public stable V4.2.x.
@@ -56,7 +57,7 @@
 ### Added
 - `docs/maintenance-policy.md`
 - `docs/bugfix-workflow.md`
-- `RELEASE_NOTES_V4.2.1.md`
+- `releases.d/RELEASE_NOTES_V4.2.1.md`
 - `VALIDATION_MANIFEST_V4.2.1.md`
 
 ### Changed
@@ -68,7 +69,7 @@
 ### Added
 - `docs/support-matrix.md`
 - `docs/public-api.md`
-- `RELEASE_NOTES_V4.2.0.md`
+- `releases.d/RELEASE_NOTES_V4.2.0.md`
 
 ### Changed
 - Stabilisation finale de la ligne V4 comme publication stable plugins-ready.
@@ -80,7 +81,7 @@
 ### Added
 - `docs/release-checklist.md`
 - `docs/plugin-publishing.md`
-- `RELEASE_NOTES_V4.1.4_RC.md`
+- `releases.d/RELEASE_NOTES_V4.1.4_RC.md`
 - scripts Composer `validate:full` et `rc:check`
 
 ### Changed
@@ -91,7 +92,7 @@
 ### Added
 - Tests de non-régression plugins pour l’ordre d’enregistrement, les collisions et les plugins vides.
 - Fixtures supplémentaires pour la consolidation runtime plugins.
-- `RELEASE_NOTES_V4.1.3_RC1.md`.
+- `releases.d/RELEASE_NOTES_V4.1.3_RC1.md`.
 
 ### Changed
 - Documentation plugins et extensibilité consolidée pour la préparation release candidate.
@@ -139,7 +140,7 @@
 ### Changed
 - Finalisation de la série 3.9.x avec une passe de stabilisation release-ready.
 - Harmonisation de la documentation de validation release.
-- Ajout d’un fichier `RELEASE_NOTES_V3.9.5.md`.
+- Ajout d’un fichier `releases.d/RELEASE_NOTES_V3.9.5.md`.
 - Ajout de `.gitattributes` pour améliorer les exports d’archive.
 - Consolidation finale des helpers extraits par responsabilité.
 

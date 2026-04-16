@@ -1,3 +1,7 @@
+[↑ Retour aux release notes](../RELEASE_NOTES.md)
+
+> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V4.1.4_RC.md
+
 # V4.1.4 RC – Validation complète, hardening final et tag release candidate
 
 ## Objectif
@@ -17,3 +21,5 @@ vendor/bin/phpunit --colors=never
 composer test:coverage
 composer release:check
 ```
+
+[↑ Retour aux release notes](../RELEASE_NOTES.md)

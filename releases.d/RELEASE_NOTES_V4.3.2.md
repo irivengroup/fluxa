@@ -1,3 +1,7 @@
+[↑ Retour aux release notes](../RELEASE_NOTES.md)
+
+> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V4.3.2.md
+
 # V4.3.2 – Intégration hooks dans lifecycle complet
 
 ## Objectif
@@ -21,3 +25,5 @@ composer validate:full
 vendor/bin/phpunit --colors=never
 vendor/bin/phpstan analyse src tests
 ```
+
+[↑ Retour aux release notes](../RELEASE_NOTES.md)

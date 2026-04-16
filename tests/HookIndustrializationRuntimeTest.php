@@ -22,11 +22,13 @@ final class HookIndustrializationRuntimeTest extends TestCase
 
         $kernel = new FormHookKernel();
         $kernel->register(new class($messages) implements FormHookInterface {
+            /** @param ArrayObject<int, string> $messages */
             public function __construct(private ArrayObject $messages) {}
             public static function getName(): string { return 'post_submit'; }
             public function __invoke(Form $form, array $context = []): void { $this->messages->append('first'); }
         });
         $kernel->register(new class($messages) implements FormHookInterface {
+            /** @param ArrayObject<int, string> $messages */
             public function __construct(private ArrayObject $messages) {}
             public static function getName(): string { return 'post_submit'; }
             public function __invoke(Form $form, array $context = []): void { $this->messages->append('second'); }

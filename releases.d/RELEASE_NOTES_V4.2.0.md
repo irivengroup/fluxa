@@ -1,3 +1,7 @@
+[↑ Retour aux release notes](../RELEASE_NOTES.md)
+
+> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V4.2.0.md
+
 # V4.2.0 – Stable plugins-ready
 
 ## Positionnement
@@ -22,3 +26,5 @@ composer validate:full
 composer test:coverage
 composer rc:check
 ```
+
+[↑ Retour aux release notes](../RELEASE_NOTES.md)

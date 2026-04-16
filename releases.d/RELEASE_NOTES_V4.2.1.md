@@ -1,3 +1,7 @@
+[↑ Retour aux release notes](../RELEASE_NOTES.md)
+
+> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V4.2.1.md
+
 # V4.2.1 – Maintenance stable
 
 ## Positionnement
@@ -17,3 +21,5 @@ composer test:coverage
 vendor/bin/phpunit --colors=never
 vendor/bin/phpstan analyse src tests
 ```
+
+[↑ Retour aux release notes](../RELEASE_NOTES.md)
