@@ -21,4 +21,10 @@ Ouvrir une nouvelle ligne d’évolution sans casser la ligne stable V4.2.x.
 - thèmes custom validés
 - documentation normalisée avec breadcrumbs et liens parent
 
+
+### V4.3.4
+- export de schéma runtime
+- hooks avancés de schéma
+- correction du sommaire RELEASE_NOTES
+
 [↑ Retour au sommaire docs](index.md)

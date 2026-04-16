@@ -1147,3 +1147,7 @@ Cette itération intègre les hooks dans le cycle de vie complet du formulaire e
 ## V4.3.3 industrialisation hooks & thèmes custom
 
 Cette étape stabilise la feature line V4.3.x avec hooks plus robustes, thèmes custom testés, fallback clarifié et documentation wiki normalisée avec breadcrumbs et liens parent.
+
+## V4.3.4 export de schéma runtime et hooks avancés
+
+Cette itération ajoute un exporteur de schéma runtime, branche les hooks de schéma et corrige la centralisation des notes de release.

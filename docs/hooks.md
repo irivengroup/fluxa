@@ -37,4 +37,10 @@ $factory = new FormFactory(hookKernel: $hooks);
 $form = $factory->createBuilder('demo')->getForm();
 ```
 
+
+## Hooks avancés V4.3.4
+- `before_schema_export`
+- `after_schema_export`
+- préparation pour `before_render` et `after_render`
+
 [↑ Retour au sommaire docs](index.md)

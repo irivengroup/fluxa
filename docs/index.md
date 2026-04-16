@@ -46,6 +46,11 @@
 
 > V4.3.2 intègre les hooks dans le cycle de vie complet du formulaire et confirme le branchement runtime des thèmes.
 
-[↑ Parent : racine docs](index.md)
 
 > V4.3.3 industrialise les hooks, confirme les thèmes custom et normalise toute la documentation avec breadcrumbs et liens parent.
+
+- [Schema Export](schema-export.md)
+
+> V4.3.4 ajoute l’export de schéma runtime, des hooks avancés de schéma et corrige le sommaire central des release notes.
+
+[↑ Parent : racine docs](index.md)

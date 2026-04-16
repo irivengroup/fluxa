@@ -1,3 +1,16 @@
+## V4.3.4
+
+### Added
+- `Infrastructure\Schema\ArraySchemaExporter`
+- Runtime tests for schema export
+- `docs/schema-export.md`
+- `releases.d/RELEASE_NOTES_V4.3.4.md`
+
+### Changed
+- `FormSchemaManager` now supports schema export hooks
+- Central `RELEASE_NOTES.md` links corrected
+- Release notes consolidated under `releases.d/`
+
 ## V4.3.3
 
 ### Added
