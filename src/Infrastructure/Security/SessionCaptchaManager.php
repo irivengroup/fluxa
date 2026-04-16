@@ -22,17 +22,11 @@ final class SessionCaptchaManager implements CaptchaManagerInterface
     {
         $this->ensureSessionStarted();
 
-        $minLength = max(1, $minLength);
+        $minLength = max(2, $minLength);
         $maxLength = max($minLength, $maxLength);
         $length = random_int($minLength, $maxLength);
 
-        $alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789';
-        $code = '';
-        $maxIndex = strlen($alphabet) - 1;
-
-        for ($i = 0; $i < $length; $i++) {
-            $code .= $alphabet[random_int(0, $maxIndex)];
-        }
+        $code = $this->generateMixedCaseCode($length);
 
         $_SESSION['_pfg_captcha'][$key] = $code;
         $_SESSION['_pfg_captcha_meta'][$key] = [
@@ -200,5 +194,26 @@ final class SessionCaptchaManager implements CaptchaManagerInterface
         if ($started !== true && session_status() !== PHP_SESSION_ACTIVE) {
             throw new RuntimeException('Unable to start session for captcha management.');
         }
+    }
+
+    private function generateMixedCaseCode(int $length): string
+    {
+        $uppercase = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
+        $lowercase = 'abcdefghijkmnopqrstuvwxyz';
+        $digits = '23456789';
+        $alphabet = $uppercase . $lowercase . $digits;
+
+        $characters = [
+            $uppercase[random_int(0, strlen($uppercase) - 1)],
+            $lowercase[random_int(0, strlen($lowercase) - 1)],
+        ];
+
+        for ($i = 2; $i < $length; $i++) {
+            $characters[] = $alphabet[random_int(0, strlen($alphabet) - 1)];
+        }
+
+        shuffle($characters);
+
+        return implode('', $characters);
     }
 }
