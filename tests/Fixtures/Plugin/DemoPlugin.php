@@ -8,7 +8,6 @@ use Iriven\PhpFormGenerator\Domain\Contract\FieldTypeRegistryInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\FormTypeRegistryInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\PluginInterface;
 use Iriven\PhpFormGenerator\Infrastructure\Extension\ExtensionRegistry;
-use Iriven\PhpFormGenerator\Infrastructure\Extension\TrimTextFieldExtension;
 
 final class DemoPlugin implements PluginInterface
 {
@@ -24,6 +23,6 @@ final class DemoPlugin implements PluginInterface
 
     public function registerExtensions(ExtensionRegistry $registry): void
     {
-        $registry->addFieldExtension('slug', new TrimTextFieldExtension());
+        $registry->addFieldTypeExtension(new SlugTrimFieldExtension());
     }
 }

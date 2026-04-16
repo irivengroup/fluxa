@@ -6,6 +6,7 @@
 - Durcissement des registries avec validation des aliases/classes et gestion configurable des collisions.
 
 ### Changed
+- Replaced the Scrutinizer configuration with the project-specific configuration provided for the release hardening pass.
 - Documentation plugins enrichie avec la stratégie de collision et les bonnes pratiques runtime.
 
 ## V4.1.1 Fixes
