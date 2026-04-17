@@ -95,4 +95,9 @@
 
 > V4.6.1 consolide la conformité statique complète du runtime unifié.
 
+
+- [Consolidation du runtime](runtime-consolidation.md)
+
+> V4.6.2 clôture la consolidation du runtime unifié avec des tests ciblés et une documentation de synthèse.
+
 [↑ Parent : racine docs](index.md)

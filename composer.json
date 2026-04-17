@@ -63,7 +63,7 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "extra": {
-    "release_name": "V4.6.1 maintenance runtime unifié et conformité statique complète",
-    "release_channel": "advanced-runtime-maintenance"
+    "release_name": "V4.6.2 bugfix runtime final et clôture de consolidation",
+    "release_channel": "advanced-runtime-bugfix"
   }
 }

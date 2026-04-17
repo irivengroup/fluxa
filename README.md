@@ -1190,3 +1190,8 @@ Cette version unifie hooks, rendu et schéma autour d’un runtime commun, avec 
 ## V4.6.1 maintenance runtime unifié et conformité statique complète
 
 Cette version consolide le runtime unifié avec des annotations complètes, des tests de forme statique et une documentation dédiée.
+
+
+## V4.6.2 bugfix runtime final et clôture de consolidation
+
+Cette version clôture la consolidation du runtime unifié avec des tests ciblés, une couverture export renforcée et une documentation de synthèse.

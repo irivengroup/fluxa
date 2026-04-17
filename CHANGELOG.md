@@ -1,3 +1,16 @@
+## V4.6.2
+
+### Added
+- `tests/RuntimePipelineDispatchRegressionTest.php`
+- `tests/RuntimeDocsIndexRegressionTest.php`
+- `docs/runtime-consolidation.md`
+- `releases.d/RELEASE_NOTES_V4.6.2.md`
+- `validations.d/VALIDATION_MANIFEST_V4.6.2.md`
+
+### Changed
+- Clôture de consolidation du runtime unifié
+- Renforcement ciblé des tests pipeline/runtime/export
+
 ## V4.6.1
 
 ### Added
