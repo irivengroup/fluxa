@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace Iriven\PhpFormGenerator\Infrastructure\Extension;
 
-use Iriven\PhpFormGenerator\Domain\Contract\ExtensionRegistryInterface;
-
 use Iriven\PhpFormGenerator\Domain\Contract\FieldTypeExtensionInterface;
 use Iriven\PhpFormGenerator\Domain\Contract\FormExtensionInterface;
 
-final class ExtensionRegistry implements ExtensionRegistryInterface
+final class ExtensionRegistry
 {
     /** @var array<int, FieldTypeExtensionInterface> */
     private array $fieldExtensions = [];
