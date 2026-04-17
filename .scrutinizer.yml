@@ -20,6 +20,8 @@ build:
 
   nodes:
     analysis:
+      resources:
+        cpus: 4    
       environment:
         php: 8.2
       dependencies:
@@ -32,3 +34,9 @@ build:
               file: coverage.clover
               format: php-clover
           - php-scrutinizer-run
+
+
+    nodes:
+        analysis:
+            resources:
+                cpus: 4
