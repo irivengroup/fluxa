@@ -21,7 +21,7 @@ final class FormRuntimePipeline
     }
 
     /**
-     * @return list<string>
+     * @return array<int, string>
      */
     public function stages(): array
     {
