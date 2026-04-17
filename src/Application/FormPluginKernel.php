@@ -6,47 +6,62 @@ namespace Iriven\PhpFormGenerator\Application;
 
 use Iriven\PhpFormGenerator\Domain\Contract\PluginInterface;
 use Iriven\PhpFormGenerator\Infrastructure\Extension\ExtensionRegistry;
+use Iriven\PhpFormGenerator\Infrastructure\Registry\BuiltinRegistries;
 use Iriven\PhpFormGenerator\Infrastructure\Registry\InMemoryFieldTypeRegistry;
 use Iriven\PhpFormGenerator\Infrastructure\Registry\InMemoryFormTypeRegistry;
 use Iriven\PhpFormGenerator\Infrastructure\Registry\PluginRegistry;
+use Iriven\PhpFormGenerator\Infrastructure\Type\TypeResolver;
 
 final class FormPluginKernel
 {
-    private PluginRegistry $registry;
+    private PluginRegistry $plugins;
 
-    public function __construct(?PluginRegistry $registry = null)
+    public function __construct(?ExtensionRegistry $extensionRegistry = null)
     {
-        $this->registry = $registry ?? new PluginRegistry(
-            new InMemoryFieldTypeRegistry(),
-            new InMemoryFormTypeRegistry(),
-            new ExtensionRegistry(),
+        $this->plugins = new PluginRegistry(
+            BuiltinRegistries::fieldTypes(),
+            BuiltinRegistries::formTypes(),
+            $extensionRegistry ?? new ExtensionRegistry(),
         );
+
+        $this->bootRuntime();
     }
 
     public function register(PluginInterface $plugin): self
     {
-        $this->registry->registerPlugin($plugin);
+        $this->plugins->registerPlugin($plugin);
+        $this->bootRuntime();
 
         return $this;
     }
 
-    public function fieldTypes(): InMemoryFieldTypeRegistry
+    public function plugins(): PluginRegistry
     {
-        return $this->registry->fieldTypes();
-    }
-
-    public function formTypes(): InMemoryFormTypeRegistry
-    {
-        return $this->registry->formTypes();
-    }
-
-    public function extensions(): ExtensionRegistry
-    {
-        return $this->registry->extensions();
+        return $this->plugins;
     }
 
     public function registry(): PluginRegistry
     {
-        return $this->registry;
+        return $this->plugins;
+    }
+
+    public function fieldTypes(): InMemoryFieldTypeRegistry
+    {
+        return $this->plugins->fieldTypes();
+    }
+
+    public function formTypes(): InMemoryFormTypeRegistry
+    {
+        return $this->plugins->formTypes();
+    }
+
+    public function extensions(): ExtensionRegistry
+    {
+        return $this->plugins->extensions();
+    }
+
+    private function bootRuntime(): void
+    {
+        TypeResolver::useRegistries($this->fieldTypes(), $this->formTypes());
     }
 }
