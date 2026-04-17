@@ -40,9 +40,6 @@ final class FrontendSdk
      */
     public function buildSubmissionPayload(Form $form, array $data): array
     {
-        // normalize payload (V4.9.1)
-        $data = is_array($data) ? $data : [];
-
         return [
             'form' => $form->getName(),
             'payload' => $data,
@@ -52,4 +49,6 @@ final class FrontendSdk
             ],
         ];
     }
+
+
 }
