@@ -63,7 +63,7 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "extra": {
-    "release_name": "V4.5.1 maintenance rendu avancé et non-régression",
-    "release_channel": "advanced-feature-maintenance"
+    "release_name": "V4.6.0 unification runtime hooks thèmes schéma",
+    "release_channel": "advanced-runtime"
   }
 }

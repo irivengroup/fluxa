@@ -1,6 +1,6 @@
 [↑ Retour au sommaire docs](index.md)
 
-> Breadcrumb: [Docs](index.md) / schema-export.md
+> Breadcrumb: [Docs](index.md) / Schema Export
 
 # Schema Export
 
@@ -39,5 +39,9 @@ Le format d’export de schéma est désormais traité comme stable dans la lign
 
 ## Orientation V4.5.0
 Le schéma exporté constitue désormais une base exploitable pour intégrations front/API.
+
+
+## Unification V4.6.0
+Le schéma peut désormais embarquer des métadonnées runtime.
 
 [↑ Retour au sommaire docs](index.md)

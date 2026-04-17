@@ -83,4 +83,11 @@
 
 > V4.5.1 consolide le rendu avancé et sa couverture de non-régression.
 
+
+- [Runtime](runtime.md)
+- [Lifecycle](lifecycle.md)
+- [Runtime Hooks](runtime-hooks.md)
+
+> V4.6.0 unifie hooks, thèmes et schéma dans un runtime cohérent.
+
 [↑ Parent : racine docs](index.md)

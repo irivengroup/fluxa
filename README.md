@@ -1180,3 +1180,8 @@ Cette version rouvre une ligne d’évolution produit avec hooks de rendu, gesti
 ## V4.5.1 maintenance rendu avancé et non-régression
 
 Cette version stabilise le rendu avancé avec des tests ciblés, une documentation de maintenance et une cohérence accrue du packaging.
+
+
+## V4.6.0 unification runtime hooks thèmes schéma
+
+Cette version unifie hooks, rendu et schéma autour d’un runtime commun, avec documentation dédiée et tests initiaux.

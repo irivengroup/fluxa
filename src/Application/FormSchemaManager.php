@@ -18,13 +18,23 @@ final class FormSchemaManager
     /**
      * @return array<string, mixed>
      */
-    public function export(Form $form): array
+    public function export(Form $form, ?FormRuntimeContext $runtimeContext = null): array
     {
-        $this->hookKernel?->dispatch('before_schema_export', $form);
+        $this->hookKernel?->dispatch('before_export', $form, ['runtime' => $runtimeContext]);
+        $this->hookKernel?->dispatch('before_schema_export', $form, ['runtime' => $runtimeContext]);
 
         $schema = $this->exporter->export($form);
 
-        $this->hookKernel?->dispatch('after_schema_export', $form, ['schema' => $schema]);
+        if ($runtimeContext instanceof FormRuntimeContext) {
+            $schema['runtime'] = [
+                'theme' => $runtimeContext->theme(),
+                'renderer' => $runtimeContext->renderer(),
+                'metadata' => $runtimeContext->metadata(),
+            ];
+        }
+
+        $this->hookKernel?->dispatch('after_schema_export', $form, ['schema' => $schema, 'runtime' => $runtimeContext]);
+        $this->hookKernel?->dispatch('after_export', $form, ['schema' => $schema, 'runtime' => $runtimeContext]);
 
         return $schema;
     }

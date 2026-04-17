@@ -1,3 +1,20 @@
+## V4.6.0
+
+### Added
+- `src/Application/FormRuntimeContext.php`
+- `src/Application/FormRuntimePipeline.php`
+- `tests/RuntimeContextTest.php`
+- `tests/SchemaRuntimeContextTest.php`
+- `docs/runtime.md`
+- `docs/lifecycle.md`
+- `docs/runtime-hooks.md`
+- `releases.d/RELEASE_NOTES_V4.6.0.md`
+- `validations.d/VALIDATION_MANIFEST_V4.6.0.md`
+
+### Changed
+- Unification du runtime hooks/thèmes/schéma
+- Enrichissement du schéma avec le contexte runtime
+
 ## V4.5.1
 
 ### Added

@@ -26,4 +26,8 @@ $renderManager = new FormRenderManager(
 $html = $renderManager->render($form, 'tailwind');
 ```
 
+
+## Unification V4.6.0
+Le rendu avancé s’inscrit désormais dans un runtime commun via `FormRuntimeContext`.
+
 [↑ Retour au sommaire docs](index.md)
