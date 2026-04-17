@@ -34,9 +34,3 @@ build:
               file: coverage.clover
               format: php-clover
           - php-scrutinizer-run
-
-
-    nodes:
-        analysis:
-            resources:
-                cpus: 4
