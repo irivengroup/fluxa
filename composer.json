@@ -63,7 +63,7 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "extra": {
-    "release_name": "V4.7.0 capacités runtime avancées",
-    "release_channel": "advanced-runtime-feature-line"
+    "release_name": "V4.7.1 maintenance runtime avancé et non-régression",
+    "release_channel": "advanced-runtime-maintenance"
   }
 }

@@ -1200,3 +1200,8 @@ Cette version clôture la consolidation du runtime unifié avec des tests ciblé
 ## V4.7.0 capacités runtime avancées
 
 Cette version étend le runtime unifié avec un payload typé, des hooks priorisés et un schéma enrichi orienté front.
+
+
+## V4.7.1 maintenance runtime avancé et non-régression
+
+Cette version stabilise le runtime avancé avec des tests ciblés sur le payload, les hooks priorisés et le schéma enrichi.

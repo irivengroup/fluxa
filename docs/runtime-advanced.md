@@ -12,4 +12,10 @@ Présenter les capacités avancées construites au-dessus du runtime unifié.
 - `PrioritizedHookKernel`
 - schéma enrichi pour usages front
 
+
+## Maintenance V4.7.1
+- payload runtime consolidé
+- hooks priorisés vérifiés en non-régression
+- schéma runtime/ui stabilisé
+
 [↑ Retour au sommaire docs](index.md)

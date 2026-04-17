@@ -11,4 +11,9 @@ Documenter une première évolution des hooks avec ordre d’exécution contrôl
 - hooks priorisés via `PrioritizedHookKernel`
 - exécution décroissante par priorité
 
+
+## Maintenance V4.7.1
+- couverture des priorités identiques
+- couverture du mode swallow
+
 [↑ Retour au sommaire docs](index.md)

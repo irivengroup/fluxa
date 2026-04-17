@@ -108,4 +108,9 @@
 
 > V4.7.0 ouvre une ligne de capacités runtime avancées avec payload typé, hooks priorisés et schéma enrichi.
 
+
+- [Maintenance du runtime avancé](runtime-advanced-maintenance.md)
+
+> V4.7.1 stabilise le runtime avancé avec de nouveaux tests ciblés et une documentation de maintenance.
+
 [↑ Parent : racine docs](index.md)

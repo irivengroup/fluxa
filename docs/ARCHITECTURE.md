@@ -1,32 +1,27 @@
 [↑ Retour au sommaire docs](index.md)
 
-> Breadcrumb: [Docs](index.md) / architecture.md
+> Breadcrumb: [Docs](index.md) / ARCHITECTURE.md
 
-# Architecture V4
+# Architecture V3.4
 
-## Couche Application
-- `Application\FormGenerator`
-- `Application\FormFactory`
-- `Application\FormPluginKernel`
+## Application
+- `FormFactory`
+- `FormGenerator`
 
-## Couche Domain
-- `Domain\Contract`
-- `Domain\Form`
-- `Domain\Form\Submission`
-- `Domain\Constraint`
-- `Domain\Transformer`
+## Domain
+- arbre de formulaire récursif
+- types de champs
+- contraintes
+- validation
+- transformers
 
-## Couche Infrastructure
-- `Infrastructure\Catalog`
-- `Infrastructure\Registry`
-- `Infrastructure\Mapping`
-- `Infrastructure\PropertyAccess`
-- `Infrastructure\Options`
-- `Infrastructure\Security`
+## Infrastructure
+- requêtes
+- CSRF
+- data mapping objet / tableau
 
-## Couche Presentation
-- `Presentation\Html`
-- `Presentation\Html\Support`
-- `Presentation\Html\Theme`
+## Presentation
+- `FormView`
+- rendu HTML thémable
 
 [↑ Retour au sommaire docs](index.md)

@@ -1,3 +1,17 @@
+## V4.7.1
+
+### Added
+- `tests/RuntimePayloadRegressionTest.php`
+- `tests/PrioritizedHookKernelRegressionTest.php`
+- `tests/SchemaRuntimeUiRegressionTest.php`
+- `docs/runtime-advanced-maintenance.md`
+- `releases.d/RELEASE_NOTES_V4.7.1.md`
+- `validations.d/VALIDATION_MANIFEST_V4.7.1.md`
+
+### Changed
+- Stabilisation du runtime avancé
+- Renforcement de la non-régression sur payload/hooks priorisés/schéma enrichi
+
 ## V4.7.0
 
 ### Added
