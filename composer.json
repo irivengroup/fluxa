@@ -63,7 +63,7 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "extra": {
-    "release_name": "V4.8.1 maintenance headless et non-régression frontend",
-    "release_channel": "headless-frontend-maintenance"
+    "release_name": "V4.9.0 SDK frontend officiel",
+    "release_channel": "frontend-sdk"
   }
 }

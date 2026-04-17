@@ -1,3 +1,22 @@
+## V4.9.0
+
+### Added
+- `src/Application/Frontend/FrontendSdk.php`
+- `src/Application/Frontend/FrontendSdkConfig.php`
+- `src/Application/Frontend/FrontendFrameworkPresets.php`
+- `tests/FrontendSdkTest.php`
+- `tests/FrontendFrameworkPresetsTest.php`
+- `docs/frontend-sdk.md`
+- `docs/frontend-sdk-react.md`
+- `docs/frontend-sdk-vue.md`
+- `docs/frontend-sdk-mobile.md`
+- `releases.d/RELEASE_NOTES_V4.9.0.md`
+- `validations.d/VALIDATION_MANIFEST_V4.9.0.md`
+
+### Changed
+- Le mode headless devient base du SDK frontend officiel
+- Ajout de presets framework pour les consommateurs frontend
+
 ## V4.8.1
 
 ### Added

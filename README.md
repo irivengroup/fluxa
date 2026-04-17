@@ -1215,3 +1215,8 @@ Cette version rend le moteur frontend-ready avec export headless, mapping UI et 
 ## V4.8.1 maintenance headless et non-régression frontend
 
 Cette version stabilise la ligne headless/frontend-ready avec des tests ciblés sur le mapping UI, l’export de validation et le schéma headless.
+
+
+## V4.9.0 SDK frontend officiel
+
+Cette version introduit le SDK frontend officiel avec schéma frontend-ready, payloads de soumission et presets de framework.

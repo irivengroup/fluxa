@@ -126,4 +126,12 @@
 
 > V4.8.1 stabilise la ligne headless/frontend-ready avec des tests ciblés et une documentation de maintenance.
 
+
+- [Frontend SDK](frontend-sdk.md)
+- [Frontend SDK React](frontend-sdk-react.md)
+- [Frontend SDK Vue](frontend-sdk-vue.md)
+- [Frontend SDK Mobile](frontend-sdk-mobile.md)
+
+> V4.9.0 introduit le SDK frontend officiel au-dessus du mode headless stabilisé.
+
 [↑ Parent : racine docs](index.md)

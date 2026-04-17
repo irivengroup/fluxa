@@ -1,6 +1,6 @@
 [↑ Retour au sommaire docs](index.md)
 
-> Breadcrumb: [Docs](index.md) / Hooks V2
+> Breadcrumb: [Docs](index.md) / hooks-v2.md
 
 # Hooks V2
 
