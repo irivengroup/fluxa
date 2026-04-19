@@ -4,30 +4,44 @@ declare(strict_types=1);
 
 namespace Iriven\PhpFormGenerator\Infrastructure\Extension;
 
-use Iriven\PhpFormGenerator\Domain\Contract\ExtensionInterface;
+use Iriven\PhpFormGenerator\Domain\Contract\FieldTypeExtensionInterface;
+use Iriven\PhpFormGenerator\Domain\Contract\FormExtensionInterface;
 
 final class ExtensionRegistry
 {
-    /** @var list<ExtensionInterface> */
-    private array $extensions = [];
+    /** @var array<int, FieldTypeExtensionInterface> */
+    private array $fieldExtensions = [];
 
-    public function addFieldExtension(ExtensionInterface $extension): void
+    /** @var array<int, FormExtensionInterface> */
+    private array $formExtensions = [];
+
+    public function addFieldTypeExtension(FieldTypeExtensionInterface $extension): void
     {
-        $this->extensions[] = $extension;
+        $this->fieldExtensions[] = $extension;
     }
 
-    /** @return list<ExtensionInterface> */
-    public function all(): array
+    public function addFormExtension(FormExtensionInterface $extension): void
     {
-        return $this->extensions;
+        $this->formExtensions[] = $extension;
     }
 
-    /** @return list<ExtensionInterface> */
-    public function for(string $type): array
+    /**
+     * @param string $typeClass
+     * @return array<int, FieldTypeExtensionInterface>
+     */
+    public function fieldExtensionsFor(string $typeClass): array
     {
         return array_values(array_filter(
-            $this->extensions,
-            fn (ExtensionInterface $ext) => $ext->supports($type)
+            $this->fieldExtensions,
+            static fn (FieldTypeExtensionInterface $extension): bool => $extension::getExtendedType() === $typeClass
         ));
+    }
+
+    /**
+     * @return array<int, FormExtensionInterface>
+     */
+    public function formExtensions(): array
+    {
+        return $this->formExtensions;
     }
 }
