@@ -38,7 +38,9 @@ final class CliApplication
             return sprintf('Unknown command: %s', $name);
         }
 
-        return $this->commands[$name]->run($args);
+        $output = $this->commands[$name]->run($args);
+
+        return $output !== '' ? $output : sprintf('Command %s produced no output', $name);
     }
 
     /**
@@ -46,6 +48,9 @@ final class CliApplication
      */
     public function commands(): array
     {
-        return array_keys($this->commands);
+        $names = array_keys($this->commands);
+        sort($names);
+
+        return array_values($names);
     }
 }

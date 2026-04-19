@@ -19,7 +19,8 @@ final class MakePluginCommand implements CliCommandInterface
      */
     public function run(array $args = []): string
     {
-        $name = $args[0] ?? 'GeneratedPlugin';
+        $name = trim($args[0] ?? '');
+        $name = $name !== '' ? $name : 'GeneratedPlugin';
 
         return <<<TXT
 <?php

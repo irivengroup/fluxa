@@ -165,4 +165,9 @@
 
 > V5.2.0 introduit la CLI officielle et l’outillage développeur du projet.
 
+
+- [CLI Maintenance](cli-maintenance.md)
+
+> V5.2.1 stabilise l’outillage CLI avec une passe de non-régression complète.
+
 [↑ Parent : racine docs](index.md)

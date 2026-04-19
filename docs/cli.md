@@ -13,4 +13,9 @@ Présenter l’outillage CLI officiel du projet.
 - `debug:schema`
 - `debug:runtime`
 
+
+## Maintenance V5.2.1
+- tri stable des commandes
+- fallback de sortie CLI
+
 [↑ Retour au sommaire docs](index.md)

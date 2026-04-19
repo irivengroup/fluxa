@@ -25,11 +25,13 @@ final class DebugRuntimeCommand implements CliCommandInterface
      */
     public function run(array $args = []): string
     {
-        return json_encode([
+        $json = json_encode([
             'plugins' => count($this->kernel->plugins()->all()),
             'field_types' => method_exists($this->kernel->fieldTypes(), 'all') ? $this->kernel->fieldTypes()->all() : [],
             'form_types' => method_exists($this->kernel->formTypes(), 'all') ? $this->kernel->formTypes()->all() : [],
             'extensions' => count($this->kernel->extensions()->all()),
-        ], JSON_PRETTY_PRINT) ?: '{}';
+        ], JSON_PRETTY_PRINT);
+
+        return is_string($json) && $json !== '' ? $json : '{}';
     }
 }

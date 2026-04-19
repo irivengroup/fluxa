@@ -28,6 +28,8 @@ final class DebugSchemaCommand implements CliCommandInterface
      */
     public function run(array $args = []): string
     {
-        return json_encode($this->schemaManager->exportHeadless($this->form), JSON_PRETTY_PRINT) ?: '{}';
+        $json = json_encode($this->schemaManager->exportHeadless($this->form), JSON_PRETTY_PRINT);
+
+        return is_string($json) && $json !== '' ? $json : '{}';
     }
 }

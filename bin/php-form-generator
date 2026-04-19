@@ -4,3 +4,4 @@
 declare(strict_types=1);
 
 echo "PhpFormGenerator CLI placeholder\n";
+exit(0);

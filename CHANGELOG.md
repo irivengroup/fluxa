@@ -1,3 +1,18 @@
+## V5.2.1
+
+### Added
+- `tests/CliRegressionTest.php`
+- `tests/DebugCliRegressionTest.php`
+- `tests/BinCliRegressionTest.php`
+- `docs/cli-maintenance.md`
+- `releases.d/RELEASE_NOTES_V5.2.1.md`
+- `validations.d/VALIDATION_MANIFEST_V5.2.1.md`
+
+### Changed
+- Durcissement de `CliApplication`
+- Stabilisation des commandes `make:*` et `debug:*`
+- Binaire CLI explicite et non-régressif
+
 ## V5.2.0
 
 ### Added

@@ -1244,3 +1244,8 @@ Cette version durcit l’écosystème plugins, isole les extensions fautives et 
 ## V5.2.0 CLI développeur et outillage officiel
 
 Cette version introduit une CLI officielle avec scaffolding et debug développeur.
+
+
+## V5.2.1 maintenance tooling et non-régression CLI
+
+Cette version stabilise la CLI officielle avec des tests complémentaires et des garanties de sortie plus robustes.

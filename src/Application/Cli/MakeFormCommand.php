@@ -19,7 +19,8 @@ final class MakeFormCommand implements CliCommandInterface
      */
     public function run(array $args = []): string
     {
-        $name = $args[0] ?? 'GeneratedFormType';
+        $name = trim($args[0] ?? '');
+        $name = $name !== '' ? $name : 'GeneratedFormType';
 
         return <<<TXT
 <?php
