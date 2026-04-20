@@ -12,4 +12,9 @@ Documenter le système de thèmes officiel.
 - fallback contrôlé
 - composants de thème
 
+
+## Maintenance V5.5.1
+- fallback thème confirmé
+- parent absent toléré
+
 [↑ Retour au sommaire docs](index.md)

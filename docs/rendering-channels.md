@@ -14,4 +14,8 @@ Décrire les canaux de rendu supportés.
 - `pdf`
 - `mobile`
 
+
+## Maintenance V5.5.1
+- canal vide retombe sur `html`
+
 [↑ Retour au sommaire docs](index.md)

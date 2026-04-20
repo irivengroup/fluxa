@@ -1,12 +1,1 @@
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
-
-> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V5.3.1.md
-
-# V5.3.1 Validation
-
-- Schema version manager regression coverage: OK
-- Schema migrator regression coverage: OK
-- Export scope regression coverage: OK
-- Schema maintenance docs added: OK
-
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
+[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n\n> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V5.3.1.md\n\n\n\n# V5.3.1 Validation\n\n- Schema version manager regression coverage: OK\n- Schema migrator regression coverage: OK\n- Export scope regression coverage: OK\n- Schema maintenance docs added: OK\n\n\n[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n

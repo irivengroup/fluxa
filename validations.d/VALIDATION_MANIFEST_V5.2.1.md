@@ -1,12 +1,1 @@
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
-
-> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V5.2.1.md
-
-# V5.2.1 Validation
-
-- CLI ordering coverage: OK
-- default scaffold naming coverage: OK
-- debug JSON validity coverage: OK
-- CLI maintenance docs added: OK
-
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
+[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n\n> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V5.2.1.md\n\n\n\n# V5.2.1 Validation\n\n- CLI ordering coverage: OK\n- default scaffold naming coverage: OK\n- debug JSON validity coverage: OK\n- CLI maintenance docs added: OK\n\n\n[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n

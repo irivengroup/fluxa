@@ -1,13 +1,1 @@
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
-
-> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.3.5.md
-
-# V4.3.5 Validation
-
-- Schema exporter hardening: OK
-- Schema runtime tests: OK
-- Lifecycle hooks docs: OK
-- Custom themes docs: OK
-- Release notes index updated: OK
-
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
+[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n\n> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.3.5.md\n\n\n\n# V4.3.5 Validation\n\n- Schema exporter hardening: OK\n- Schema runtime tests: OK\n- Lifecycle hooks docs: OK\n- Custom themes docs: OK\n- Release notes index updated: OK\n\n\n[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n

@@ -1,12 +1,1 @@
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
-
-> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.7.0.md
-
-# V4.7.0 Validation
-
-- Runtime payload coverage: OK
-- Prioritized hooks coverage: OK
-- Frontend-ready schema coverage: OK
-- Advanced runtime docs added: OK
-
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
+[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n\n> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.7.0.md\n\n\n\n# V4.7.0 Validation\n\n- Runtime payload coverage: OK\n- Prioritized hooks coverage: OK\n- Frontend-ready schema coverage: OK\n- Advanced runtime docs added: OK\n\n\n[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n

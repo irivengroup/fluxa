@@ -1,11 +1,1 @@
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
-
-> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.6.0.md
-
-# V4.6.0 Validation
-
-- Runtime context coverage: OK
-- Schema runtime metadata coverage: OK
-- Runtime docs added: OK
-
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
+[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n\n> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.6.0.md\n\n\n\n# V4.6.0 Validation\n\n- Runtime context coverage: OK\n- Schema runtime metadata coverage: OK\n- Runtime docs added: OK\n\n\n[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n

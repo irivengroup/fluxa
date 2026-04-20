@@ -11,4 +11,8 @@ Documenter l’héritage de thèmes.
 - `tailwind` peut hériter de `default`
 - les composants enfants surchargent ceux du parent
 
+
+## Maintenance V5.5.1
+- héritage profond stabilisé
+
 [↑ Retour au sommaire docs](index.md)

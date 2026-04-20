@@ -1,11 +1,1 @@
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
-
-> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.5.0.md
-
-# V4.5.0 Validation
-
-- Render hook runtime coverage: OK
-- Advanced rendering documentation: OK
-- Release and validation indexes preserved: OK
-
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
+[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n\n> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.5.0.md\n\n\n\n# V4.5.0 Validation\n\n- Render hook runtime coverage: OK\n- Advanced rendering documentation: OK\n- Release and validation indexes preserved: OK\n\n\n[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n

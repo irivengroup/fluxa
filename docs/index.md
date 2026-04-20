@@ -197,4 +197,9 @@
 
 > V5.5.0 industrialise les thèmes et prépare un rendu multi-canal cohérent.
 
+
+- [Rendering Maintenance](rendering-maintenance.md)
+
+> V5.5.1 consolide les thèmes, les canaux et la stabilité de `runtime.rendering`.
+
 [↑ Parent : racine docs](index.md)

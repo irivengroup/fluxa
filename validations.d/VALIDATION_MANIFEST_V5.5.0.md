@@ -1,12 +1,1 @@
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
-
-> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V5.5.0.md
-
-# V5.5.0 Validation
-
-- Theme fallback coverage: OK
-- Theme inheritance coverage: OK
-- Render profile coverage: OK
-- Frontend rendering integration coverage: OK
-
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
+[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n\n> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V5.5.0.md\n\n\n\n# V5.5.0 Validation\n\n- Theme fallback coverage: OK\n- Theme inheritance coverage: OK\n- Render profile coverage: OK\n- Frontend rendering integration coverage: OK\n\n\n[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n

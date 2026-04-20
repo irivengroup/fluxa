@@ -1,16 +1,1 @@
-[↑ Retour aux release notes](../RELEASE_NOTES.md)
-
-> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V4.8.1.md
-
-# V4.8.1 – Maintenance headless et non-régression frontend
-
-## Objectif
-Stabiliser les nouvelles capacités headless/frontend-ready introduites en V4.8.0.
-
-## Inclus
-- tests ciblés sur le mapping UI
-- tests ciblés sur l’export de validation
-- tests ciblés sur le schéma headless
-- documentation de maintenance headless
-
-[↑ Retour aux release notes](../RELEASE_NOTES.md)
+[↑ Retour aux release notes](../RELEASE_NOTES.md)\n\n> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V4.8.1.md\n\n\n\n# V4.8.1 – Maintenance headless et non-régression frontend\n\n## Objectif\nStabiliser les nouvelles capacités headless/frontend-ready introduites en V4.8.0.\n\n## Inclus\n- tests ciblés sur le mapping UI\n- tests ciblés sur l’export de validation\n- tests ciblés sur le schéma headless\n- documentation de maintenance headless\n\n\n[↑ Retour aux release notes](../RELEASE_NOTES.md)\n

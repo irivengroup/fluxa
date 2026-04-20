@@ -1,13 +1,1 @@
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
-
-> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V5.1.1.md
-
-# V5.1.1 Validation
-
-- Plugin validator coverage: OK
-- Extension registry hardening coverage: OK
-- Plugin kernel hardening coverage: OK
-- CI audit visibility added: OK
-- Lifecycle architecture docs added: OK
-
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
+[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n\n> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V5.1.1.md\n\n\n\n# V5.1.1 Validation\n\n- Plugin validator coverage: OK\n- Extension registry hardening coverage: OK\n- Plugin kernel hardening coverage: OK\n- CI audit visibility added: OK\n- Lifecycle architecture docs added: OK\n\n\n[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n

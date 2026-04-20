@@ -75,10 +75,10 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "extra": {
-    "release_name": "V5.5.0 thèmes industrialisés et rendu multi-canal",
-    "release_channel": "rendering-themes"
+    "release_name": "V5.5.1 maintenance rendu et non-régression multi-canal",
+    "release_channel": "rendering-maintenance"
   },
   "bin": [
     "bin/php-form-generator"
   ]
-}
+}\n

@@ -1,16 +1,1 @@
-[↑ Retour aux release notes](../RELEASE_NOTES.md)
-
-> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V4.6.0.md
-
-# V4.6.0 – Unification runtime hooks thèmes schéma
-
-## Objectif
-Unifier hooks, thèmes et schéma dans un runtime commun.
-
-## Inclus
-- `FormRuntimeContext`
-- `FormRuntimePipeline`
-- schéma enrichi par le contexte runtime
-- documentation runtime dédiée
-
-[↑ Retour aux release notes](../RELEASE_NOTES.md)
+[↑ Retour aux release notes](../RELEASE_NOTES.md)\n\n> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V4.6.0.md\n\n\n\n# V4.6.0 – Unification runtime hooks thèmes schéma\n\n## Objectif\nUnifier hooks, thèmes et schéma dans un runtime commun.\n\n## Inclus\n- `FormRuntimeContext`\n- `FormRuntimePipeline`\n- schéma enrichi par le contexte runtime\n- documentation runtime dédiée\n\n\n[↑ Retour aux release notes](../RELEASE_NOTES.md)\n

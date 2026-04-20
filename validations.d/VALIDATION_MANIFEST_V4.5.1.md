@@ -1,12 +1,1 @@
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
-
-> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.5.1.md
-
-# V4.5.1 Validation
-
-- Advanced rendering regression coverage: OK
-- Render fallback coverage: OK
-- Render failure bubbling coverage: OK
-- Rendering maintenance doc added: OK
-
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
+[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n\n> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.5.1.md\n\n\n\n# V4.5.1 Validation\n\n- Advanced rendering regression coverage: OK\n- Render fallback coverage: OK\n- Render failure bubbling coverage: OK\n- Rendering maintenance doc added: OK\n\n\n[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n

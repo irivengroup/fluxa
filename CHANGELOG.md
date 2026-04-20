@@ -1,4 +1,4 @@
-## V5.5.0
+## V5.5.1\n\n### Added\n- `tests/ThemeResolverRegressionTest.php`\n- `tests/RenderProfileRegressionTest.php`\n- `tests/FrontendRenderingRegressionTest.php`\n- `docs/rendering-maintenance.md`\n- `releases.d/RELEASE_NOTES_V5.5.1.md`\n- `validations.d/VALIDATION_MANIFEST_V5.5.1.md`\n\n### Changed\n- Hardening de `ThemeRegistry`\n- Hardening de `ThemeResolver`\n- Hardening de `RenderProfile`\n- Hardening de `RenderProfileManager`\n- Stabilisation de `FrontendSdk`\n\n## V5.5.0
 
 ### Added
 - `src/Application/Rendering/ThemeDefinition.php`

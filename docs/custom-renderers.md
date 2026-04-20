@@ -11,4 +11,8 @@ Préparer l’extension des renderers et des profils de rendu.
 - profil de rendu exportable
 - thème + canal + metadata de rendu
 
+
+## Maintenance V5.5.1
+- `runtime.rendering` stabilisé comme point d’entrée rendu
+
 [↑ Retour au sommaire docs](index.md)

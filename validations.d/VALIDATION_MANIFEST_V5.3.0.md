@@ -1,12 +1,1 @@
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
-
-> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V5.3.0.md
-
-# V5.3.0 Validation
-
-- Schema version stamping coverage: OK
-- Schema migration coverage: OK
-- Schema CLI coverage: OK
-- Schema compatibility docs added: OK
-
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
+[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n\n> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V5.3.0.md\n\n\n\n# V5.3.0 Validation\n\n- Schema version stamping coverage: OK\n- Schema migration coverage: OK\n- Schema CLI coverage: OK\n- Schema compatibility docs added: OK\n\n\n[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n

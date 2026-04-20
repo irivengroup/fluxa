@@ -1,16 +1,1 @@
-[↑ Retour aux release notes](../RELEASE_NOTES.md)
-
-> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V4.7.0.md
-
-# V4.7.0 – Capacités runtime avancées
-
-## Objectif
-Élargir le runtime unifié avec des capacités avancées orientées framework.
-
-## Inclus
-- `RuntimePayload`
-- `PrioritizedHookKernel`
-- schéma enrichi pour intégrations front
-- documentation runtime avancée
-
-[↑ Retour aux release notes](../RELEASE_NOTES.md)
+[↑ Retour aux release notes](../RELEASE_NOTES.md)\n\n> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V4.7.0.md\n\n\n\n# V4.7.0 – Capacités runtime avancées\n\n## Objectif\nÉlargir le runtime unifié avec des capacités avancées orientées framework.\n\n## Inclus\n- `RuntimePayload`\n- `PrioritizedHookKernel`\n- schéma enrichi pour intégrations front\n- documentation runtime avancée\n\n\n[↑ Retour aux release notes](../RELEASE_NOTES.md)\n

@@ -1274,3 +1274,4 @@ Cette version stabilise le SDK frontend avancé, la shape du schéma et la réso
 ## V5.5.0 thèmes industrialisés et rendu multi-canal
 
 Cette version industrialise les thèmes et ajoute un socle de rendu multi-canal.
+\n\n## V5.5.1 maintenance rendu et non-régression multi-canal\n\nCette version stabilise les thèmes, les canaux et la shape de `runtime.rendering`.\n

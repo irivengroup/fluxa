@@ -1,18 +1,31 @@
 <?php
 declare(strict_types=1);
+
 namespace Iriven\PhpFormGenerator\Application\Rendering;
-/** @api */
+
+/**
+ * @api
+ */
 final class RenderProfileManager
 {
-    public function __construct(private readonly ThemeResolver $themeResolver = new ThemeResolver()) {}
-    /** @return array<string, mixed> */
+    public function __construct(
+        private readonly ThemeResolver $themeResolver = new ThemeResolver(),
+    ) {
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
     public function export(RenderProfile $profile): array
     {
+        $resolvedTheme = $this->themeResolver->resolve($profile->theme());
+        $metadata = $profile->metadata();
+
         return [
-            'theme' => $this->themeResolver->resolve($profile->theme()),
+            'theme' => $resolvedTheme,
             'channel' => $profile->channel(),
-            'theme_components' => $this->themeResolver->components($profile->theme()),
-            'metadata' => $profile->metadata(),
+            'theme_components' => $this->themeResolver->components($resolvedTheme),
+            'metadata' => is_array($metadata) ? $metadata : [],
         ];
     }
 }

@@ -41,15 +41,17 @@ final class FrontendSdk
             'validation' => [],
         ];
 
-        $renderProfile = new RenderProfile(
+        $profile = new RenderProfile(
             $runtimeContext?->theme() ?? 'default',
-            $runtimeContext?->payload()->metadataValue('channel', 'headless') ?? 'headless',
+            is_object($runtimeContext?->payload()) ? (string) $runtimeContext->payload()->metadataValue('channel', 'headless') : 'headless',
             ['renderer' => $runtimeContext?->renderer()]
         );
 
+        $rendering = ($this->renderProfileManager ?? new RenderProfileManager())->export($profile);
+        $rendering['metadata'] = is_array($rendering['metadata'] ?? null) ? $rendering['metadata'] : [];
+
         $runtime = is_array($schema['runtime'] ?? null) ? $schema['runtime'] : [];
-        $runtime['rendering'] = ($this->renderProfileManager ?? new RenderProfileManager())->export($renderProfile);
-        $runtime['rendering']['metadata'] = is_array($runtime['rendering']['metadata'] ?? null) ? $runtime['rendering']['metadata'] : [];
+        $runtime['rendering'] = $rendering;
         $schema['runtime'] = $runtime;
 
         $schema['schema'] = ['version' => $this->config->schemaVersion()];

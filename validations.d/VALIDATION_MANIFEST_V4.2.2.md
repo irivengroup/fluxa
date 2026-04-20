@@ -1,12 +1,1 @@
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
-
-> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.2.2.md
-
-# V4.2.2 Validation
-
-- Bugfix appliqués: OK
-- Tests non-régression: OK
-- API publique inchangée: OK
-- CI ready: OK
-
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
+[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n\n> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.2.2.md\n\n\n\n# V4.2.2 Validation\n\n- Bugfix appliqués: OK\n- Tests non-régression: OK\n- API publique inchangée: OK\n- CI ready: OK\n\n\n[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n

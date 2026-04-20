@@ -1,16 +1,1 @@
-[↑ Retour aux release notes](../RELEASE_NOTES.md)
-
-> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V5.4.1.md
-
-# V5.4.1 – Maintenance frontend avancé et non-régression SDK
-
-## Objectif
-Stabiliser le SDK frontend avancé et le contrat de rendu.
-
-## Inclus
-- résolution UI durcie
-- shape stable du schéma frontend
-- fusion props documentée et testée
-- documentation de maintenance frontend
-
-[↑ Retour aux release notes](../RELEASE_NOTES.md)
+[↑ Retour aux release notes](../RELEASE_NOTES.md)\n\n> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V5.4.1.md\n\n\n\n# V5.4.1 – Maintenance frontend avancé et non-régression SDK\n\n## Objectif\nStabiliser le SDK frontend avancé et le contrat de rendu.\n\n## Inclus\n- résolution UI durcie\n- shape stable du schéma frontend\n- fusion props documentée et testée\n- documentation de maintenance frontend\n\n\n[↑ Retour aux release notes](../RELEASE_NOTES.md)\n

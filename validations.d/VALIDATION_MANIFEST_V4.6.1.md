@@ -1,12 +1,1 @@
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
-
-> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.6.1.md
-
-# V4.6.1 Validation
-
-- PHPStan render metadata typing: OK
-- Runtime annotations completed: OK
-- Runtime static shape regression coverage: OK
-- Runtime static conformance doc added: OK
-
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
+[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n\n> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.6.1.md\n\n\n\n# V4.6.1 Validation\n\n- PHPStan render metadata typing: OK\n- Runtime annotations completed: OK\n- Runtime static shape regression coverage: OK\n- Runtime static conformance doc added: OK\n\n\n[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n

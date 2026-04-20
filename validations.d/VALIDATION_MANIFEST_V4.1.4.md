@@ -1,16 +1,1 @@
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
-
-> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.1.4.md
-
-# V4.1.4 RC Validation Manifest
-
-- OK: README.md
-- OK: CHANGELOG.md
-- OK: releases.d/RELEASE_NOTES_V4.1.4_RC.md
-- OK: docs/index.md
-- OK: docs/release-checklist.md
-- OK: docs/plugin-publishing.md
-- OK: composer.json
-- OK: .scrutinizer.yml
-
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
+[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n\n> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.1.4.md\n\n\n\n# V4.1.4 RC Validation Manifest\n\n- OK: README.md\n- OK: CHANGELOG.md\n- OK: releases.d/RELEASE_NOTES_V4.1.4_RC.md\n- OK: docs/index.md\n- OK: docs/release-checklist.md\n- OK: docs/plugin-publishing.md\n- OK: composer.json\n- OK: .scrutinizer.yml\n\n\n[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n

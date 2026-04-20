@@ -1,15 +1,1 @@
-[↑ Retour aux release notes](../RELEASE_NOTES.md)
-
-> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V5.2.1.md
-
-# V5.2.1 – Maintenance tooling et non-régression CLI
-
-## Objectif
-Stabiliser l’outillage CLI introduit en V5.2.0.
-
-## Inclus
-- durcissement de la CLI
-- tests de non-régression sur scaffolding et debug
-- documentation de maintenance CLI
-
-[↑ Retour aux release notes](../RELEASE_NOTES.md)
+[↑ Retour aux release notes](../RELEASE_NOTES.md)\n\n> Breadcrumb: [Release Notes](../RELEASE_NOTES.md) / RELEASE_NOTES_V5.2.1.md\n\n\n\n# V5.2.1 – Maintenance tooling et non-régression CLI\n\n## Objectif\nStabiliser l’outillage CLI introduit en V5.2.0.\n\n## Inclus\n- durcissement de la CLI\n- tests de non-régression sur scaffolding et debug\n- documentation de maintenance CLI\n\n\n[↑ Retour aux release notes](../RELEASE_NOTES.md)\n

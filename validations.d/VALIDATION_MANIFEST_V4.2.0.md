@@ -1,16 +1,1 @@
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
-
-> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.2.0.md
-
-# V4.2.0 Stable Validation Manifest
-
-- Stable release notes: OK
-- Public API document: OK
-- Support matrix: OK
-- Wiki index updated: OK
-- README stable section: OK
-- CHANGELOG stable entry: OK
-- Composer metadata stable channel: OK
-- Final package archive: OK
-
-[↑ Retour aux validations](../VALIDATION_MANIFEST.md)
+[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n\n> Breadcrumb: [Validations](../VALIDATION_MANIFEST.md) / VALIDATION_MANIFEST_V4.2.0.md\n\n\n\n# V4.2.0 Stable Validation Manifest\n\n- Stable release notes: OK\n- Public API document: OK\n- Support matrix: OK\n- Wiki index updated: OK\n- README stable section: OK\n- CHANGELOG stable entry: OK\n- Composer metadata stable channel: OK\n- Final package archive: OK\n\n\n[↑ Retour aux validations](../VALIDATION_MANIFEST.md)\n
