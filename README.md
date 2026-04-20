@@ -1249,3 +1249,8 @@ Cette version introduit une CLI officielle avec scaffolding et debug développeu
 ## V5.2.1 maintenance tooling et non-régression CLI
 
 Cette version stabilise la CLI officielle avec des tests complémentaires et des garanties de sortie plus robustes.
+
+
+## V5.3.0 versionnement avancé du schéma et migrations
+
+Cette version introduit un versionnement explicite du schéma, des migrations et leur outillage CLI associé.

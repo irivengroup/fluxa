@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Iriven\PhpFormGenerator\Application;
 
 use Iriven\PhpFormGenerator\Application\Frontend\HeadlessSchemaBuilder;
+use Iriven\PhpFormGenerator\Application\Schema\SchemaMigrator;
+use Iriven\PhpFormGenerator\Application\Schema\SchemaVersionManager;
 use Iriven\PhpFormGenerator\Domain\Contract\SchemaExporterInterface;
 use Iriven\PhpFormGenerator\Domain\Form\Form;
 
@@ -14,6 +16,8 @@ final class FormSchemaManager
         private readonly SchemaExporterInterface $exporter,
         private readonly ?FormHookKernel $hookKernel = null,
         private readonly ?HeadlessSchemaBuilder $headlessSchemaBuilder = null,
+        private readonly ?SchemaVersionManager $schemaVersionManager = null,
+        private readonly ?SchemaMigrator $schemaMigrator = null,
     ) {
     }
 
@@ -52,7 +56,7 @@ final class FormSchemaManager
         $this->hookKernel?->dispatch('after_schema_export', $form, $afterPayload);
         $this->hookKernel?->dispatch('after_export', $form, $afterPayload);
 
-        return $schema;
+        return ($this->schemaVersionManager ?? new SchemaVersionManager())->stamp($schema);
     }
 
     /**
@@ -64,6 +68,15 @@ final class FormSchemaManager
 
         $builder = $this->headlessSchemaBuilder ?? new HeadlessSchemaBuilder();
 
-        return $builder->build($form, $schema);
+        return ($this->schemaVersionManager ?? new SchemaVersionManager())->stamp($builder->build($form, $schema));
+    }
+
+    /**
+     * @param array<string, mixed> $schema
+     * @return array<string, mixed>
+     */
+    public function migrateSchema(array $schema, string $targetVersion): array
+    {
+        return ($this->schemaMigrator ?? new SchemaMigrator())->migrate($schema, $targetVersion);
     }
 }

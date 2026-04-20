@@ -1,3 +1,25 @@
+## V5.3.0
+
+### Added
+- `src/Application/Schema/SchemaVersionManager.php`
+- `src/Application/Schema/SchemaMigrationInterface.php`
+- `src/Application/Schema/SchemaMigrator.php`
+- `src/Application/Schema/Migration/V20ToV21SchemaMigration.php`
+- `src/Application/Cli/DebugSchemaVersionCommand.php`
+- `src/Application/Cli/MigrateSchemaCommand.php`
+- `tests/SchemaVersionManagerTest.php`
+- `tests/SchemaMigratorTest.php`
+- `tests/SchemaCliCommandTest.php`
+- `tests/SchemaCompatibilityRegressionTest.php`
+- `docs/schema-migrations.md`
+- `docs/schema-compatibility.md`
+- `releases.d/RELEASE_NOTES_V5.3.0.md`
+- `validations.d/VALIDATION_MANIFEST_V5.3.0.md`
+
+### Changed
+- `FormSchemaManager` enrichi avec versionnement et migrations de schéma
+- Schéma public passé à la version `2.1`
+
 ## V5.2.1
 
 ### Added
