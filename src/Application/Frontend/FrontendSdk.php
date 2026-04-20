@@ -49,6 +49,7 @@ final class FrontendSdk
 
         $runtime = is_array($schema['runtime'] ?? null) ? $schema['runtime'] : [];
         $runtime['rendering'] = ($this->renderProfileManager ?? new RenderProfileManager())->export($renderProfile);
+        $runtime['rendering']['metadata'] = is_array($runtime['rendering']['metadata'] ?? null) ? $runtime['rendering']['metadata'] : [];
         $schema['runtime'] = $runtime;
 
         $schema['schema'] = ['version' => $this->config->schemaVersion()];
