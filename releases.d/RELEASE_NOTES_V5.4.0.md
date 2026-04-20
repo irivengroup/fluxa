@@ -14,3 +14,6 @@ Renforcer la consommation frontend avec un SDK plus configurable.
 - schéma frontend enrichi (`component`, `props`, `ui_hints`)
 
 [↑ Retour aux release notes](../RELEASE_NOTES.md)
+## Correctif compatibilité
+- résolution des overrides UI supportant nom court et type pleinement qualifié
+

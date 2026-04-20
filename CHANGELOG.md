@@ -1,3 +1,6 @@
+### Fixed
+- UI component overrides now resolve both fully-qualified field types and short class names.
+
 ## V5.4.0
 
 ### Added

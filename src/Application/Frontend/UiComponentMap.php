@@ -26,6 +26,23 @@ final class UiComponentMap
 
     public function resolve(string $fieldType, string $default): string
     {
-        return $this->overrides[$fieldType] ?? $default;
+        if (isset($this->overrides[$fieldType])) {
+            return $this->overrides[$fieldType];
+        }
+
+        $shortName = $this->shortName($fieldType);
+
+        if (isset($this->overrides[$shortName])) {
+            return $this->overrides[$shortName];
+        }
+
+        return $default;
+    }
+
+    private function shortName(string $fieldType): string
+    {
+        $parts = explode('\\', $fieldType);
+
+        return $parts[array_key_last($parts)] ?? $fieldType;
     }
 }
