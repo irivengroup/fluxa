@@ -187,4 +187,8 @@
 
 > V5.4.0 enrichit le SDK frontend avec composants UI configurables et schéma de rendu avancé.
 
+
+
+> V5.4.1 stabilise le SDK frontend avancé et verrouille le contrat de rendu.
+
 [↑ Parent : racine docs](index.md)

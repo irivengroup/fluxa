@@ -1,3 +1,20 @@
+## V5.4.1
+
+### Added
+- `tests/FrontendSdkStabilityTest.php`
+- `tests/UiComponentResolutionEdgeCaseTest.php`
+- `tests/FrontendPropsMergeTest.php`
+- `tests/FrontendSchemaShapeTest.php`
+- `docs/frontend-sdk-maintenance.md`
+- `releases.d/RELEASE_NOTES_V5.4.1.md`
+- `validations.d/VALIDATION_MANIFEST_V5.4.1.md`
+
+### Changed
+- Durcissement de `UiComponentMap`
+- Durcissement de `AdvancedUiComponentResolver`
+- Stabilisation de `HeadlessSchemaBuilder`
+- Stabilisation de `FrontendSdk`
+
 ### Fixed
 - UI component overrides now resolve both fully-qualified field types and short class names.
 

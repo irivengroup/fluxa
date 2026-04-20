@@ -75,8 +75,8 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "extra": {
-    "release_name": "V5.4.0 SDK frontend avancé et composants UI configurables",
-    "release_channel": "frontend-advanced"
+    "release_name": "V5.4.1 maintenance frontend avancé et non-régression SDK",
+    "release_channel": "frontend-advanced-maintenance"
   },
   "bin": [
     "bin/php-form-generator"

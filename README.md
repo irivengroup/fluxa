@@ -1264,3 +1264,8 @@ Cette version stabilise le périmètre du schéma versionné et clarifie les gar
 ## V5.4.0 SDK frontend avancé et composants UI configurables
 
 Cette version enrichit le SDK frontend avec des composants UI configurables et un schéma de rendu avancé.
+
+
+## V5.4.1 maintenance frontend avancé et non-régression SDK
+
+Cette version stabilise le SDK frontend avancé, la shape du schéma et la résolution UI configurable.

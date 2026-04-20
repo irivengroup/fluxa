@@ -34,7 +34,7 @@ final class HeadlessSchemaBuilder
                 'variant' => $baseSchema['ui']['variant'] ?? null,
                 'component_overrides' => $this->rendererConfig?->componentMap()->all() ?? [],
             ],
-            'runtime' => $baseSchema['runtime'] ?? [],
+            'runtime' => is_array($baseSchema['runtime'] ?? null) ? $baseSchema['runtime'] : [],
             'validation' => $this->validation($form),
         ];
     }
@@ -87,10 +87,13 @@ final class HeadlessSchemaBuilder
      */
     private function props(FieldConfig $field): array
     {
-        return array_merge(
-            $this->rendererConfig?->defaultProps() ?? [],
-            is_array($field->options['ui_props'] ?? null) ? $field->options['ui_props'] : []
-        );
+        $defaults = $this->rendererConfig?->defaultProps();
+        $defaults = is_array($defaults) ? $defaults : [];
+
+        $uiProps = $field->options['ui_props'] ?? [];
+        $uiProps = is_array($uiProps) ? $uiProps : [];
+
+        return array_merge($defaults, $uiProps);
     }
 
     /**

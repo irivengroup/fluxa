@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Iriven\PhpFormGenerator\Application\Frontend;
 
+use Throwable;
+
 /**
  * @api
  */
@@ -17,6 +19,16 @@ final class AdvancedUiComponentResolver
 
     public function resolve(string $fieldType): string
     {
-        return $this->componentMap->resolve($fieldType, $this->baseResolver->resolve($fieldType));
+        $default = 'input:text';
+
+        try {
+            $default = $this->baseResolver->resolve($fieldType);
+        } catch (Throwable) {
+            $default = 'input:text';
+        }
+
+        $resolved = $this->componentMap->resolve($fieldType, $default);
+
+        return $resolved !== '' ? $resolved : 'input:text';
     }
 }

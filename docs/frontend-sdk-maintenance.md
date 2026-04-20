@@ -1,15 +1,16 @@
 [↑ Retour au sommaire docs](index.md)
 
-> Breadcrumb: [Docs](index.md) / frontend-sdk-maintenance.md
+> Breadcrumb: [Docs](index.md) / Frontend SDK Maintenance
 
 # Frontend SDK Maintenance
 
 ## Objectif
-Stabilisation du SDK frontend introduit en V4.9.0.
+Stabiliser le SDK frontend avancé introduit en V5.4.0.
 
-## Points couverts
-- normalisation du schéma headless
-- payload robuste (données vides)
-- cohérence des structures retournées
+## Points surveillés
+- résolution UI robuste
+- shape stable du schéma
+- fusion contrôlée des props
+- compatibilité schéma versionné
 
 [↑ Retour au sommaire docs](index.md)

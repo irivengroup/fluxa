@@ -31,6 +31,14 @@ final class FrontendSdk
             $this->rendererConfig
         ))->build($form, $this->schemaManager->export($form, $runtimeContext));
 
+        $schema += [
+            'form' => [],
+            'fields' => [],
+            'ui' => [],
+            'runtime' => [],
+            'validation' => [],
+        ];
+
         $schema['schema'] = ['version' => $this->config->schemaVersion()];
         $schema['sdk'] = [
             'framework' => $this->config->framework(),

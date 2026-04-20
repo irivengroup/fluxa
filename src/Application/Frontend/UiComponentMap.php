@@ -26,17 +26,17 @@ final class UiComponentMap
 
     public function resolve(string $fieldType, string $default): string
     {
-        if (isset($this->overrides[$fieldType])) {
+        if (isset($this->overrides[$fieldType]) && $this->overrides[$fieldType] !== '') {
             return $this->overrides[$fieldType];
         }
 
         $shortName = $this->shortName($fieldType);
 
-        if (isset($this->overrides[$shortName])) {
+        if (isset($this->overrides[$shortName]) && $this->overrides[$shortName] !== '') {
             return $this->overrides[$shortName];
         }
 
-        return $default;
+        return $default !== '' ? $default : 'input:text';
     }
 
     private function shortName(string $fieldType): string
