@@ -18,6 +18,10 @@ final class FormHydrator
      */
     public function hydrate(array $payload, object|array $target = []): array
     {
+        if ($payload === []) {
+            return is_array($target) ? $target : $this->mapper->extract($target);
+        }
+
         $normalized = [];
         foreach ($payload as $key => $value) {
             $normalized[$this->normalizer->normalize((string) $key)] = $value;

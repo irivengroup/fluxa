@@ -12,6 +12,10 @@ final class ObjectFormMapper
      */
     public function extract(object|array $source): array
     {
+        if ($source === []) {
+            return [];
+        }
+
         if (is_array($source)) {
             return $source;
         }
