@@ -12,6 +12,8 @@ final class ExampleSchemaFormGeneratorTest extends TestCase
     {
         $schema = (new ExampleSchemaFormGenerator())->generate(['email' => 'john@example.com']);
 
+        self::assertArrayHasKey('fields', $schema);
+        self::assertArrayHasKey('email', $schema['fields']);
         self::assertSame('TextType', $schema['fields']['email']['type']);
     }
 }

@@ -13,7 +13,7 @@ final class ExampleSchemaFormGenerator
 
     /**
      * @param array<string, mixed> $sample
-     * @return array<string, array<string, string>>
+     * @return array{fields: array<string, array{type: string}>}
      */
     public function generate(array $sample): array
     {

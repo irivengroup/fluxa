@@ -7,6 +7,7 @@ namespace Iriven\PhpFormGenerator\Application\Generation;
 final class DtoFormGuesser
 {
     /**
+     * @param object|array<string, mixed> $source
      * @return array<string, string>
      */
     public function guess(object|array $source): array
