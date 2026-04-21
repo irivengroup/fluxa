@@ -1,0 +1,12 @@
+<?php
+declare(strict_types=1);
+namespace Iriven\PhpFormGenerator\Application\PublicApi;
+/** @api */
+final class PublicApiContract
+{
+    /** @return list<string> */
+    public function schemaKeys(): array
+    {
+        return ['name','method','action','fields','ui','runtime','validation','rendering','schema','sdk'];
+    }
+}

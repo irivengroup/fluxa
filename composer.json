@@ -75,8 +75,8 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "extra": {
-    "release_name": "V5.9.1 maintenance attributs & non-régression metadata",
-    "release_channel": "attributes-maintenance"
+    "release_name": "V6.0.0 contrat public figé & industrialisation finale",
+    "release_channel": "v6-public-api"
   },
   "bin": [
     "bin/php-form-generator"

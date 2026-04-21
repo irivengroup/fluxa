@@ -1309,3 +1309,8 @@ Cette version ajoute des attributs PHP et une génération enrichie par metadata
 ## V5.9.1 maintenance attributs et non-régression metadata
 
 Cette version stabilise les attributs PHP, la metadata enrichie et la rétrocompatibilité du guesser.
+
+
+## V6.0.0 contrat public figé et industrialisation finale
+
+Cette version fige le contrat public, harmonise les exports et renforce la cohérence globale du framework.

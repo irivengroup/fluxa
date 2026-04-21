@@ -241,3 +241,11 @@
 
 
 > V5.9.1 consolide les attributs PHP et la non-régression metadata.
+
+- [Public API](public-api.md)
+- [Architecture](architecture.md)
+- [Headless](headless.md)
+- [Plugins](plugins.md)
+- [SDK](sdk.md)
+
+> V6.0.0 fige le contrat public et converge vers une architecture de référence.

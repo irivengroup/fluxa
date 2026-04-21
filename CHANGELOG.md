@@ -1,3 +1,27 @@
+## V6.0.0
+
+### Added
+- `src/Application/PublicApi/PublicApiContract.php`
+- `src/Application/PublicApi/PublicApiStabilityChecker.php`
+- `src/Application/PublicApi/UnifiedSchemaExporter.php`
+- `src/Application/PublicApi/FullPipelineConsistencyInspector.php`
+- `tests/PublicApiStabilityTest.php`
+- `tests/FullPipelineConsistencyTest.php`
+- `tests/HeadlessVsSdkParityTest.php`
+- `tests/ThemeFallbackTest.php`
+- `tests/PluginIsolationTest.php`
+- `docs/public-api.md`
+- `docs/architecture.md`
+- `docs/headless.md`
+- `docs/plugins.md`
+- `docs/sdk.md`
+- `releases.d/RELEASE_NOTES_V6.0.0.md`
+- `validations.d/VALIDATION_MANIFEST_V6.0.0.md`
+
+### Changed
+- harmonisation du contrat public de schéma
+- convergence SDK / headless / rendering
+
 ## V5.9.1
 
 ### Added
