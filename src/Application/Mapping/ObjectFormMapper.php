@@ -12,11 +12,7 @@ final class ObjectFormMapper
      */
     public function extract(object|array $source): array
     {
-        if ($source === []) {
-            return [];
-        }
-
-        if (is_array($source)) {
+        if (!is_object($source)) {
             return $source;
         }
 
@@ -35,7 +31,7 @@ final class ObjectFormMapper
      */
     public function hydrate(array $payload, object|array $target = []): array
     {
-        $base = is_array($target) ? $target : $this->extract($target);
+        $base = is_object($target) ? $this->extract($target) : $target;
 
         foreach ($payload as $key => $value) {
             $base[(string) $key] = $value;
