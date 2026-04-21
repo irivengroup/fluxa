@@ -1,3 +1,32 @@
+## V6.1.0
+
+### Added
+- `src/Application/Dx/DeveloperExperienceConfig.php`
+- `src/Application/Dx/SchemaCacheKeyGenerator.php`
+- `src/Application/Dx/InMemorySchemaCache.php`
+- `src/Application/Dx/CachedUnifiedSchemaExporter.php`
+- `src/Integration/Symfony/SymfonyFormBridge.php`
+- `src/Integration/Symfony/SymfonyBundleConfig.php`
+- `src/Integration/Laravel/LaravelFormBridge.php`
+- `src/Integration/Laravel/LaravelServiceProviderConfig.php`
+- `src/Application/Cli/DebugIntegrationCommand.php`
+- `tests/CachedUnifiedSchemaExporterTest.php`
+- `tests/SymfonyIntegrationTest.php`
+- `tests/LaravelIntegrationTest.php`
+- `tests/DebugIntegrationCommandTest.php`
+- `docs/dx.md`
+- `docs/performance.md`
+- `docs/integrations.md`
+- `docs/symfony-integration.md`
+- `docs/laravel-integration.md`
+- `releases.d/RELEASE_NOTES_V6.1.0.md`
+- `validations.d/VALIDATION_MANIFEST_V6.1.0.md`
+
+### Changed
+- amélioration DX
+- ajout d'un export unifié caché
+- intégrations officielles Symfony / Laravel
+
 ### Fixed
 - Refactored `DtoFormGuesser::guess()` to reduce method length and cyclomatic complexity without changing its observable contract.
 - Extracted normalization helpers in `ExampleSchemaFormGenerator` to reduce conditional density.

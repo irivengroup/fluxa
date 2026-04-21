@@ -1314,3 +1314,8 @@ Cette version stabilise les attributs PHP, la metadata enrichie et la rétrocomp
 ## V6.0.0 contrat public figé et industrialisation finale
 
 Cette version fige le contrat public, harmonise les exports et renforce la cohérence globale du framework.
+
+
+## V6.1.0 DX, performance et intégrations officielles Symfony / Laravel
+
+Cette version ajoute des outils DX, un cache de schéma et des bridges officiels d'intégration.

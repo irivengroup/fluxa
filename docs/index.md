@@ -249,3 +249,11 @@
 - [SDK](sdk.md)
 
 > V6.0.0 fige le contrat public et converge vers une architecture de référence.
+
+- [DX](dx.md)
+- [Performance](performance.md)
+- [Integrations](integrations.md)
+- [Symfony Integration](symfony-integration.md)
+- [Laravel Integration](laravel-integration.md)
+
+> V6.1.0 introduit DX, cache de schéma et intégrations officielles Symfony / Laravel.
