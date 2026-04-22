@@ -23,15 +23,10 @@ final class Profiler
      */
     public function report(): array
     {
-        $peak = memory_get_peak_usage(true);
-        if (!is_int($peak) || $peak < 0) {
-            $peak = 0;
-        }
-
         return [
             'timeline' => $this->timeline->all(),
             'steps_count' => $this->timeline->count(),
-            'peak_memory_bytes' => $peak,
+            'peak_memory_bytes' => memory_get_peak_usage(true),
         ];
     }
 
