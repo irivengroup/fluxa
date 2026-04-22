@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Transformer;
+namespace Iriven\Fluxa\Domain\Transformer;
 
-use Iriven\PhpFormGenerator\Domain\Contract\DataTransformerInterface;
+use Iriven\Fluxa\Domain\Contract\DataTransformerInterface;
 
 final class FloatTransformer implements DataTransformerInterface
 {

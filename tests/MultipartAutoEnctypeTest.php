@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\FormGenerator;
-use Iriven\PhpFormGenerator\Presentation\Html\HtmlRenderer;
+use Iriven\Fluxa\Application\FormGenerator;
+use Iriven\Fluxa\Presentation\Html\HtmlRenderer;
 use PHPUnit\Framework\TestCase;
 
 final class MultipartAutoEnctypeTest extends TestCase

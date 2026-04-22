@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Contract;
+namespace Iriven\Fluxa\Domain\Contract;
 
 interface CsrfManagerInterface
 {

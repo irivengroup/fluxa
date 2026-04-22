@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Cli;
+namespace Iriven\Fluxa\Application\Cli;
 
-use Iriven\PhpFormGenerator\Integration\Laravel\LaravelServiceProviderConfig;
-use Iriven\PhpFormGenerator\Integration\Symfony\SymfonyBundleConfig;
+use Iriven\Fluxa\Integration\Laravel\LaravelServiceProviderConfig;
+use Iriven\Fluxa\Integration\Symfony\SymfonyBundleConfig;
 
 /** @api */
 final class DebugIntegrationCommand implements CliCommandInterface

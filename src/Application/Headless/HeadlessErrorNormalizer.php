@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Headless;
+namespace Iriven\Fluxa\Application\Headless;
 
 /**
  * @api

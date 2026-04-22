@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests\Fixtures\Hook;
+namespace Iriven\Fluxa\Tests\Fixtures\Hook;
 
-use Iriven\PhpFormGenerator\Domain\Contract\FormHookInterface;
-use Iriven\PhpFormGenerator\Domain\Form\Form;
+use Iriven\Fluxa\Domain\Contract\FormHookInterface;
+use Iriven\Fluxa\Domain\Form\Form;
 
 final class BeforeRenderHook implements FormHookInterface
 {

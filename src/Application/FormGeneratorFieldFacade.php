@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application;
+namespace Iriven\Fluxa\Application;
 
-use Iriven\PhpFormGenerator\Application\FormGenerator\AttributeNormalizer;
-use Iriven\PhpFormGenerator\Application\FormGenerator\BasicFieldFacade;
-use Iriven\PhpFormGenerator\Application\FormGenerator\ChoiceFieldFacade;
-use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
+use Iriven\Fluxa\Application\FormGenerator\AttributeNormalizer;
+use Iriven\Fluxa\Application\FormGenerator\BasicFieldFacade;
+use Iriven\Fluxa\Application\FormGenerator\ChoiceFieldFacade;
+use Iriven\Fluxa\Domain\Form\FormBuilder;
 
 final class FormGeneratorFieldFacade
 {

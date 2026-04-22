@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Dx;
+namespace Iriven\Fluxa\Application\Dx;
 
 /** @api */
 final class DeveloperExperienceConfig

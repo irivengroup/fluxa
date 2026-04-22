@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\JsonSchemaExporter;
-use Iriven\PhpFormGenerator\Infrastructure\Http\ArrayRequest;
-use Iriven\PhpFormGenerator\Infrastructure\Security\NullCsrfManager;
-use Iriven\PhpFormGenerator\Presentation\Html\HtmlRenderer;
-use Iriven\PhpFormGenerator\Presentation\Html\Theme\TailwindTheme;
-use Iriven\PhpFormGenerator\Tests\Fixtures\ProfileDto;
-use Iriven\PhpFormGenerator\Tests\Fixtures\ProfileType;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\JsonSchemaExporter;
+use Iriven\Fluxa\Infrastructure\Http\ArrayRequest;
+use Iriven\Fluxa\Infrastructure\Security\NullCsrfManager;
+use Iriven\Fluxa\Presentation\Html\HtmlRenderer;
+use Iriven\Fluxa\Presentation\Html\Theme\TailwindTheme;
+use Iriven\Fluxa\Tests\Fixtures\ProfileDto;
+use Iriven\Fluxa\Tests\Fixtures\ProfileType;
 use PHPUnit\Framework\TestCase;
 
 final class V35EnterpriseTest extends TestCase

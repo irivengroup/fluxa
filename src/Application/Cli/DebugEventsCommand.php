@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Cli;
+namespace Iriven\Fluxa\Application\Cli;
 
-use Iriven\PhpFormGenerator\Application\Events\FormEvents;
+use Iriven\Fluxa\Application\Events\FormEvents;
 
 /** @api */
 final class DebugEventsCommand implements CliCommandInterface

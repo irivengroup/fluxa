@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Contract;
+namespace Iriven\Fluxa\Domain\Contract;
 
-use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
+use Iriven\Fluxa\Domain\Form\FormBuilder;
 
 interface FormTypeInterface
 {

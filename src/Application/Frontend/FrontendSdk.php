@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Frontend;
+namespace Iriven\Fluxa\Application\Frontend;
 
-use Iriven\PhpFormGenerator\Application\FormRuntimeContext;
-use Iriven\PhpFormGenerator\Application\FormSchemaManager;
-use Iriven\PhpFormGenerator\Application\Rendering\RenderProfile;
-use Iriven\PhpFormGenerator\Application\Rendering\RenderProfileManager;
-use Iriven\PhpFormGenerator\Domain\Form\Form;
+use Iriven\Fluxa\Application\FormRuntimeContext;
+use Iriven\Fluxa\Application\FormSchemaManager;
+use Iriven\Fluxa\Application\Rendering\RenderProfile;
+use Iriven\Fluxa\Application\Rendering\RenderProfileManager;
+use Iriven\Fluxa\Domain\Form\Form;
 
 /**
  * @api

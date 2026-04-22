@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\FormGenerator;
+namespace Iriven\Fluxa\Application\FormGenerator;
 
 final class OpenNormalizer
 {

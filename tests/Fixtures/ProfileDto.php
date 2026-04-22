@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests\Fixtures;
+namespace Iriven\Fluxa\Tests\Fixtures;
 
 final class ProfileDto
 {

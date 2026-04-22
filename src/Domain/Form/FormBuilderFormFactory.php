@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Form;
+namespace Iriven\Fluxa\Domain\Form;
 
-use Iriven\PhpFormGenerator\Domain\Contract\EventDispatcherInterface;
-use Iriven\PhpFormGenerator\Infrastructure\Extension\ExtensionRegistry;
-use Iriven\PhpFormGenerator\Infrastructure\Security\NullCsrfManager;
-use Iriven\PhpFormGenerator\Infrastructure\Security\SessionCsrfManager;
+use Iriven\Fluxa\Domain\Contract\EventDispatcherInterface;
+use Iriven\Fluxa\Infrastructure\Extension\ExtensionRegistry;
+use Iriven\Fluxa\Infrastructure\Security\NullCsrfManager;
+use Iriven\Fluxa\Infrastructure\Security\SessionCsrfManager;
 
 final class FormBuilderFormFactory
 {
@@ -19,7 +19,7 @@ final class FormBuilderFormFactory
      * @param array<string, mixed> $options
      * @param array<string, FieldConfig> $fields
      * @param array<int, Fieldset> $fieldsets
-     * @param array<int, \Iriven\PhpFormGenerator\Domain\Contract\ConstraintInterface> $formConstraints
+     * @param array<int, \Iriven\Fluxa\Domain\Contract\ConstraintInterface> $formConstraints
      */
     public function create(
         string $name,

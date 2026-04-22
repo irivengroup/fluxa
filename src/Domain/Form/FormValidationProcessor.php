@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Form;
+namespace Iriven\Fluxa\Domain\Form;
 
-use Iriven\PhpFormGenerator\Domain\Contract\CaptchaManagerInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\ConstraintInterface;
-use Iriven\PhpFormGenerator\Domain\Event\ValidationErrorEvent;
-use Iriven\PhpFormGenerator\Domain\Validation\Validator;
+use Iriven\Fluxa\Domain\Contract\CaptchaManagerInterface;
+use Iriven\Fluxa\Domain\Contract\ConstraintInterface;
+use Iriven\Fluxa\Domain\Event\ValidationErrorEvent;
+use Iriven\Fluxa\Domain\Validation\Validator;
 
 final class FormValidationProcessor
 {

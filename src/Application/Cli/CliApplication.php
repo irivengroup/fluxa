@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Cli;
+namespace Iriven\Fluxa\Application\Cli;
 
 /** @api */
 final class CliApplication

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application;
+namespace Iriven\Fluxa\Application;
 
-use Iriven\PhpFormGenerator\Application\Runtime\RuntimePayload;
-use Iriven\PhpFormGenerator\Domain\Form\Form;
+use Iriven\Fluxa\Application\Runtime\RuntimePayload;
+use Iriven\Fluxa\Domain\Form\Form;
 
 /**
  * @api

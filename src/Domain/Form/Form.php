@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Form;
+namespace Iriven\Fluxa\Domain\Form;
 
-use Iriven\PhpFormGenerator\Application\FormHookKernel;
-use Iriven\PhpFormGenerator\Domain\Contract\ConstraintInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\EventDispatcherInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\RequestInterface;
-use Iriven\PhpFormGenerator\Domain\Event\PreSetDataEvent;
-use Iriven\PhpFormGenerator\Infrastructure\PropertyAccess\PropertyAccessor;
+use Iriven\Fluxa\Application\FormHookKernel;
+use Iriven\Fluxa\Domain\Contract\ConstraintInterface;
+use Iriven\Fluxa\Domain\Contract\EventDispatcherInterface;
+use Iriven\Fluxa\Domain\Contract\RequestInterface;
+use Iriven\Fluxa\Domain\Event\PreSetDataEvent;
+use Iriven\Fluxa\Infrastructure\PropertyAccess\PropertyAccessor;
 
 final class Form
 {

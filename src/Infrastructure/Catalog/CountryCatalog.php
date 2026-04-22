@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Catalog;
+namespace Iriven\Fluxa\Infrastructure\Catalog;
 
 final class CountryCatalog
 {

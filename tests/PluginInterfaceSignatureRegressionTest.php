@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Domain\Contract\PluginInterface;
-use Iriven\PhpFormGenerator\Tests\Fixtures\Plugin\DemoPlugin;
-use Iriven\PhpFormGenerator\Tests\Fixtures\Plugin\EmptyPlugin;
-use Iriven\PhpFormGenerator\Tests\Fixtures\Plugin\OverridePlugin;
+use Iriven\Fluxa\Domain\Contract\PluginInterface;
+use Iriven\Fluxa\Tests\Fixtures\Plugin\DemoPlugin;
+use Iriven\Fluxa\Tests\Fixtures\Plugin\EmptyPlugin;
+use Iriven\Fluxa\Tests\Fixtures\Plugin\OverridePlugin;
 use PHPUnit\Framework\TestCase;
 
 final class PluginInterfaceSignatureRegressionTest extends TestCase

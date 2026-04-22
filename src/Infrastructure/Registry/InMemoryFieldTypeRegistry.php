@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Registry;
+namespace Iriven\Fluxa\Infrastructure\Registry;
 
 use InvalidArgumentException;
-use Iriven\PhpFormGenerator\Domain\Contract\FieldTypeRegistryInterface;
+use Iriven\Fluxa\Domain\Contract\FieldTypeRegistryInterface;
 
 final class InMemoryFieldTypeRegistry implements FieldTypeRegistryInterface
 {

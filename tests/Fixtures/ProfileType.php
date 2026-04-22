@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests\Fixtures;
+namespace Iriven\Fluxa\Tests\Fixtures;
 
-use Iriven\PhpFormGenerator\Domain\Constraint\Callback;
-use Iriven\PhpFormGenerator\Domain\Constraint\Required;
-use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\OptionsResolverInterface;
-use Iriven\PhpFormGenerator\Domain\Event\FormEvents;
-use Iriven\PhpFormGenerator\Domain\Event\PreSubmitEvent;
-use Iriven\PhpFormGenerator\Domain\Field\CheckboxType;
-use Iriven\PhpFormGenerator\Domain\Field\CollectionType;
-use Iriven\PhpFormGenerator\Domain\Field\TextType;
-use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
+use Iriven\Fluxa\Domain\Constraint\Callback;
+use Iriven\Fluxa\Domain\Constraint\Required;
+use Iriven\Fluxa\Domain\Contract\FormTypeInterface;
+use Iriven\Fluxa\Domain\Contract\OptionsResolverInterface;
+use Iriven\Fluxa\Domain\Event\FormEvents;
+use Iriven\Fluxa\Domain\Event\PreSubmitEvent;
+use Iriven\Fluxa\Domain\Field\CheckboxType;
+use Iriven\Fluxa\Domain\Field\CollectionType;
+use Iriven\Fluxa\Domain\Field\TextType;
+use Iriven\Fluxa\Domain\Form\FormBuilder;
 
 final class ProfileType implements FormTypeInterface
 {

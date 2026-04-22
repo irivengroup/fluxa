@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Type;
+namespace Iriven\Fluxa\Infrastructure\Type;
 
-use Iriven\PhpFormGenerator\Infrastructure\Registry\InMemoryFieldTypeRegistry;
-use Iriven\PhpFormGenerator\Infrastructure\Registry\InMemoryFormTypeRegistry;
+use Iriven\Fluxa\Infrastructure\Registry\InMemoryFieldTypeRegistry;
+use Iriven\Fluxa\Infrastructure\Registry\InMemoryFormTypeRegistry;
 
 final class TypeResolver
 {

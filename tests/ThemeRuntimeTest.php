@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\FormThemeKernel;
-use Iriven\PhpFormGenerator\Presentation\Html\HtmlRenderer;
-use Iriven\PhpFormGenerator\Presentation\Html\HtmlRendererFactory;
+use Iriven\Fluxa\Application\FormThemeKernel;
+use Iriven\Fluxa\Presentation\Html\HtmlRenderer;
+use Iriven\Fluxa\Presentation\Html\HtmlRendererFactory;
 use PHPUnit\Framework\TestCase;
 
 final class ThemeRuntimeTest extends TestCase

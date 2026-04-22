@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application;
+namespace Iriven\Fluxa\Application;
 
-use Iriven\PhpFormGenerator\Application\Plugin\PluginValidator;
-use Iriven\PhpFormGenerator\Domain\Contract\PluginInterface;
-use Iriven\PhpFormGenerator\Infrastructure\Extension\ExtensionRegistry;
-use Iriven\PhpFormGenerator\Infrastructure\Registry\BuiltinRegistries;
-use Iriven\PhpFormGenerator\Infrastructure\Registry\InMemoryFieldTypeRegistry;
-use Iriven\PhpFormGenerator\Infrastructure\Registry\InMemoryFormTypeRegistry;
-use Iriven\PhpFormGenerator\Infrastructure\Registry\PluginRegistry;
-use Iriven\PhpFormGenerator\Infrastructure\Type\TypeResolver;
+use Iriven\Fluxa\Application\Plugin\PluginValidator;
+use Iriven\Fluxa\Domain\Contract\PluginInterface;
+use Iriven\Fluxa\Infrastructure\Extension\ExtensionRegistry;
+use Iriven\Fluxa\Infrastructure\Registry\BuiltinRegistries;
+use Iriven\Fluxa\Infrastructure\Registry\InMemoryFieldTypeRegistry;
+use Iriven\Fluxa\Infrastructure\Registry\InMemoryFormTypeRegistry;
+use Iriven\Fluxa\Infrastructure\Registry\PluginRegistry;
+use Iriven\Fluxa\Infrastructure\Type\TypeResolver;
 
 final class FormPluginKernel
 {

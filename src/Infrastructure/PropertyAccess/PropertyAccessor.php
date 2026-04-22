@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\PropertyAccess;
+namespace Iriven\Fluxa\Infrastructure\PropertyAccess;
 
 final class PropertyAccessor
 {

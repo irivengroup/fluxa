@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Events;
+namespace Iriven\Fluxa\Application\Events;
 
-use Iriven\PhpFormGenerator\Domain\Form\Form;
+use Iriven\Fluxa\Domain\Form\Form;
 
 /** @api */
 final class FormRenderEvent

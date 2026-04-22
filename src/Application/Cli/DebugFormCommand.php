@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Cli;
+namespace Iriven\Fluxa\Application\Cli;
 
-use Iriven\PhpFormGenerator\Application\Debug\RuntimeInspector;
-use Iriven\PhpFormGenerator\Application\FormFactory;
+use Iriven\Fluxa\Application\Debug\RuntimeInspector;
+use Iriven\Fluxa\Application\FormFactory;
 
 /** @api */
 final class DebugFormCommand implements CliCommandInterface

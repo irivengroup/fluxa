@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
 use PHPUnit\Framework\TestCase;
 
@@ -10,6 +10,6 @@ final class BinCliRegressionTest extends TestCase
 {
     public function testBinScriptExists(): void
     {
-        self::assertFileExists(__DIR__ . '/../bin/php-form-generator');
+        self::assertFileExists(__DIR__ . '/../bin/fluxa');
     }
 }

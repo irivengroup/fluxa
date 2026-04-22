@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Integration\Symfony;
+namespace Iriven\Fluxa\Integration\Symfony;
 
 /** @api */
 final class SymfonyBundleConfig

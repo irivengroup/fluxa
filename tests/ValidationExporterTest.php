@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\Frontend\ValidationExporter;
-use Iriven\PhpFormGenerator\Domain\Form\FieldConfig;
+use Iriven\Fluxa\Application\Frontend\ValidationExporter;
+use Iriven\Fluxa\Domain\Form\FieldConfig;
 use PHPUnit\Framework\TestCase;
 
 final class ValidationExporterTest extends TestCase

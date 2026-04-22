@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\FormPluginKernel;
-use Iriven\PhpFormGenerator\Tests\Fixtures\Plugin\DemoPlugin;
+use Iriven\Fluxa\Application\FormPluginKernel;
+use Iriven\Fluxa\Tests\Fixtures\Plugin\DemoPlugin;
 use PHPUnit\Framework\TestCase;
 
 final class PluginKernelHardeningTest extends TestCase

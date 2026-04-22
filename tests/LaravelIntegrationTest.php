@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Integration\Laravel\LaravelFormBridge;
+use Iriven\Fluxa\Integration\Laravel\LaravelFormBridge;
 use PHPUnit\Framework\TestCase;
 
 final class LaravelIntegrationTest extends TestCase

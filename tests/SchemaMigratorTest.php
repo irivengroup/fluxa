@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\Schema\Migration\V20ToV21SchemaMigration;
-use Iriven\PhpFormGenerator\Application\Schema\SchemaMigrator;
+use Iriven\Fluxa\Application\Schema\Migration\V20ToV21SchemaMigration;
+use Iriven\Fluxa\Application\Schema\SchemaMigrator;
 use PHPUnit\Framework\TestCase;
 
 final class SchemaMigratorTest extends TestCase

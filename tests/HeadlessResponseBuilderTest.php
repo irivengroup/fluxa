@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace Iriven\PhpFormGenerator\Tests;
-use Iriven\PhpFormGenerator\Application\Headless\HeadlessFormState;
-use Iriven\PhpFormGenerator\Application\Headless\HeadlessResponseBuilder;
+namespace Iriven\Fluxa\Tests;
+use Iriven\Fluxa\Application\Headless\HeadlessFormState;
+use Iriven\Fluxa\Application\Headless\HeadlessResponseBuilder;
 use PHPUnit\Framework\TestCase;
 final class HeadlessResponseBuilderTest extends TestCase
 {

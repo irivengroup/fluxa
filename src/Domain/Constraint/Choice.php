@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Constraint;
+namespace Iriven\Fluxa\Domain\Constraint;
 
-use Iriven\PhpFormGenerator\Domain\Contract\ConstraintInterface;
+use Iriven\Fluxa\Domain\Contract\ConstraintInterface;
 
 final class Choice implements ConstraintInterface
 {

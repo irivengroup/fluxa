@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Event;
+namespace Iriven\Fluxa\Infrastructure\Event;
 
-use Iriven\PhpFormGenerator\Domain\Contract\EventDispatcherInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\EventSubscriberInterface;
+use Iriven\Fluxa\Domain\Contract\EventDispatcherInterface;
+use Iriven\Fluxa\Domain\Contract\EventSubscriberInterface;
 
 final class EventDispatcher implements EventDispatcherInterface
 {

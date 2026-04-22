@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Cli;
+namespace Iriven\Fluxa\Application\Cli;
 
-use Iriven\PhpFormGenerator\Application\FormPluginKernel;
+use Iriven\Fluxa\Application\FormPluginKernel;
 
 /**
  * @api

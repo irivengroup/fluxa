@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Form;
+namespace Iriven\Fluxa\Domain\Form;
 
-use Iriven\PhpFormGenerator\Infrastructure\Mapping\ArrayDataMapper;
-use Iriven\PhpFormGenerator\Infrastructure\Mapping\ObjectDataMapper;
+use Iriven\Fluxa\Infrastructure\Mapping\ArrayDataMapper;
+use Iriven\Fluxa\Infrastructure\Mapping\ObjectDataMapper;
 
 final class FormDataMappingProcessor
 {

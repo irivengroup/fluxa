@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Schema;
+namespace Iriven\Fluxa\Application\Schema;
 
 /**
  * @api

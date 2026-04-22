@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Registry;
+namespace Iriven\Fluxa\Infrastructure\Registry;
 
-use Iriven\PhpFormGenerator\Domain\Contract\PluginInterface;
-use Iriven\PhpFormGenerator\Infrastructure\Extension\ExtensionRegistry;
+use Iriven\Fluxa\Domain\Contract\PluginInterface;
+use Iriven\Fluxa\Infrastructure\Extension\ExtensionRegistry;
 
 final class PluginRegistry
 {

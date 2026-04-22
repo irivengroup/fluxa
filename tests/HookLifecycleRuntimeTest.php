@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\FormHookKernel;
-use Iriven\PhpFormGenerator\Infrastructure\Http\ArrayRequest;
-use Iriven\PhpFormGenerator\Tests\Fixtures\Hook\InvalidateOnPostSubmitHook;
-use Iriven\PhpFormGenerator\Tests\Fixtures\Hook\InvalidateOnPreSubmitHook;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\FormHookKernel;
+use Iriven\Fluxa\Infrastructure\Http\ArrayRequest;
+use Iriven\Fluxa\Tests\Fixtures\Hook\InvalidateOnPostSubmitHook;
+use Iriven\Fluxa\Tests\Fixtures\Hook\InvalidateOnPreSubmitHook;
 use PHPUnit\Framework\TestCase;
 
 final class HookLifecycleRuntimeTest extends TestCase

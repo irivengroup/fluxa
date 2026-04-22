@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
-namespace Iriven\PhpFormGenerator\Tests;
-use Iriven\PhpFormGenerator\Application\Rendering\ThemeDefinition;
-use Iriven\PhpFormGenerator\Application\Rendering\ThemeRegistry;
-use Iriven\PhpFormGenerator\Application\Rendering\ThemeResolver;
+namespace Iriven\Fluxa\Tests;
+use Iriven\Fluxa\Application\Rendering\ThemeDefinition;
+use Iriven\Fluxa\Application\Rendering\ThemeRegistry;
+use Iriven\Fluxa\Application\Rendering\ThemeResolver;
 use PHPUnit\Framework\TestCase;
 final class ThemeResolverTest extends TestCase
 {

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace Iriven\PhpFormGenerator\Tests;
-use Iriven\PhpFormGenerator\Application\Mapping\MappingBlueprintGenerator;
+namespace Iriven\Fluxa\Tests;
+use Iriven\Fluxa\Application\Mapping\MappingBlueprintGenerator;
 use PHPUnit\Framework\TestCase;
 final class MappingBlueprintGeneratorTest extends TestCase
 {

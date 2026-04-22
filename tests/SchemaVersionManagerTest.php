@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\Schema\SchemaVersionManager;
+use Iriven\Fluxa\Application\Schema\SchemaVersionManager;
 use PHPUnit\Framework\TestCase;
 
 final class SchemaVersionManagerTest extends TestCase

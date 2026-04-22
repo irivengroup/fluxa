@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Mapping;
+namespace Iriven\Fluxa\Infrastructure\Mapping;
 
 final class ArrayDataMapper
 {

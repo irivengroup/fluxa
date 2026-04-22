@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Domain\Contract\FieldExtensionInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\PluginInterface;
+use Iriven\Fluxa\Domain\Contract\FieldExtensionInterface;
+use Iriven\Fluxa\Domain\Contract\PluginInterface;
 use PHPUnit\Framework\TestCase;
 
 final class PluginContractTest extends TestCase

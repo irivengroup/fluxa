@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Server\Http\FormHttpKernel;
+use Iriven\Fluxa\Server\Http\FormHttpKernel;
 use PHPUnit\Framework\TestCase;
 
 final class FormHttpKernelTest extends TestCase

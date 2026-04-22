@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Infrastructure\Security\SessionCaptchaManager;
-use Iriven\PhpFormGenerator\Infrastructure\Security\SessionCsrfManager;
+use Iriven\Fluxa\Infrastructure\Security\SessionCaptchaManager;
+use Iriven\Fluxa\Infrastructure\Security\SessionCsrfManager;
 use PHPUnit\Framework\TestCase;
 
 final class SessionSecurityManagersTest extends TestCase

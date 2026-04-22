@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
 use ArrayObject;
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\FormHookKernel;
-use Iriven\PhpFormGenerator\Domain\Contract\FormHookInterface;
-use Iriven\PhpFormGenerator\Domain\Form\Form;
-use Iriven\PhpFormGenerator\Infrastructure\Http\ArrayRequest;
-use Iriven\PhpFormGenerator\Tests\Fixtures\Hook\ThrowingHook;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\FormHookKernel;
+use Iriven\Fluxa\Domain\Contract\FormHookInterface;
+use Iriven\Fluxa\Domain\Form\Form;
+use Iriven\Fluxa\Infrastructure\Http\ArrayRequest;
+use Iriven\Fluxa\Tests\Fixtures\Hook\ThrowingHook;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 

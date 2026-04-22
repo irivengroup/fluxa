@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\FormType;
+namespace Iriven\Fluxa\Application\FormType;
 
-use Iriven\PhpFormGenerator\Domain\Constraint\Callback;
-use Iriven\PhpFormGenerator\Domain\Constraint\Email;
-use Iriven\PhpFormGenerator\Domain\Constraint\Required;
-use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\OptionsResolverInterface;
-use Iriven\PhpFormGenerator\Domain\Field\CaptchaType;
-use Iriven\PhpFormGenerator\Domain\Field\CheckboxType;
-use Iriven\PhpFormGenerator\Domain\Field\EmailType;
-use Iriven\PhpFormGenerator\Domain\Field\PasswordType;
-use Iriven\PhpFormGenerator\Domain\Field\SubmitType;
-use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
+use Iriven\Fluxa\Domain\Constraint\Callback;
+use Iriven\Fluxa\Domain\Constraint\Email;
+use Iriven\Fluxa\Domain\Constraint\Required;
+use Iriven\Fluxa\Domain\Contract\FormTypeInterface;
+use Iriven\Fluxa\Domain\Contract\OptionsResolverInterface;
+use Iriven\Fluxa\Domain\Field\CaptchaType;
+use Iriven\Fluxa\Domain\Field\CheckboxType;
+use Iriven\Fluxa\Domain\Field\EmailType;
+use Iriven\Fluxa\Domain\Field\PasswordType;
+use Iriven\Fluxa\Domain\Field\SubmitType;
+use Iriven\Fluxa\Domain\Form\FormBuilder;
 
 final class RegistrationType implements FormTypeInterface
 {

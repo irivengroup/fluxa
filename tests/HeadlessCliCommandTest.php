@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace Iriven\PhpFormGenerator\Tests;
-use Iriven\PhpFormGenerator\Application\Cli\DebugHeadlessContractCommand;
-use Iriven\PhpFormGenerator\Application\Cli\DebugHeadlessSubmissionCommand;
+namespace Iriven\Fluxa\Tests;
+use Iriven\Fluxa\Application\Cli\DebugHeadlessContractCommand;
+use Iriven\Fluxa\Application\Cli\DebugHeadlessSubmissionCommand;
 use PHPUnit\Framework\TestCase;
 final class HeadlessCliCommandTest extends TestCase
 {

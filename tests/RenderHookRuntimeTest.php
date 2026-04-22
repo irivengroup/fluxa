@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\FormHookKernel;
-use Iriven\PhpFormGenerator\Application\FormRenderManager;
-use Iriven\PhpFormGenerator\Application\FormThemeKernel;
-use Iriven\PhpFormGenerator\Presentation\Html\HtmlRendererFactory;
-use Iriven\PhpFormGenerator\Tests\Fixtures\Hook\AfterRenderHook;
-use Iriven\PhpFormGenerator\Tests\Fixtures\Hook\BeforeRenderHook;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\FormHookKernel;
+use Iriven\Fluxa\Application\FormRenderManager;
+use Iriven\Fluxa\Application\FormThemeKernel;
+use Iriven\Fluxa\Presentation\Html\HtmlRendererFactory;
+use Iriven\Fluxa\Tests\Fixtures\Hook\AfterRenderHook;
+use Iriven\Fluxa\Tests\Fixtures\Hook\BeforeRenderHook;
 use PHPUnit\Framework\TestCase;
 
 final class RenderHookRuntimeTest extends TestCase

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Transformer;
+namespace Iriven\Fluxa\Domain\Transformer;
 
 use BackedEnum;
 use InvalidArgumentException;
-use Iriven\PhpFormGenerator\Domain\Contract\DataTransformerInterface;
+use Iriven\Fluxa\Domain\Contract\DataTransformerInterface;
 use UnitEnum;
 
 final class EnumTransformer implements DataTransformerInterface

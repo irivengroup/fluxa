@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Server\Http;
+namespace Iriven\Fluxa\Server\Http;
 
-use Iriven\PhpFormGenerator\Application\Runtime\ExecutionContext;
-use Iriven\PhpFormGenerator\Application\Runtime\FormRuntimeEngine;
+use Iriven\Fluxa\Application\Runtime\ExecutionContext;
+use Iriven\Fluxa\Application\Runtime\FormRuntimeEngine;
 
 /** @api */
 final class FormHttpKernel

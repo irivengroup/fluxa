@@ -1,5 +1,5 @@
 {
-  "name": "iriven/php-form-generator",
+  "name": "fluxa",
   "description": "Enterprise form framework for PHP with nested forms, collections, transformers, events and themes",
   "type": "library",
   "license": "MIT",
@@ -15,12 +15,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Iriven\\PhpFormGenerator\\": "src/"
+      "Iriven\\Fluxa\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Iriven\\PhpFormGenerator\\Tests\\": "tests/"
+      "Iriven\\Fluxa\\Tests\\": "tests/"
     }
   },
   "scripts": {
@@ -79,6 +79,6 @@
     "release_channel": "runtime-api-server"
   },
   "bin": [
-    "bin/php-form-generator"
+    "bin/fluxa"
   ]
 }

@@ -2,7 +2,7 @@
 
 > Breadcrumb: [Docs](index.md)
 
-# PhpFormGenerator Wiki
+# Fluxa Wiki
 
 ## Sommaire
 

@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace Iriven\PhpFormGenerator\Application\Cli;
-use Iriven\PhpFormGenerator\Application\Headless\HeadlessFormState;
-use Iriven\PhpFormGenerator\Application\Headless\HeadlessResponseBuilder;
+namespace Iriven\Fluxa\Application\Cli;
+use Iriven\Fluxa\Application\Headless\HeadlessFormState;
+use Iriven\Fluxa\Application\Headless\HeadlessResponseBuilder;
 /** @api */
 final class DebugHeadlessContractCommand implements CliCommandInterface
 {

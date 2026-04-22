@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Schema\Migration;
+namespace Iriven\Fluxa\Application\Schema\Migration;
 
-use Iriven\PhpFormGenerator\Application\Schema\SchemaMigrationInterface;
+use Iriven\Fluxa\Application\Schema\SchemaMigrationInterface;
 
 /**
  * @api

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Security;
+namespace Iriven\Fluxa\Infrastructure\Security;
 
-use Iriven\PhpFormGenerator\Domain\Contract\CaptchaManagerInterface;
+use Iriven\Fluxa\Domain\Contract\CaptchaManagerInterface;
 use RuntimeException;
 
 final class SessionCaptchaManager implements CaptchaManagerInterface

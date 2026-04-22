@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\ValueObject;
+namespace Iriven\Fluxa\Domain\ValueObject;
 
 final class UploadedFile
 {

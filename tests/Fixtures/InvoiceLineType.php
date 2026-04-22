@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests\Fixtures;
+namespace Iriven\Fluxa\Tests\Fixtures;
 
-use Iriven\PhpFormGenerator\Domain\Constraint\Required;
-use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\OptionsResolverInterface;
-use Iriven\PhpFormGenerator\Domain\Field\FloatType;
-use Iriven\PhpFormGenerator\Domain\Field\IntegerType;
-use Iriven\PhpFormGenerator\Domain\Field\TextType;
-use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
+use Iriven\Fluxa\Domain\Constraint\Required;
+use Iriven\Fluxa\Domain\Contract\FormTypeInterface;
+use Iriven\Fluxa\Domain\Contract\OptionsResolverInterface;
+use Iriven\Fluxa\Domain\Field\FloatType;
+use Iriven\Fluxa\Domain\Field\IntegerType;
+use Iriven\Fluxa\Domain\Field\TextType;
+use Iriven\Fluxa\Domain\Form\FormBuilder;
 
 final class InvoiceLineType implements FormTypeInterface
 {

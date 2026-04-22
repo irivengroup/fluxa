@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Security;
+namespace Iriven\Fluxa\Infrastructure\Security;
 
-use Iriven\PhpFormGenerator\Domain\Contract\CsrfManagerInterface;
+use Iriven\Fluxa\Domain\Contract\CsrfManagerInterface;
 use RuntimeException;
 
 final class SessionCsrfManager implements CsrfManagerInterface

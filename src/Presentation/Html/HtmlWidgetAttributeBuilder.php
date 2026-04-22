@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Presentation\Html;
+namespace Iriven\Fluxa\Presentation\Html;
 
-use Iriven\PhpFormGenerator\Domain\Field\AbstractFieldType;
-use Iriven\PhpFormGenerator\Domain\Form\FormView;
+use Iriven\Fluxa\Domain\Field\AbstractFieldType;
+use Iriven\Fluxa\Domain\Form\FormView;
 
 final class HtmlWidgetAttributeBuilder
 {

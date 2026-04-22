@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\FormGenerator;
+namespace Iriven\Fluxa\Application\FormGenerator;
 
-use Iriven\PhpFormGenerator\Domain\Field\CheckboxType;
-use Iriven\PhpFormGenerator\Domain\Field\DatalistType;
-use Iriven\PhpFormGenerator\Domain\Field\RadioType;
-use Iriven\PhpFormGenerator\Domain\Field\SelectType;
-use Iriven\PhpFormGenerator\Domain\Field\YesNoType;
+use Iriven\Fluxa\Domain\Field\CheckboxType;
+use Iriven\Fluxa\Domain\Field\DatalistType;
+use Iriven\Fluxa\Domain\Field\RadioType;
+use Iriven\Fluxa\Domain\Field\SelectType;
+use Iriven\Fluxa\Domain\Field\YesNoType;
 
 final class ChoiceFieldFacade
 {

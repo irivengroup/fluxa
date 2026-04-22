@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Event;
+namespace Iriven\Fluxa\Domain\Event;
 
 final class PreSubmitEvent extends FormEvent
 {

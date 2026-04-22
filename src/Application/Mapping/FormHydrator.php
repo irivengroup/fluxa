@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Mapping;
+namespace Iriven\Fluxa\Application\Mapping;
 
 /** @api */
 final class FormHydrator

@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
 use BackedEnum;
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Domain\Constraint\GroupedConstraint;
-use Iriven\PhpFormGenerator\Domain\Constraint\Required;
-use Iriven\PhpFormGenerator\Domain\Constraint\When;
-use Iriven\PhpFormGenerator\Domain\Field\SubmitType;
-use Iriven\PhpFormGenerator\Domain\Field\TextType;
-use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
-use Iriven\PhpFormGenerator\Domain\Transformer\EnumTransformer;
-use Iriven\PhpFormGenerator\Infrastructure\Extension\ExtensionRegistry;
-use Iriven\PhpFormGenerator\Infrastructure\Extension\TrimTextFieldExtension;
-use Iriven\PhpFormGenerator\Infrastructure\Http\ArrayRequest;
-use Iriven\PhpFormGenerator\Infrastructure\Security\NullCsrfManager;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Domain\Constraint\GroupedConstraint;
+use Iriven\Fluxa\Domain\Constraint\Required;
+use Iriven\Fluxa\Domain\Constraint\When;
+use Iriven\Fluxa\Domain\Field\SubmitType;
+use Iriven\Fluxa\Domain\Field\TextType;
+use Iriven\Fluxa\Domain\Form\FormBuilder;
+use Iriven\Fluxa\Domain\Transformer\EnumTransformer;
+use Iriven\Fluxa\Infrastructure\Extension\ExtensionRegistry;
+use Iriven\Fluxa\Infrastructure\Extension\TrimTextFieldExtension;
+use Iriven\Fluxa\Infrastructure\Http\ArrayRequest;
+use Iriven\Fluxa\Infrastructure\Security\NullCsrfManager;
 use PHPUnit\Framework\TestCase;
 
 enum LeadStatus: string

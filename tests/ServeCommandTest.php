@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\Cli\ServeCommand;
+use Iriven\Fluxa\Application\Cli\ServeCommand;
 use PHPUnit\Framework\TestCase;
 
 final class ServeCommandTest extends TestCase

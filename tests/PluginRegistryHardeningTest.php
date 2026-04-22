@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
 use InvalidArgumentException;
-use Iriven\PhpFormGenerator\Infrastructure\Registry\InMemoryFieldTypeRegistry;
-use Iriven\PhpFormGenerator\Infrastructure\Registry\InMemoryFormTypeRegistry;
+use Iriven\Fluxa\Infrastructure\Registry\InMemoryFieldTypeRegistry;
+use Iriven\Fluxa\Infrastructure\Registry\InMemoryFormTypeRegistry;
 use PHPUnit\Framework\TestCase;
 
 final class PluginRegistryHardeningTest extends TestCase

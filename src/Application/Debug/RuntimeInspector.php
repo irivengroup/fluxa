@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Debug;
+namespace Iriven\Fluxa\Application\Debug;
 
-use Iriven\PhpFormGenerator\Application\FormRuntimeContext;
-use Iriven\PhpFormGenerator\Application\Observability\InMemoryMetricsCollector;
-use Iriven\PhpFormGenerator\Domain\Form\Form;
+use Iriven\Fluxa\Application\FormRuntimeContext;
+use Iriven\Fluxa\Application\Observability\InMemoryMetricsCollector;
+use Iriven\Fluxa\Domain\Form\Form;
 
 /** @api */
 final class RuntimeInspector

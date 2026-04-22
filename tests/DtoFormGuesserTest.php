@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\Generation\DtoFormGuesser;
+use Iriven\Fluxa\Application\Generation\DtoFormGuesser;
 use PHPUnit\Framework\TestCase;
 
 final class DtoFormGuesserTest extends TestCase

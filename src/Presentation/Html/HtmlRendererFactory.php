@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Presentation\Html;
+namespace Iriven\Fluxa\Presentation\Html;
 
-use Iriven\PhpFormGenerator\Application\FormThemeKernel;
+use Iriven\Fluxa\Application\FormThemeKernel;
 
 final class HtmlRendererFactory
 {

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Schema;
+namespace Iriven\Fluxa\Infrastructure\Schema;
 
-use Iriven\PhpFormGenerator\Domain\Contract\SchemaExporterInterface;
-use Iriven\PhpFormGenerator\Domain\Form\FieldConfig;
-use Iriven\PhpFormGenerator\Domain\Form\Form;
-use Iriven\PhpFormGenerator\Infrastructure\Type\TypeResolver;
+use Iriven\Fluxa\Domain\Contract\SchemaExporterInterface;
+use Iriven\Fluxa\Domain\Form\FieldConfig;
+use Iriven\Fluxa\Domain\Form\Form;
+use Iriven\Fluxa\Infrastructure\Type\TypeResolver;
 
 final class ArraySchemaExporter implements SchemaExporterInterface
 {

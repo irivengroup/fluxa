@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Constraint;
+namespace Iriven\Fluxa\Domain\Constraint;
 
-use Iriven\PhpFormGenerator\Infrastructure\Translation\TranslatorInterface;
+use Iriven\Fluxa\Infrastructure\Translation\TranslatorInterface;
 
 trait TranslatableConstraintMessageTrait
 {

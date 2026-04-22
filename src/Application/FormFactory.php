@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application;
+namespace Iriven\Fluxa\Application;
 
-use Iriven\PhpFormGenerator\Domain\Contract\CaptchaManagerInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\CsrfManagerInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\EventDispatcherInterface;
-use Iriven\PhpFormGenerator\Domain\Form\Form;
-use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
-use Iriven\PhpFormGenerator\Infrastructure\Event\EventDispatcher;
-use Iriven\PhpFormGenerator\Infrastructure\Extension\ExtensionRegistry;
-use Iriven\PhpFormGenerator\Infrastructure\Options\OptionsResolver;
-use Iriven\PhpFormGenerator\Infrastructure\Security\NullCsrfManager;
-use Iriven\PhpFormGenerator\Infrastructure\Security\SessionCaptchaManager;
-use Iriven\PhpFormGenerator\Infrastructure\Security\SessionCsrfManager;
-use Iriven\PhpFormGenerator\Infrastructure\Type\TypeResolver;
+use Iriven\Fluxa\Domain\Contract\CaptchaManagerInterface;
+use Iriven\Fluxa\Domain\Contract\CsrfManagerInterface;
+use Iriven\Fluxa\Domain\Contract\EventDispatcherInterface;
+use Iriven\Fluxa\Domain\Form\Form;
+use Iriven\Fluxa\Domain\Form\FormBuilder;
+use Iriven\Fluxa\Infrastructure\Event\EventDispatcher;
+use Iriven\Fluxa\Infrastructure\Extension\ExtensionRegistry;
+use Iriven\Fluxa\Infrastructure\Options\OptionsResolver;
+use Iriven\Fluxa\Infrastructure\Security\NullCsrfManager;
+use Iriven\Fluxa\Infrastructure\Security\SessionCaptchaManager;
+use Iriven\Fluxa\Infrastructure\Security\SessionCsrfManager;
+use Iriven\Fluxa\Infrastructure\Type\TypeResolver;
 
 final class FormFactory
 {

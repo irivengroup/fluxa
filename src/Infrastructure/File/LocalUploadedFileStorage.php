@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\File;
+namespace Iriven\Fluxa\Infrastructure\File;
 
-use Iriven\PhpFormGenerator\Domain\Contract\UploadedFileStorageInterface;
-use Iriven\PhpFormGenerator\Domain\ValueObject\UploadedFile;
+use Iriven\Fluxa\Domain\Contract\UploadedFileStorageInterface;
+use Iriven\Fluxa\Domain\ValueObject\UploadedFile;
 
 final class LocalUploadedFileStorage implements UploadedFileStorageInterface
 {

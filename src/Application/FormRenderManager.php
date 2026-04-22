@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application;
+namespace Iriven\Fluxa\Application;
 
-use Iriven\PhpFormGenerator\Domain\Form\Form;
-use Iriven\PhpFormGenerator\Presentation\Html\HtmlRendererFactory;
+use Iriven\Fluxa\Domain\Form\Form;
+use Iriven\Fluxa\Presentation\Html\HtmlRendererFactory;
 
 final class FormRenderManager
 {

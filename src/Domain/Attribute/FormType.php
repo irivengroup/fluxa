@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Attribute;
+namespace Iriven\Fluxa\Domain\Attribute;
 
 use Attribute;
 

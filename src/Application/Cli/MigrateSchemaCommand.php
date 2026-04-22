@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Cli;
+namespace Iriven\Fluxa\Application\Cli;
 
-use Iriven\PhpFormGenerator\Application\Schema\Migration\V20ToV21SchemaMigration;
-use Iriven\PhpFormGenerator\Application\Schema\SchemaMigrator;
+use Iriven\Fluxa\Application\Schema\Migration\V20ToV21SchemaMigration;
+use Iriven\Fluxa\Application\Schema\SchemaMigrator;
 
 /**
  * @api

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Form;
+namespace Iriven\Fluxa\Domain\Form;
 
-use Iriven\PhpFormGenerator\Domain\Contract\ConstraintInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\DataTransformerInterface;
+use Iriven\Fluxa\Domain\Contract\ConstraintInterface;
+use Iriven\Fluxa\Domain\Contract\DataTransformerInterface;
 
 final class FieldConfig
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Contract;
+namespace Iriven\Fluxa\Domain\Contract;
 
-use Iriven\PhpFormGenerator\Domain\ValueObject\UploadedFile;
+use Iriven\Fluxa\Domain\ValueObject\UploadedFile;
 
 interface UploadedFileStorageInterface
 {

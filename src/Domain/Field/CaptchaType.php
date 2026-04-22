@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Field;
+namespace Iriven\Fluxa\Domain\Field;
 
 final class CaptchaType extends TextType
 {

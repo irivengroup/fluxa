@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
-namespace Iriven\PhpFormGenerator\Tests;
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\FormRuntimeContext;
-use Iriven\PhpFormGenerator\Application\FormSchemaManager;
-use Iriven\PhpFormGenerator\Application\Frontend\FrontendSdk;
-use Iriven\PhpFormGenerator\Application\Rendering\RenderProfileManager;
-use Iriven\PhpFormGenerator\Application\Rendering\ThemeDefinition;
-use Iriven\PhpFormGenerator\Application\Rendering\ThemeRegistry;
-use Iriven\PhpFormGenerator\Application\Rendering\ThemeResolver;
-use Iriven\PhpFormGenerator\Infrastructure\Schema\ArraySchemaExporter;
+namespace Iriven\Fluxa\Tests;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\FormRuntimeContext;
+use Iriven\Fluxa\Application\FormSchemaManager;
+use Iriven\Fluxa\Application\Frontend\FrontendSdk;
+use Iriven\Fluxa\Application\Rendering\RenderProfileManager;
+use Iriven\Fluxa\Application\Rendering\ThemeDefinition;
+use Iriven\Fluxa\Application\Rendering\ThemeRegistry;
+use Iriven\Fluxa\Application\Rendering\ThemeResolver;
+use Iriven\Fluxa\Infrastructure\Schema\ArraySchemaExporter;
 use PHPUnit\Framework\TestCase;
 final class FrontendRenderingIntegrationTest extends TestCase
 {

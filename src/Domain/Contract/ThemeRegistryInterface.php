@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Contract;
+namespace Iriven\Fluxa\Domain\Contract;
 
-use Iriven\PhpFormGenerator\Presentation\Html\Theme\ThemeInterface;
+use Iriven\Fluxa\Presentation\Html\Theme\ThemeInterface;
 
 interface ThemeRegistryInterface
 {

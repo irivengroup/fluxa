@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Constraint;
+namespace Iriven\Fluxa\Domain\Constraint;
 
-use Iriven\PhpFormGenerator\Domain\Contract\ConstraintInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\ValidationGroupAwareInterface;
+use Iriven\Fluxa\Domain\Contract\ConstraintInterface;
+use Iriven\Fluxa\Domain\Contract\ValidationGroupAwareInterface;
 
 final class GroupedConstraint implements ConstraintInterface, ValidationGroupAwareInterface
 {

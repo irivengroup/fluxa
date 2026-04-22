@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Domain\Form\FormView;
-use Iriven\PhpFormGenerator\Domain\Transformer\EnumTransformer;
+use Iriven\Fluxa\Domain\Form\FormView;
+use Iriven\Fluxa\Domain\Transformer\EnumTransformer;
 use PHPUnit\Framework\TestCase;
 
 enum RuntimeRegressionUnitEnum

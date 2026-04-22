@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Infrastructure\Event\EventDispatcher;
-use Iriven\PhpFormGenerator\Infrastructure\Options\OptionsResolver;
+use Iriven\Fluxa\Infrastructure\Event\EventDispatcher;
+use Iriven\Fluxa\Infrastructure\Options\OptionsResolver;
 use PHPUnit\Framework\TestCase;
 
 final class StandaloneInfrastructureTest extends TestCase

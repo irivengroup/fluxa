@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
-namespace Iriven\PhpFormGenerator\Application\FormType;
-use Iriven\PhpFormGenerator\Domain\Constraint\Length;
-use Iriven\PhpFormGenerator\Domain\Constraint\Required;
-use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\OptionsResolverInterface;
-use Iriven\PhpFormGenerator\Domain\Field\CheckboxType;
-use Iriven\PhpFormGenerator\Domain\Field\EmailType;
-use Iriven\PhpFormGenerator\Domain\Field\PasswordType;
-use Iriven\PhpFormGenerator\Domain\Field\SubmitType;
-use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
+namespace Iriven\Fluxa\Application\FormType;
+use Iriven\Fluxa\Domain\Constraint\Length;
+use Iriven\Fluxa\Domain\Constraint\Required;
+use Iriven\Fluxa\Domain\Contract\FormTypeInterface;
+use Iriven\Fluxa\Domain\Contract\OptionsResolverInterface;
+use Iriven\Fluxa\Domain\Field\CheckboxType;
+use Iriven\Fluxa\Domain\Field\EmailType;
+use Iriven\Fluxa\Domain\Field\PasswordType;
+use Iriven\Fluxa\Domain\Field\SubmitType;
+use Iriven\Fluxa\Domain\Form\FormBuilder;
 final class LoginType implements FormTypeInterface {
     public function buildForm(FormBuilder $builder, array $options = []): void {
         $builder

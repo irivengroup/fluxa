@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace Iriven\PhpFormGenerator\Tests;
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\Headless\HeadlessFormProcessor;
+namespace Iriven\Fluxa\Tests;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\Headless\HeadlessFormProcessor;
 use PHPUnit\Framework\TestCase;
 final class HeadlessFormProcessorTest extends TestCase
 {

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Form;
+namespace Iriven\Fluxa\Domain\Form;
 
-use Iriven\PhpFormGenerator\Domain\Contract\RequestInterface;
-use Iriven\PhpFormGenerator\Domain\Event\PostSubmitEvent;
-use Iriven\PhpFormGenerator\Domain\Event\PreSubmitEvent;
-use Iriven\PhpFormGenerator\Domain\Event\SubmitEvent;
-use Iriven\PhpFormGenerator\Domain\Form\Submission\FieldSubmissionProcessor;
-use Iriven\PhpFormGenerator\Infrastructure\Translation\TranslatorInterface;
+use Iriven\Fluxa\Domain\Contract\RequestInterface;
+use Iriven\Fluxa\Domain\Event\PostSubmitEvent;
+use Iriven\Fluxa\Domain\Event\PreSubmitEvent;
+use Iriven\Fluxa\Domain\Event\SubmitEvent;
+use Iriven\Fluxa\Domain\Form\Submission\FieldSubmissionProcessor;
+use Iriven\Fluxa\Infrastructure\Translation\TranslatorInterface;
 
 final class FormSubmissionProcessor
 {

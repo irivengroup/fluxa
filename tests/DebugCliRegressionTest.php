@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\Cli\DebugRuntimeCommand;
-use Iriven\PhpFormGenerator\Application\Cli\DebugSchemaCommand;
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\FormPluginKernel;
-use Iriven\PhpFormGenerator\Application\FormSchemaManager;
-use Iriven\PhpFormGenerator\Infrastructure\Schema\ArraySchemaExporter;
+use Iriven\Fluxa\Application\Cli\DebugRuntimeCommand;
+use Iriven\Fluxa\Application\Cli\DebugSchemaCommand;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\FormPluginKernel;
+use Iriven\Fluxa\Application\FormSchemaManager;
+use Iriven\Fluxa\Infrastructure\Schema\ArraySchemaExporter;
 use PHPUnit\Framework\TestCase;
 
 final class DebugCliRegressionTest extends TestCase

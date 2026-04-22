@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
-namespace Iriven\PhpFormGenerator\Tests;
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\FormSchemaManager;
-use Iriven\PhpFormGenerator\Application\Frontend\FrontendSdk;
-use Iriven\PhpFormGenerator\Application\Headless\HeadlessFormProcessor;
-use Iriven\PhpFormGenerator\Application\PublicApi\UnifiedSchemaExporter;
-use Iriven\PhpFormGenerator\Infrastructure\Schema\ArraySchemaExporter;
+namespace Iriven\Fluxa\Tests;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\FormSchemaManager;
+use Iriven\Fluxa\Application\Frontend\FrontendSdk;
+use Iriven\Fluxa\Application\Headless\HeadlessFormProcessor;
+use Iriven\Fluxa\Application\PublicApi\UnifiedSchemaExporter;
+use Iriven\Fluxa\Infrastructure\Schema\ArraySchemaExporter;
 use PHPUnit\Framework\TestCase;
 final class HeadlessVsSdkParityTest extends TestCase
 {

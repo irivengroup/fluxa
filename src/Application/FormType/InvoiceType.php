@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\FormType;
+namespace Iriven\Fluxa\Application\FormType;
 
-use Iriven\PhpFormGenerator\Domain\Constraint\Required;
-use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\OptionsResolverInterface;
-use Iriven\PhpFormGenerator\Domain\Field\CollectionType;
-use Iriven\PhpFormGenerator\Domain\Field\DatetimeType;
-use Iriven\PhpFormGenerator\Domain\Field\SubmitType;
-use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
+use Iriven\Fluxa\Domain\Constraint\Required;
+use Iriven\Fluxa\Domain\Contract\FormTypeInterface;
+use Iriven\Fluxa\Domain\Contract\OptionsResolverInterface;
+use Iriven\Fluxa\Domain\Field\CollectionType;
+use Iriven\Fluxa\Domain\Field\DatetimeType;
+use Iriven\Fluxa\Domain\Field\SubmitType;
+use Iriven\Fluxa\Domain\Form\FormBuilder;
 
 final class InvoiceType implements FormTypeInterface
 {

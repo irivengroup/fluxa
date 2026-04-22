@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
 use PHPUnit\Framework\TestCase;
 
@@ -19,14 +19,14 @@ final class LegacyFieldTypesParityTest extends TestCase
         ];
 
         foreach ($classes as $class) {
-            self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\' . $class), $class);
+            self::assertTrue(class_exists('Iriven\\Fluxa\\Domain\\Field\\' . $class), $class);
         }
     }
 
     public function testNormalizedNamesResolve(): void
     {
-        self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\DatetimeType'));
-        self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\DatetimeLocalType'));
-        self::assertTrue(class_exists('Iriven\\PhpFormGenerator\\Domain\\Field\\TextareaType'));
+        self::assertTrue(class_exists('Iriven\\Fluxa\\Domain\\Field\\DatetimeType'));
+        self::assertTrue(class_exists('Iriven\\Fluxa\\Domain\\Field\\DatetimeLocalType'));
+        self::assertTrue(class_exists('Iriven\\Fluxa\\Domain\\Field\\TextareaType'));
     }
 }

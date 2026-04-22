@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace Iriven\PhpFormGenerator\Application\Cli;
-use Iriven\PhpFormGenerator\Application\Mapping\FormHydrator;
+namespace Iriven\Fluxa\Application\Cli;
+use Iriven\Fluxa\Application\Mapping\FormHydrator;
 /** @api */
 final class DebugMappingCommand implements CliCommandInterface
 {

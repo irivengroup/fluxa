@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Event;
+namespace Iriven\Fluxa\Domain\Event;
 
-use Iriven\PhpFormGenerator\Domain\Form\Form;
+use Iriven\Fluxa\Domain\Form\Form;
 
 class FormEvent
 {

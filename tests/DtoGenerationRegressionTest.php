@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\Generation\DtoFormGuesser;
-use Iriven\PhpFormGenerator\Application\Generation\ExampleSchemaFormGenerator;
+use Iriven\Fluxa\Application\Generation\DtoFormGuesser;
+use Iriven\Fluxa\Application\Generation\ExampleSchemaFormGenerator;
 use PHPUnit\Framework\TestCase;
 
 final class DtoGenerationRegressionTest extends TestCase

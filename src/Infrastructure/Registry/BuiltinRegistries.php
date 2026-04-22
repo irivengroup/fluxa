@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Registry;
+namespace Iriven\Fluxa\Infrastructure\Registry;
 
-use Iriven\PhpFormGenerator\Infrastructure\Type\BuiltinTypeRegistry;
+use Iriven\Fluxa\Infrastructure\Type\BuiltinTypeRegistry;
 
 final class BuiltinRegistries
 {

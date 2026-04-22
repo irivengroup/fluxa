@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Extension;
+namespace Iriven\Fluxa\Infrastructure\Extension;
 
-use Iriven\PhpFormGenerator\Domain\Contract\ConstraintInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\DataTransformerInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\FieldTypeExtensionInterface;
-use Iriven\PhpFormGenerator\Domain\Field\TextType;
-use Iriven\PhpFormGenerator\Domain\Transformer\StringTrimTransformer;
+use Iriven\Fluxa\Domain\Contract\ConstraintInterface;
+use Iriven\Fluxa\Domain\Contract\DataTransformerInterface;
+use Iriven\Fluxa\Domain\Contract\FieldTypeExtensionInterface;
+use Iriven\Fluxa\Domain\Field\TextType;
+use Iriven\Fluxa\Domain\Transformer\StringTrimTransformer;
 
 final class TrimTextFieldExtension implements FieldTypeExtensionInterface
 {

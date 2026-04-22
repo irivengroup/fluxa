@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests\Fixtures\Plugin;
+namespace Iriven\Fluxa\Tests\Fixtures\Plugin;
 
-use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\OptionsResolverInterface;
-use Iriven\PhpFormGenerator\Domain\Field\EmailType;
-use Iriven\PhpFormGenerator\Domain\Field\SubmitType;
-use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
+use Iriven\Fluxa\Domain\Contract\FormTypeInterface;
+use Iriven\Fluxa\Domain\Contract\OptionsResolverInterface;
+use Iriven\Fluxa\Domain\Field\EmailType;
+use Iriven\Fluxa\Domain\Field\SubmitType;
+use Iriven\Fluxa\Domain\Form\FormBuilder;
 
 final class NewsletterType implements FormTypeInterface
 {

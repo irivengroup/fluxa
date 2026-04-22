@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Domain\Constraint\Required;
-use Iriven\PhpFormGenerator\Domain\Constraint\Range;
-use Iriven\PhpFormGenerator\Infrastructure\Translation\ArrayTranslator;
+use Iriven\Fluxa\Domain\Constraint\Required;
+use Iriven\Fluxa\Domain\Constraint\Range;
+use Iriven\Fluxa\Infrastructure\Translation\ArrayTranslator;
 use PHPUnit\Framework\TestCase;
 
 final class ConstraintTranslationTest extends TestCase

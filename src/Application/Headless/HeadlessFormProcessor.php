@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Headless;
+namespace Iriven\Fluxa\Application\Headless;
 
-use Iriven\PhpFormGenerator\Application\FormSchemaManager;
-use Iriven\PhpFormGenerator\Domain\Form\Form;
-use Iriven\PhpFormGenerator\Infrastructure\Schema\ArraySchemaExporter;
+use Iriven\Fluxa\Application\FormSchemaManager;
+use Iriven\Fluxa\Domain\Form\Form;
+use Iriven\Fluxa\Infrastructure\Schema\ArraySchemaExporter;
 
 /**
  * @api

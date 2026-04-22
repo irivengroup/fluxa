@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Field;
+namespace Iriven\Fluxa\Domain\Field;
 
-use Iriven\PhpFormGenerator\Domain\Contract\DataTransformerInterface;
-use Iriven\PhpFormGenerator\Domain\Transformer\IntegerTransformer;
+use Iriven\Fluxa\Domain\Contract\DataTransformerInterface;
+use Iriven\Fluxa\Domain\Transformer\IntegerTransformer;
 
 class IntegerType extends NumberType
 {

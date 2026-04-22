@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
 use InvalidArgumentException;
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\FormPluginKernel;
-use Iriven\PhpFormGenerator\Infrastructure\Registry\InMemoryFieldTypeRegistry;
-use Iriven\PhpFormGenerator\Infrastructure\Registry\InMemoryFormTypeRegistry;
-use Iriven\PhpFormGenerator\Tests\Fixtures\Plugin\DemoPlugin;
-use Iriven\PhpFormGenerator\Tests\Fixtures\Plugin\EmptyPlugin;
-use Iriven\PhpFormGenerator\Tests\Fixtures\Plugin\OverridePlugin;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\FormPluginKernel;
+use Iriven\Fluxa\Infrastructure\Registry\InMemoryFieldTypeRegistry;
+use Iriven\Fluxa\Infrastructure\Registry\InMemoryFormTypeRegistry;
+use Iriven\Fluxa\Tests\Fixtures\Plugin\DemoPlugin;
+use Iriven\Fluxa\Tests\Fixtures\Plugin\EmptyPlugin;
+use Iriven\Fluxa\Tests\Fixtures\Plugin\OverridePlugin;
 use PHPUnit\Framework\TestCase;
 
 final class PluginRuntimeRegressionTest extends TestCase
@@ -30,11 +30,11 @@ final class PluginRuntimeRegressionTest extends TestCase
             ->register(new OverridePlugin());
 
         self::assertSame(
-            'Iriven\\PhpFormGenerator\\Tests\\Fixtures\\Plugin\\SlugType',
+            'Iriven\\Fluxa\\Tests\\Fixtures\\Plugin\\SlugType',
             $kernel->fieldTypes()->resolve('slug')
         );
         self::assertSame(
-            'Iriven\\PhpFormGenerator\\Tests\\Fixtures\\Plugin\\NewsletterType',
+            'Iriven\\Fluxa\\Tests\\Fixtures\\Plugin\\NewsletterType',
             $kernel->formTypes()->resolve('newsletter')
         );
     }

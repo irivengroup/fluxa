@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 spl_autoload_register(static function (string $class): void {
     $prefixes = [
-        'Iriven\\PhpFormGenerator\\' => __DIR__ . '/',
-        'Iriven\\PhpFormGenerator\\Tests\\' => dirname(__DIR__) . '/tests/',
+        'Iriven\\Fluxa\\' => __DIR__ . '/',
+        'Iriven\\Fluxa\\Tests\\' => dirname(__DIR__) . '/tests/',
     ];
 
     foreach ($prefixes as $prefix => $baseDir) {

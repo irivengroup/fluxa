@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\Runtime\ExecutionContext;
-use Iriven\PhpFormGenerator\Application\Runtime\FormRuntimeEngine;
+use Iriven\Fluxa\Application\Runtime\ExecutionContext;
+use Iriven\Fluxa\Application\Runtime\FormRuntimeEngine;
 use PHPUnit\Framework\TestCase;
 
 final class FormRuntimeEngineTest extends TestCase

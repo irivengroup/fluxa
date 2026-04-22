@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Runtime;
+namespace Iriven\Fluxa\Application\Runtime;
 
 final class RuntimePayload
 {

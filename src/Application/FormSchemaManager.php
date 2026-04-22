@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application;
+namespace Iriven\Fluxa\Application;
 
-use Iriven\PhpFormGenerator\Application\Frontend\HeadlessSchemaBuilder;
-use Iriven\PhpFormGenerator\Application\Schema\SchemaMigrator;
-use Iriven\PhpFormGenerator\Application\Schema\SchemaVersionManager;
-use Iriven\PhpFormGenerator\Domain\Contract\SchemaExporterInterface;
-use Iriven\PhpFormGenerator\Domain\Form\Form;
+use Iriven\Fluxa\Application\Frontend\HeadlessSchemaBuilder;
+use Iriven\Fluxa\Application\Schema\SchemaMigrator;
+use Iriven\Fluxa\Application\Schema\SchemaVersionManager;
+use Iriven\Fluxa\Domain\Contract\SchemaExporterInterface;
+use Iriven\Fluxa\Domain\Form\Form;
 
 final class FormSchemaManager
 {

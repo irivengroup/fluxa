@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Events;
+namespace Iriven\Fluxa\Application\Events;
 
 /** @api */
 final class FormEvents

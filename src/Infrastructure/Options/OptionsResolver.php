@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Options;
+namespace Iriven\Fluxa\Infrastructure\Options;
 
 use InvalidArgumentException;
-use Iriven\PhpFormGenerator\Domain\Contract\OptionsResolverInterface;
+use Iriven\Fluxa\Domain\Contract\OptionsResolverInterface;
 
 final class OptionsResolver implements OptionsResolverInterface
 {

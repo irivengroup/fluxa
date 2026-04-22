@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application;
+namespace Iriven\Fluxa\Application;
 
-use Iriven\PhpFormGenerator\Infrastructure\Registry\InMemoryThemeRegistry;
-use Iriven\PhpFormGenerator\Presentation\Html\Theme\Bootstrap5Theme;
-use Iriven\PhpFormGenerator\Presentation\Html\Theme\DefaultTheme;
-use Iriven\PhpFormGenerator\Presentation\Html\Theme\TailwindTheme;
-use Iriven\PhpFormGenerator\Presentation\Html\Theme\ThemeInterface;
+use Iriven\Fluxa\Infrastructure\Registry\InMemoryThemeRegistry;
+use Iriven\Fluxa\Presentation\Html\Theme\Bootstrap5Theme;
+use Iriven\Fluxa\Presentation\Html\Theme\DefaultTheme;
+use Iriven\Fluxa\Presentation\Html\Theme\TailwindTheme;
+use Iriven\Fluxa\Presentation\Html\Theme\ThemeInterface;
 
 final class FormThemeKernel
 {

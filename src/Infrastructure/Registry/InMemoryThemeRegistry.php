@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Registry;
+namespace Iriven\Fluxa\Infrastructure\Registry;
 
 use InvalidArgumentException;
-use Iriven\PhpFormGenerator\Domain\Contract\ThemeRegistryInterface;
-use Iriven\PhpFormGenerator\Presentation\Html\Theme\ThemeInterface;
+use Iriven\Fluxa\Domain\Contract\ThemeRegistryInterface;
+use Iriven\Fluxa\Presentation\Html\Theme\ThemeInterface;
 
 final class InMemoryThemeRegistry implements ThemeRegistryInterface
 {

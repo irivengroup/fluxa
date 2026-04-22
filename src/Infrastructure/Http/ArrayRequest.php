@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Http;
+namespace Iriven\Fluxa\Infrastructure\Http;
 
-use Iriven\PhpFormGenerator\Domain\Contract\RequestInterface;
+use Iriven\Fluxa\Domain\Contract\RequestInterface;
 
 final class ArrayRequest implements RequestInterface
 {

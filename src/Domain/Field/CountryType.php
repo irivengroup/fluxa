@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Field;
+namespace Iriven\Fluxa\Domain\Field;
 
-use Iriven\PhpFormGenerator\Infrastructure\Catalog\CountryCatalog;
+use Iriven\Fluxa\Infrastructure\Catalog\CountryCatalog;
 
 class CountryType extends SelectType
 {

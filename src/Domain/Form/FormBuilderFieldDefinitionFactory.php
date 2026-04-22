@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Form;
+namespace Iriven\Fluxa\Domain\Form;
 
 use InvalidArgumentException;
-use Iriven\PhpFormGenerator\Domain\Constraint\MimeType;
-use Iriven\PhpFormGenerator\Domain\Contract\ConstraintInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\DataTransformerInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\EventDispatcherInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
-use Iriven\PhpFormGenerator\Domain\Field\CaptchaType;
-use Iriven\PhpFormGenerator\Domain\Field\CollectionType;
-use Iriven\PhpFormGenerator\Domain\Field\FileType;
-use Iriven\PhpFormGenerator\Infrastructure\Extension\ExtensionRegistry;
-use Iriven\PhpFormGenerator\Infrastructure\Options\OptionsResolver;
-use Iriven\PhpFormGenerator\Infrastructure\Type\TypeResolver;
+use Iriven\Fluxa\Domain\Constraint\MimeType;
+use Iriven\Fluxa\Domain\Contract\ConstraintInterface;
+use Iriven\Fluxa\Domain\Contract\DataTransformerInterface;
+use Iriven\Fluxa\Domain\Contract\EventDispatcherInterface;
+use Iriven\Fluxa\Domain\Contract\FormTypeInterface;
+use Iriven\Fluxa\Domain\Field\CaptchaType;
+use Iriven\Fluxa\Domain\Field\CollectionType;
+use Iriven\Fluxa\Domain\Field\FileType;
+use Iriven\Fluxa\Infrastructure\Extension\ExtensionRegistry;
+use Iriven\Fluxa\Infrastructure\Options\OptionsResolver;
+use Iriven\Fluxa\Infrastructure\Type\TypeResolver;
 use ReflectionClass;
 
 final class FormBuilderFieldDefinitionFactory

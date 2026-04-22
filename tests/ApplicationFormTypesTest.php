@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\FormGenerator;
-use Iriven\PhpFormGenerator\Application\FormType\ContactType;
-use Iriven\PhpFormGenerator\Application\FormType\InvoiceType;
-use Iriven\PhpFormGenerator\Application\FormType\RegistrationType;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\FormGenerator;
+use Iriven\Fluxa\Application\FormType\ContactType;
+use Iriven\Fluxa\Application\FormType\InvoiceType;
+use Iriven\Fluxa\Application\FormType\RegistrationType;
 use PHPUnit\Framework\TestCase;
 
 final class ApplicationFormTypesTest extends TestCase

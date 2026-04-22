@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\FormRuntimePipeline;
+use Iriven\Fluxa\Application\FormRuntimePipeline;
 use PHPUnit\Framework\TestCase;
 
 final class HookLifecycleCompletenessTest extends TestCase

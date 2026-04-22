@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Cli;
+namespace Iriven\Fluxa\Application\Cli;
 
 /**
  * @api
@@ -27,10 +27,10 @@ final class MakePluginCommand implements CliCommandInterface
 
 declare(strict_types=1);
 
-use Iriven\PhpFormGenerator\Domain\Contract\PluginInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\FieldTypeRegistryInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\FormTypeRegistryInterface;
-use Iriven\PhpFormGenerator\Infrastructure\Extension\ExtensionRegistry;
+use Iriven\Fluxa\Domain\Contract\PluginInterface;
+use Iriven\Fluxa\Domain\Contract\FieldTypeRegistryInterface;
+use Iriven\Fluxa\Domain\Contract\FormTypeRegistryInterface;
+use Iriven\Fluxa\Infrastructure\Extension\ExtensionRegistry;
 
 final class {$name} implements PluginInterface
 {

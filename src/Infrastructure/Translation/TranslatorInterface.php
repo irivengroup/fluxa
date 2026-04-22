@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Translation;
+namespace Iriven\Fluxa\Infrastructure\Translation;
 
 interface TranslatorInterface
 {

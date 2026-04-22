@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests\Fixtures\Plugin;
+namespace Iriven\Fluxa\Tests\Fixtures\Plugin;
 
-use Iriven\PhpFormGenerator\Domain\Contract\FieldTypeExtensionInterface;
-use Iriven\PhpFormGenerator\Domain\Transformer\StringTrimTransformer;
+use Iriven\Fluxa\Domain\Contract\FieldTypeExtensionInterface;
+use Iriven\Fluxa\Domain\Transformer\StringTrimTransformer;
 
 final class SlugTrimFieldExtension implements FieldTypeExtensionInterface
 {

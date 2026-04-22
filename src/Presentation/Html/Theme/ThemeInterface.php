@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Presentation\Html\Theme;
+namespace Iriven\Fluxa\Presentation\Html\Theme;
 
 interface ThemeInterface
 {

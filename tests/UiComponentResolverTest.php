@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\Frontend\UiComponentResolver;
+use Iriven\Fluxa\Application\Frontend\UiComponentResolver;
 use PHPUnit\Framework\TestCase;
 
 final class UiComponentResolverTest extends TestCase

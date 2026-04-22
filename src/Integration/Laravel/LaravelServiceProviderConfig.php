@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Integration\Laravel;
+namespace Iriven\Fluxa\Integration\Laravel;
 
 /** @api */
 final class LaravelServiceProviderConfig

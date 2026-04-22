@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Runtime;
+namespace Iriven\Fluxa\Application\Runtime;
 
-use Iriven\PhpFormGenerator\Domain\Contract\FormHookInterface;
-use Iriven\PhpFormGenerator\Domain\Form\Form;
+use Iriven\Fluxa\Domain\Contract\FormHookInterface;
+use Iriven\Fluxa\Domain\Form\Form;
 use Throwable;
 
 final class PrioritizedHookKernel

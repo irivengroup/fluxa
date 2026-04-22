@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\FormType;
+namespace Iriven\Fluxa\Application\FormType;
 
-use Iriven\PhpFormGenerator\Domain\Constraint\Email;
-use Iriven\PhpFormGenerator\Domain\Constraint\Length;
-use Iriven\PhpFormGenerator\Domain\Constraint\Required;
-use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\OptionsResolverInterface;
-use Iriven\PhpFormGenerator\Domain\Field\CaptchaType;
-use Iriven\PhpFormGenerator\Domain\Field\CountryType;
-use Iriven\PhpFormGenerator\Domain\Field\EmailType;
-use Iriven\PhpFormGenerator\Domain\Field\PhoneType;
-use Iriven\PhpFormGenerator\Domain\Field\SubmitType;
-use Iriven\PhpFormGenerator\Domain\Field\TextareaType;
-use Iriven\PhpFormGenerator\Domain\Field\TextType;
-use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
+use Iriven\Fluxa\Domain\Constraint\Email;
+use Iriven\Fluxa\Domain\Constraint\Length;
+use Iriven\Fluxa\Domain\Constraint\Required;
+use Iriven\Fluxa\Domain\Contract\FormTypeInterface;
+use Iriven\Fluxa\Domain\Contract\OptionsResolverInterface;
+use Iriven\Fluxa\Domain\Field\CaptchaType;
+use Iriven\Fluxa\Domain\Field\CountryType;
+use Iriven\Fluxa\Domain\Field\EmailType;
+use Iriven\Fluxa\Domain\Field\PhoneType;
+use Iriven\Fluxa\Domain\Field\SubmitType;
+use Iriven\Fluxa\Domain\Field\TextareaType;
+use Iriven\Fluxa\Domain\Field\TextType;
+use Iriven\Fluxa\Domain\Form\FormBuilder;
 
 final class ContactType implements FormTypeInterface
 {

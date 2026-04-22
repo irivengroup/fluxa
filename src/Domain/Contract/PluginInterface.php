@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Contract;
+namespace Iriven\Fluxa\Domain\Contract;
 
-use Iriven\PhpFormGenerator\Infrastructure\Extension\ExtensionRegistry;
+use Iriven\Fluxa\Infrastructure\Extension\ExtensionRegistry;
 
 /**
  * @api

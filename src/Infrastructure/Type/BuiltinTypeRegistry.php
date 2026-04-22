@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Type;
+namespace Iriven\Fluxa\Infrastructure\Type;
 
 final class BuiltinTypeRegistry
 {
@@ -12,41 +12,41 @@ final class BuiltinTypeRegistry
     public static function fieldTypes(): array
     {
         return [
-            'AudioType' => \Iriven\PhpFormGenerator\Domain\Field\AudioType::class,
-            'ButtonType' => \Iriven\PhpFormGenerator\Domain\Field\ButtonType::class,
-            'CaptchaType' => \Iriven\PhpFormGenerator\Domain\Field\CaptchaType::class,
-            'CheckboxType' => \Iriven\PhpFormGenerator\Domain\Field\CheckboxType::class,
-            'CollectionType' => \Iriven\PhpFormGenerator\Domain\Field\CollectionType::class,
-            'ColorType' => \Iriven\PhpFormGenerator\Domain\Field\ColorType::class,
-            'CountryType' => \Iriven\PhpFormGenerator\Domain\Field\CountryType::class,
-            'DatalistType' => \Iriven\PhpFormGenerator\Domain\Field\DatalistType::class,
-            'DateType' => \Iriven\PhpFormGenerator\Domain\Field\DateType::class,
-            'DatetimeLocalType' => \Iriven\PhpFormGenerator\Domain\Field\DatetimeLocalType::class,
-            'DatetimeType' => \Iriven\PhpFormGenerator\Domain\Field\DatetimeType::class,
-            'EditorType' => \Iriven\PhpFormGenerator\Domain\Field\EditorType::class,
-            'EmailType' => \Iriven\PhpFormGenerator\Domain\Field\EmailType::class,
-            'FileType' => \Iriven\PhpFormGenerator\Domain\Field\FileType::class,
-            'FloatType' => \Iriven\PhpFormGenerator\Domain\Field\FloatType::class,
-            'HiddenType' => \Iriven\PhpFormGenerator\Domain\Field\HiddenType::class,
-            'ImageType' => \Iriven\PhpFormGenerator\Domain\Field\ImageType::class,
-            'IntegerType' => \Iriven\PhpFormGenerator\Domain\Field\IntegerType::class,
-            'MonthType' => \Iriven\PhpFormGenerator\Domain\Field\MonthType::class,
-            'NumberType' => \Iriven\PhpFormGenerator\Domain\Field\NumberType::class,
-            'PasswordType' => \Iriven\PhpFormGenerator\Domain\Field\PasswordType::class,
-            'PhoneType' => \Iriven\PhpFormGenerator\Domain\Field\PhoneType::class,
-            'RadioType' => \Iriven\PhpFormGenerator\Domain\Field\RadioType::class,
-            'RangeType' => \Iriven\PhpFormGenerator\Domain\Field\RangeType::class,
-            'ResetType' => \Iriven\PhpFormGenerator\Domain\Field\ResetType::class,
-            'SearchType' => \Iriven\PhpFormGenerator\Domain\Field\SearchType::class,
-            'SelectType' => \Iriven\PhpFormGenerator\Domain\Field\SelectType::class,
-            'SubmitType' => \Iriven\PhpFormGenerator\Domain\Field\SubmitType::class,
-            'TextareaType' => \Iriven\PhpFormGenerator\Domain\Field\TextareaType::class,
-            'TextType' => \Iriven\PhpFormGenerator\Domain\Field\TextType::class,
-            'TimeType' => \Iriven\PhpFormGenerator\Domain\Field\TimeType::class,
-            'UrlType' => \Iriven\PhpFormGenerator\Domain\Field\UrlType::class,
-            'VideoType' => \Iriven\PhpFormGenerator\Domain\Field\VideoType::class,
-            'WeekType' => \Iriven\PhpFormGenerator\Domain\Field\WeekType::class,
-            'YesNoType' => \Iriven\PhpFormGenerator\Domain\Field\YesNoType::class,
+            'AudioType' => \Iriven\Fluxa\Domain\Field\AudioType::class,
+            'ButtonType' => \Iriven\Fluxa\Domain\Field\ButtonType::class,
+            'CaptchaType' => \Iriven\Fluxa\Domain\Field\CaptchaType::class,
+            'CheckboxType' => \Iriven\Fluxa\Domain\Field\CheckboxType::class,
+            'CollectionType' => \Iriven\Fluxa\Domain\Field\CollectionType::class,
+            'ColorType' => \Iriven\Fluxa\Domain\Field\ColorType::class,
+            'CountryType' => \Iriven\Fluxa\Domain\Field\CountryType::class,
+            'DatalistType' => \Iriven\Fluxa\Domain\Field\DatalistType::class,
+            'DateType' => \Iriven\Fluxa\Domain\Field\DateType::class,
+            'DatetimeLocalType' => \Iriven\Fluxa\Domain\Field\DatetimeLocalType::class,
+            'DatetimeType' => \Iriven\Fluxa\Domain\Field\DatetimeType::class,
+            'EditorType' => \Iriven\Fluxa\Domain\Field\EditorType::class,
+            'EmailType' => \Iriven\Fluxa\Domain\Field\EmailType::class,
+            'FileType' => \Iriven\Fluxa\Domain\Field\FileType::class,
+            'FloatType' => \Iriven\Fluxa\Domain\Field\FloatType::class,
+            'HiddenType' => \Iriven\Fluxa\Domain\Field\HiddenType::class,
+            'ImageType' => \Iriven\Fluxa\Domain\Field\ImageType::class,
+            'IntegerType' => \Iriven\Fluxa\Domain\Field\IntegerType::class,
+            'MonthType' => \Iriven\Fluxa\Domain\Field\MonthType::class,
+            'NumberType' => \Iriven\Fluxa\Domain\Field\NumberType::class,
+            'PasswordType' => \Iriven\Fluxa\Domain\Field\PasswordType::class,
+            'PhoneType' => \Iriven\Fluxa\Domain\Field\PhoneType::class,
+            'RadioType' => \Iriven\Fluxa\Domain\Field\RadioType::class,
+            'RangeType' => \Iriven\Fluxa\Domain\Field\RangeType::class,
+            'ResetType' => \Iriven\Fluxa\Domain\Field\ResetType::class,
+            'SearchType' => \Iriven\Fluxa\Domain\Field\SearchType::class,
+            'SelectType' => \Iriven\Fluxa\Domain\Field\SelectType::class,
+            'SubmitType' => \Iriven\Fluxa\Domain\Field\SubmitType::class,
+            'TextareaType' => \Iriven\Fluxa\Domain\Field\TextareaType::class,
+            'TextType' => \Iriven\Fluxa\Domain\Field\TextType::class,
+            'TimeType' => \Iriven\Fluxa\Domain\Field\TimeType::class,
+            'UrlType' => \Iriven\Fluxa\Domain\Field\UrlType::class,
+            'VideoType' => \Iriven\Fluxa\Domain\Field\VideoType::class,
+            'WeekType' => \Iriven\Fluxa\Domain\Field\WeekType::class,
+            'YesNoType' => \Iriven\Fluxa\Domain\Field\YesNoType::class,
         ];
     }
 
@@ -56,14 +56,14 @@ final class BuiltinTypeRegistry
     public static function formTypes(): array
     {
         return [
-            'ContactType' => \Iriven\PhpFormGenerator\Application\FormType\ContactType::class,
-            'CustomerType' => \Iriven\PhpFormGenerator\Application\FormType\CustomerType::class,
-            'ForgotPasswordType' => \Iriven\PhpFormGenerator\Application\FormType\ForgotPasswordType::class,
-            'LoginType' => \Iriven\PhpFormGenerator\Application\FormType\LoginType::class,
-            'InvoiceLineType' => \Iriven\PhpFormGenerator\Application\FormType\InvoiceLineType::class,
-            'InvoiceType' => \Iriven\PhpFormGenerator\Application\FormType\InvoiceType::class,
-            'RegistrationType' => \Iriven\PhpFormGenerator\Application\FormType\RegistrationType::class,
-            'ResetPasswordType' => \Iriven\PhpFormGenerator\Application\FormType\ResetPasswordType::class,
+            'ContactType' => \Iriven\Fluxa\Application\FormType\ContactType::class,
+            'CustomerType' => \Iriven\Fluxa\Application\FormType\CustomerType::class,
+            'ForgotPasswordType' => \Iriven\Fluxa\Application\FormType\ForgotPasswordType::class,
+            'LoginType' => \Iriven\Fluxa\Application\FormType\LoginType::class,
+            'InvoiceLineType' => \Iriven\Fluxa\Application\FormType\InvoiceLineType::class,
+            'InvoiceType' => \Iriven\Fluxa\Application\FormType\InvoiceType::class,
+            'RegistrationType' => \Iriven\Fluxa\Application\FormType\RegistrationType::class,
+            'ResetPasswordType' => \Iriven\Fluxa\Application\FormType\ResetPasswordType::class,
         ];
     }
 }

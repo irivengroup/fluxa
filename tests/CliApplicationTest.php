@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\Cli\CliApplication;
-use Iriven\PhpFormGenerator\Application\Cli\MakeFormCommand;
+use Iriven\Fluxa\Application\Cli\CliApplication;
+use Iriven\Fluxa\Application\Cli\MakeFormCommand;
 use PHPUnit\Framework\TestCase;
 
 final class CliApplicationTest extends TestCase

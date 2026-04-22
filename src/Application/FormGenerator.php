@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application;
+namespace Iriven\Fluxa\Application;
 
-use Iriven\PhpFormGenerator\Application\FormGenerator\OpenNormalizer;
-use Iriven\PhpFormGenerator\Domain\Form\Form;
-use Iriven\PhpFormGenerator\Domain\Form\FormBuilder;
+use Iriven\Fluxa\Application\FormGenerator\OpenNormalizer;
+use Iriven\Fluxa\Domain\Form\Form;
+use Iriven\Fluxa\Domain\Form\FormBuilder;
 
 final class FormGenerator
 {

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace Iriven\PhpFormGenerator\Tests;
-use Iriven\PhpFormGenerator\Application\Mapping\FormHydrator;
+namespace Iriven\Fluxa\Tests;
+use Iriven\Fluxa\Application\Mapping\FormHydrator;
 use PHPUnit\Framework\TestCase;
 final class FormHydratorTest extends TestCase
 {

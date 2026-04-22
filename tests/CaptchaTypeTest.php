@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\FormGenerator;
-use Iriven\PhpFormGenerator\Domain\Form\FormView;
-use Iriven\PhpFormGenerator\Infrastructure\Http\ArrayRequest;
+use Iriven\Fluxa\Application\FormGenerator;
+use Iriven\Fluxa\Domain\Form\FormView;
+use Iriven\Fluxa\Infrastructure\Http\ArrayRequest;
 use PHPUnit\Framework\TestCase;
 
 final class CaptchaTypeTest extends TestCase
@@ -49,7 +49,7 @@ final class CaptchaTypeTest extends TestCase
         self::assertTrue($validForm->isValid());
     }
 
-    private function createCaptchaForm(): \Iriven\PhpFormGenerator\Domain\Form\Form
+    private function createCaptchaForm(): \Iriven\Fluxa\Domain\Form\Form
     {
         return (new FormGenerator('secure'))
             ->open(['method' => 'POST'])

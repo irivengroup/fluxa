@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\FormRuntimeContext;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\FormRuntimeContext;
 use PHPUnit\Framework\TestCase;
 
 final class RuntimeContextTest extends TestCase

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Validation;
+namespace Iriven\Fluxa\Domain\Validation;
 
-use Iriven\PhpFormGenerator\Domain\Contract\ConstraintInterface;
+use Iriven\Fluxa\Domain\Contract\ConstraintInterface;
 
 final class Validator
 {

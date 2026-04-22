@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Iriven\PhpFormGenerator\Application\Rendering;
+namespace Iriven\Fluxa\Application\Rendering;
 /** @api */
 final class RenderingChannel
 {

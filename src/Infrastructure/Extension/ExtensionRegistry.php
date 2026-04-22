@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Extension;
+namespace Iriven\Fluxa\Infrastructure\Extension;
 
-use Iriven\PhpFormGenerator\Domain\Contract\ExtensionInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\FieldTypeExtensionInterface;
+use Iriven\Fluxa\Domain\Contract\ExtensionInterface;
+use Iriven\Fluxa\Domain\Contract\FieldTypeExtensionInterface;
 
 /**
  * @api

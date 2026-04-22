@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\Generation\DtoFormGuesser;
-use Iriven\PhpFormGenerator\Domain\Attribute\FormField;
-use Iriven\PhpFormGenerator\Domain\Attribute\FormIgnore;
+use Iriven\Fluxa\Application\Generation\DtoFormGuesser;
+use Iriven\Fluxa\Domain\Attribute\FormField;
+use Iriven\Fluxa\Domain\Attribute\FormIgnore;
 use PHPUnit\Framework\TestCase;
 
 final class DtoMetadataRegressionTest extends TestCase

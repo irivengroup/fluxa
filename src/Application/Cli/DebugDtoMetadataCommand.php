@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Cli;
+namespace Iriven\Fluxa\Application\Cli;
 
-use Iriven\PhpFormGenerator\Application\Generation\DtoAttributeReader;
-use Iriven\PhpFormGenerator\Domain\Attribute\FormField;
-use Iriven\PhpFormGenerator\Domain\Attribute\FormIgnore;
+use Iriven\Fluxa\Application\Generation\DtoAttributeReader;
+use Iriven\Fluxa\Domain\Attribute\FormField;
+use Iriven\Fluxa\Domain\Attribute\FormIgnore;
 
 /** @api */
 final class DebugDtoMetadataCommand implements CliCommandInterface

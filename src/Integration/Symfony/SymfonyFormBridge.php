@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Integration\Symfony;
+namespace Iriven\Fluxa\Integration\Symfony;
 
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Domain\Form\Form;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Domain\Form\Form;
 
 /** @api */
 final class SymfonyFormBridge

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Presentation\Html;
+namespace Iriven\Fluxa\Presentation\Html;
 
-use Iriven\PhpFormGenerator\Domain\Form\FormView;
-use Iriven\PhpFormGenerator\Presentation\Html\Support\HtmlAttributeRenderer;
-use Iriven\PhpFormGenerator\Presentation\Html\Theme\DefaultTheme;
-use Iriven\PhpFormGenerator\Presentation\Html\Theme\ThemeInterface;
+use Iriven\Fluxa\Domain\Form\FormView;
+use Iriven\Fluxa\Presentation\Html\Support\HtmlAttributeRenderer;
+use Iriven\Fluxa\Presentation\Html\Theme\DefaultTheme;
+use Iriven\Fluxa\Presentation\Html\Theme\ThemeInterface;
 
 final class HtmlRenderer
 {

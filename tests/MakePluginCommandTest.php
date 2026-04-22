@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\Cli\MakePluginCommand;
+use Iriven\Fluxa\Application\Cli\MakePluginCommand;
 use PHPUnit\Framework\TestCase;
 
 final class MakePluginCommandTest extends TestCase

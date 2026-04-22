@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Frontend;
+namespace Iriven\Fluxa\Application\Frontend;
 
 /** @api */
 final class AdvancedUiComponentResolver

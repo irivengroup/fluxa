@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\Cli\DebugIntegrationCommand;
+use Iriven\Fluxa\Application\Cli\DebugIntegrationCommand;
 use PHPUnit\Framework\TestCase;
 
 final class DebugIntegrationCommandTest extends TestCase

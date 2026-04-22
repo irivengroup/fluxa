@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Tests;
+namespace Iriven\Fluxa\Tests;
 
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\FormPluginKernel;
-use Iriven\PhpFormGenerator\Tests\Fixtures\Plugin\DemoPlugin;
-use Iriven\PhpFormGenerator\Tests\Fixtures\Plugin\EmptyPlugin;
-use Iriven\PhpFormGenerator\Tests\Fixtures\Plugin\OverridePlugin;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\FormPluginKernel;
+use Iriven\Fluxa\Tests\Fixtures\Plugin\DemoPlugin;
+use Iriven\Fluxa\Tests\Fixtures\Plugin\EmptyPlugin;
+use Iriven\Fluxa\Tests\Fixtures\Plugin\OverridePlugin;
 use PHPUnit\Framework\TestCase;
 
 final class PluginRuntimeChainRegressionTest extends TestCase

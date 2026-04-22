@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Domain\Transformer;
+namespace Iriven\Fluxa\Domain\Transformer;
 
 use DateTimeImmutable;
 use DateTimeInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\DataTransformerInterface;
+use Iriven\Fluxa\Domain\Contract\DataTransformerInterface;
 
 final class DateTimeTransformer implements DataTransformerInterface
 {

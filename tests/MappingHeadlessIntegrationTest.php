@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
-namespace Iriven\PhpFormGenerator\Tests;
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\Headless\HeadlessFormProcessor;
-use Iriven\PhpFormGenerator\Application\Mapping\FormExtractionManager;
+namespace Iriven\Fluxa\Tests;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\Headless\HeadlessFormProcessor;
+use Iriven\Fluxa\Application\Mapping\FormExtractionManager;
 use PHPUnit\Framework\TestCase;
 final class MappingHeadlessIntegrationTest extends TestCase
 {

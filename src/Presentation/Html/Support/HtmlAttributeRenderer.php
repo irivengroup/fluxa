@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Presentation\Html\Support;
+namespace Iriven\Fluxa\Presentation\Html\Support;
 
 final class HtmlAttributeRenderer
 {

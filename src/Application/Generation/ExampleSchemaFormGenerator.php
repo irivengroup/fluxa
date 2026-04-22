@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Generation;
+namespace Iriven\Fluxa\Application\Generation;
 
 /** @api */
 final class ExampleSchemaFormGenerator

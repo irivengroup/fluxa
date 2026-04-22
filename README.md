@@ -2,9 +2,9 @@
 
 ## V4.9.1 maintenance SDK frontend
 Stabilisation du SDK frontend avec garanties de structure et non-régression.
-# PhpFormGenerator
+# Fluxa
 
-PhpFormGenerator est un framework de formulaires PHP **autonome**. Il ne dépend d'aucun framework applicatif externe et fournit un noyau complet pour construire, afficher, soumettre, valider et mapper des formulaires simples ou complexes.
+Fluxa est un framework de formulaires PHP **autonome**. Il ne dépend d'aucun framework applicatif externe et fournit un noyau complet pour construire, afficher, soumettre, valider et mapper des formulaires simples ou complexes.
 
 ## Fonctionnalités intégrées
 
@@ -90,8 +90,8 @@ PhpFormGenerator est un framework de formulaires PHP **autonome**. Il ne dépend
 ### Exemple rapide
 
 ```php
-use Iriven\PhpFormGenerator\Application\FormGenerator;
-use Iriven\PhpFormGenerator\Presentation\Html\HtmlRenderer;
+use Iriven\Fluxa\Application\FormGenerator;
+use Iriven\Fluxa\Presentation\Html\HtmlRenderer;
 
 $generator = (new FormGenerator('contact'))
     ->open([
@@ -162,21 +162,21 @@ Méthodes disponibles sur `FormGenerator` :
 ### Exemple avec type de formulaire
 
 ```php
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
-use Iriven\PhpFormGenerator\Domain\Contract\FormBuilderInterface;
-use Iriven\PhpFormGenerator\Infrastructure\Http\ArrayRequest;
-use Iriven\PhpFormGenerator\Infrastructure\Options\OptionsResolver;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Domain\Contract\FormTypeInterface;
+use Iriven\Fluxa\Domain\Contract\FormBuilderInterface;
+use Iriven\Fluxa\Infrastructure\Http\ArrayRequest;
+use Iriven\Fluxa\Infrastructure\Options\OptionsResolver;
 
 final class ContactType implements FormTypeInterface
 {
     public function buildForm($builder, array $options = []): void
     {
         $builder
-            ->add('name', \Iriven\PhpFormGenerator\Domain\Field\TextType::class, ['required' => true])
-            ->add('email', \Iriven\PhpFormGenerator\Domain\Field\EmailType::class, ['required' => true])
-            ->add('captcha', \Iriven\PhpFormGenerator\Domain\Field\CaptchaType::class, ['label' => 'Security code'])
-            ->add('submit', \Iriven\PhpFormGenerator\Domain\Field\SubmitType::class, ['label' => 'Send']);
+            ->add('name', \Iriven\Fluxa\Domain\Field\TextType::class, ['required' => true])
+            ->add('email', \Iriven\Fluxa\Domain\Field\EmailType::class, ['required' => true])
+            ->add('captcha', \Iriven\Fluxa\Domain\Field\CaptchaType::class, ['label' => 'Security code'])
+            ->add('submit', \Iriven\Fluxa\Domain\Field\SubmitType::class, ['label' => 'Send']);
     }
 
     public function configureOptions($resolver): void
@@ -210,9 +210,9 @@ Cette rubrique regroupe les exemples d’usage du framework, depuis la création
 ### Création simple avec le builder fluide
 
 ```php
-use Iriven\PhpFormGenerator\Application\FormGenerator;
-use Iriven\PhpFormGenerator\Presentation\Html\HtmlRenderer;
-use Iriven\PhpFormGenerator\Infrastructure\Http\ArrayRequest;
+use Iriven\Fluxa\Application\FormGenerator;
+use Iriven\Fluxa\Presentation\Html\HtmlRenderer;
+use Iriven\Fluxa\Infrastructure\Http\ArrayRequest;
 
 $generator = (new FormGenerator('contact'))
     ->open([
@@ -247,9 +247,9 @@ if ($form->isSubmitted() && $form->isValid()) {
 ### Création avec la factory
 
 ```php
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\FormType\ContactType;
-use Iriven\PhpFormGenerator\Infrastructure\Http\ArrayRequest;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\FormType\ContactType;
+use Iriven\Fluxa\Infrastructure\Http\ArrayRequest;
 
 $factory = new FormFactory();
 $form = $factory->create(ContactType::class);
@@ -276,8 +276,8 @@ Le framework intègre un mapping natif des types internes. Cela permet d’écri
 Le moteur résout automatiquement les types connus à partir de leur nom court dans l’API factory et dans l’API builder.
 
 ```php
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Domain\Contract\FormTypeInterface;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Domain\Contract\FormTypeInterface;
 
 final class DummyType implements FormTypeInterface
 {
@@ -349,7 +349,7 @@ if ($form->isSubmitted() && $form->isValid()) {
 ### Cas complet : RegistrationType
 
 ```php
-use Iriven\PhpFormGenerator\Application\FormType\RegistrationType;
+use Iriven\Fluxa\Application\FormType\RegistrationType;
 
 $form = $factory->create(RegistrationType::class);
 
@@ -371,7 +371,7 @@ if ($form->isSubmitted() && $form->isValid()) {
 ### Cas complet : InvoiceType
 
 ```php
-use Iriven\PhpFormGenerator\Application\FormType\InvoiceType;
+use Iriven\Fluxa\Application\FormType\InvoiceType;
 
 $form = $factory->create(InvoiceType::class);
 
@@ -431,8 +431,8 @@ $form = $factory->create(ContactType::class, null, [
 ## Rendu HTML
 
 ```php
-use Iriven\PhpFormGenerator\Presentation\Html\HtmlRenderer;
-use Iriven\PhpFormGenerator\Presentation\Html\Theme\Bootstrap5Theme;
+use Iriven\Fluxa\Presentation\Html\HtmlRenderer;
+use Iriven\Fluxa\Presentation\Html\Theme\Bootstrap5Theme;
 
 echo (new HtmlRenderer(new Bootstrap5Theme()))->renderForm($form->createView());
 ```
@@ -550,7 +550,7 @@ Examples:
 Example:
 
 ```php
-$builder->add('country', \Iriven\PhpFormGenerator\Domain\Field\CountryType::class, [
+$builder->add('country', \Iriven\Fluxa\Domain\Field\CountryType::class, [
     'placeholder' => 'Select a country',
     'sort' => true,
     'region' => 'europe',
@@ -571,9 +571,9 @@ This keeps the field model simpler while preserving the expected behavior for co
 ### Formulaire de contact complet
 
 ```php
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\FormType\ContactType;
-use Iriven\PhpFormGenerator\Infrastructure\Http\NativeRequest;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\FormType\ContactType;
+use Iriven\Fluxa\Infrastructure\Http\NativeRequest;
 
 $factory = new FormFactory();
 $form = $factory->create(ContactType::class);
@@ -586,15 +586,15 @@ if ($form->isSubmitted() && $form->isValid()) {
     // $data['name'], $data['email'], $data['message'], etc.
 }
 
-echo (new \Iriven\PhpFormGenerator\Presentation\Html\HtmlRenderer())->renderForm($form->createView());
+echo (new \Iriven\Fluxa\Presentation\Html\HtmlRenderer())->renderForm($form->createView());
 ```
 
 ### Formulaire d'inscription avec validation métier
 
 ```php
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\FormType\RegistrationType;
-use Iriven\PhpFormGenerator\Infrastructure\Http\ArrayRequest;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\FormType\RegistrationType;
+use Iriven\Fluxa\Infrastructure\Http\ArrayRequest;
 
 $factory = new FormFactory();
 $form = $factory->create(RegistrationType::class);
@@ -617,8 +617,8 @@ if ($form->isSubmitted() && $form->isValid()) {
 ### Facture avec lignes dynamiques
 
 ```php
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Application\FormType\InvoiceType;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Application\FormType\InvoiceType;
 
 $factory = new FormFactory();
 $form = $factory->create(InvoiceType::class);
@@ -634,8 +634,8 @@ if ($form->isSubmitted() && $form->isValid()) {
 Vous pouvez maintenant piloter l’exécution des contraintes via `validation_groups` sur le formulaire ou sur un champ via `GroupedConstraint`.
 
 ```php
-use Iriven\PhpFormGenerator\Domain\Constraint\GroupedConstraint;
-use Iriven\PhpFormGenerator\Domain\Constraint\Required;
+use Iriven\Fluxa\Domain\Constraint\GroupedConstraint;
+use Iriven\Fluxa\Domain\Constraint\Required;
 
 $builder->add('vatNumber', TextType::class, [
     'constraints' => [
@@ -648,8 +648,8 @@ $builder->add('vatNumber', TextType::class, [
 La contrainte `When` permet de n’exécuter une ou plusieurs contraintes que si une condition est vraie.
 
 ```php
-use Iriven\PhpFormGenerator\Domain\Constraint\When;
-use Iriven\PhpFormGenerator\Domain\Constraint\Required;
+use Iriven\Fluxa\Domain\Constraint\When;
+use Iriven\Fluxa\Domain\Constraint\Required;
 
 $builder->add('phone', TextType::class, [
     'constraints' => [
@@ -665,9 +665,9 @@ $builder->add('phone', TextType::class, [
 Le noyau supporte maintenant un système d’extensions pour enrichir les field types et les formulaires sans modifier le cœur.
 
 ```php
-use Iriven\PhpFormGenerator\Application\FormFactory;
-use Iriven\PhpFormGenerator\Infrastructure\Extension\ExtensionRegistry;
-use Iriven\PhpFormGenerator\Infrastructure\Extension\TrimTextFieldExtension;
+use Iriven\Fluxa\Application\FormFactory;
+use Iriven\Fluxa\Infrastructure\Extension\ExtensionRegistry;
+use Iriven\Fluxa\Infrastructure\Extension\TrimTextFieldExtension;
 
 $registry = new ExtensionRegistry();
 $registry->addFieldTypeExtension(new TrimTextFieldExtension());
@@ -682,7 +682,7 @@ Le projet inclut désormais :
 - `LocalUploadedFileStorage` pour stocker physiquement un fichier validé
 
 ```php
-use Iriven\PhpFormGenerator\Infrastructure\File\LocalUploadedFileStorage;
+use Iriven\Fluxa\Infrastructure\File\LocalUploadedFileStorage;
 
 $storage = new LocalUploadedFileStorage(__DIR__ . '/uploads');
 $path = $storage->store($uploadedFile, 'invoices');
@@ -693,7 +693,7 @@ Le transformeur `EnumTransformer` permet de mapper proprement une valeur scalar 
 
 ```php
 use App\Enum\LeadStatus;
-use Iriven\PhpFormGenerator\Domain\Transformer\EnumTransformer;
+use Iriven\Fluxa\Domain\Transformer\EnumTransformer;
 
 $transformer = new EnumTransformer(LeadStatus::class);
 $status = $transformer->reverseTransform('new');
@@ -728,7 +728,7 @@ Extension contracts now use explicit `array<string, mixed>` option typing for be
 Le framework intègre maintenant un système de traduction simple :
 
 ```php
-use Iriven\PhpFormGenerator\Infrastructure\Translation\ArrayTranslator;
+use Iriven\Fluxa\Infrastructure\Translation\ArrayTranslator;
 
 $translator = new ArrayTranslator([
     'required' => 'Ce champ est requis',
@@ -858,7 +858,7 @@ Default runtime behavior:
 `SessionCaptchaManager` can also be instantiated explicitly with custom limits:
 
 ```php
-$manager = new \Iriven\PhpFormGenerator\Infrastructure\Security\SessionCaptchaManager(
+$manager = new \Iriven\Fluxa\Infrastructure\Security\SessionCaptchaManager(
     ttlSeconds: 180,
     maxAttempts: 3,
 );

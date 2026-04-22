@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Application\Plugin;
+namespace Iriven\Fluxa\Application\Plugin;
 
-use Iriven\PhpFormGenerator\Domain\Contract\PluginInterface;
+use Iriven\Fluxa\Domain\Contract\PluginInterface;
 use RuntimeException;
 
 /**

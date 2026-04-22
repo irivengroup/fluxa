@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Iriven\PhpFormGenerator\Infrastructure\Http;
+namespace Iriven\Fluxa\Infrastructure\Http;
 
-use Iriven\PhpFormGenerator\Domain\Contract\RequestInterface;
-use Iriven\PhpFormGenerator\Domain\ValueObject\UploadedFile;
+use Iriven\Fluxa\Domain\Contract\RequestInterface;
+use Iriven\Fluxa\Domain\ValueObject\UploadedFile;
 
 final class NativeRequest implements RequestInterface
 {
