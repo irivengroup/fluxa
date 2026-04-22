@@ -1,3 +1,34 @@
+## V6.4.0
+
+### Added
+- `src/Application/Profiling/ProfileTimeline.php`
+- `src/Application/Profiling/Profiler.php`
+- `src/Application/Diagnostics/DiagnosticsRunner.php`
+- `src/Application/Cli/DebugDiagnosticsCommand.php`
+- `src/Application/Cli/DebugProfileCommand.php`
+- `src/Application/Cli/DebugHealthCommand.php`
+- `tests/ProfilerTest.php`
+- `tests/DiagnosticsRunnerTest.php`
+- `tests/DebugDiagnosticsCliTest.php`
+- `docs/profiling.md`
+- `docs/diagnostics.md`
+- `docs/performance-tuning.md`
+- `docs/production-hardening.md`
+- `releases.d/RELEASE_NOTES_V6.4.0.md`
+- `validations.d/VALIDATION_MANIFEST_V6.4.0.md`
+
+### Changed
+- ajout du profilage avancé
+- ajout des diagnostics production
+- amélioration de l'observabilité de production
+
+## V6.3.1
+
+### Changed
+- `composer.json` préparé pour publication Packagist
+- package renommé en `iriven/fluxa`
+- ajout de `type`, `description` et `keywords`
+
 ## V6.3.0
 
 ### Added

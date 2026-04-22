@@ -1334,3 +1334,19 @@ Cette version stabilise l'observabilité, le dispatcher d'événements et les ou
 ## V6.3.0 moteur distribué et API server
 
 Cette version ajoute un runtime engine unifié, des transports abstraits et un API server embarqué.
+
+## V6.3.1 packaging publication
+
+Cette version prépare Fluxa pour une publication propre sur Packagist et une release GitHub exploitable.
+
+### Métadonnées package
+- nom package : `iriven/fluxa`
+- type : `library`
+- description Packagist ajoutée
+- keywords ajoutés
+
+
+
+## V6.4.0 profilage avancé et diagnostics production
+
+Cette version ajoute un profiler, un runner de diagnostics et des outils de debug production.

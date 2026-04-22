@@ -273,3 +273,10 @@
 - [Distributed Architecture](distributed-architecture.md)
 
 > V6.3.0 introduit le moteur runtime unifié et un API server embarqué.
+
+- [Profiling](profiling.md)
+- [Diagnostics](diagnostics.md)
+- [Performance Tuning](performance-tuning.md)
+- [Production Hardening](production-hardening.md)
+
+> V6.4.0 introduit le profilage avancé et les diagnostics production.
