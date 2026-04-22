@@ -1,3 +1,25 @@
+## V6.5.0
+
+### Added
+- `src/Application/Runtime/AsyncJobEnvelope.php`
+- `src/Application/Runtime/JobSerializer.php`
+- `src/Application/Runtime/QueueTransport.php`
+- `src/Application/Runtime/AsyncRuntimeDispatcher.php`
+- `tests/AsyncJobEnvelopeTest.php`
+- `tests/JobSerializerTest.php`
+- `tests/QueueTransportTest.php`
+- `tests/AsyncRuntimeDispatcherTest.php`
+- `docs/async-runtime.md`
+- `docs/queue-transport.md`
+- `docs/job-lifecycle.md`
+- `docs/distributed-execution.md`
+- `releases.d/RELEASE_NOTES_V6.5.0.md`
+- `validations.d/VALIDATION_MANIFEST_V6.5.0.md`
+
+### Changed
+- ajout d'un runtime async structuré
+- préparation à l'exécution distribuée via queue
+
 ## V6.4.1
 
 ### Added

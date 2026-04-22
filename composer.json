@@ -75,8 +75,8 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "extra": {
-    "release_name": "V6.4.1 maintenance profilage et non-régression diagnostics",
-    "release_channel": "profiling-maintenance"
+    "release_name": "V6.5.0 queue transport et exécution async",
+    "release_channel": "queue-async-runtime"
   },
   "bin": [
     "bin/fluxon"

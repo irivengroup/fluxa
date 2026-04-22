@@ -1355,3 +1355,8 @@ Cette version ajoute un profiler, un runner de diagnostics et des outils de debu
 ## V6.4.1 maintenance profilage et non-régression diagnostics
 
 Cette version stabilise le profilage, les diagnostics production et la cohérence Fluxon/autoload.
+
+
+## V6.5.0 queue transport et exécution async
+
+Cette version ajoute le transport queue, l'enveloppe de job async et le dispatcher runtime asynchrone.

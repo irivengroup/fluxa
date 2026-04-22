@@ -283,3 +283,10 @@
 
 
 > V6.4.1 consolide le profilage, les diagnostics et la stabilité post-renommage Fluxon.
+
+- [Async Runtime](async-runtime.md)
+- [Queue Transport](queue-transport.md)
+- [Job Lifecycle](job-lifecycle.md)
+- [Distributed Execution](distributed-execution.md)
+
+> V6.5.0 introduit le transport queue et l'exécution async structurée.
