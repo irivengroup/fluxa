@@ -1,3 +1,21 @@
+## V6.4.1
+
+### Added
+- `tests/ProfileTimelineRegressionTest.php`
+- `tests/ProfilerRegressionTest.php`
+- `tests/DiagnosticsRunnerRegressionTest.php`
+- `tests/ProductionDebugCliRegressionTest.php`
+- `tests/ComposerAutoloadRegressionTest.php`
+- `releases.d/RELEASE_NOTES_V6.4.1.md`
+- `validations.d/VALIDATION_MANIFEST_V6.4.1.md`
+
+### Changed
+- hardening de `ProfileTimeline`
+- hardening de `Profiler`
+- hardening de `DiagnosticsRunner`
+- stabilisation des commandes diagnostics
+- consolidation du package `iriven/fluxon`
+
 ## V6.4.0
 
 ### Added

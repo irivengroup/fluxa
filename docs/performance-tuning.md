@@ -7,3 +7,7 @@ Documenter les optimisations production.
 - cache
 - profiling
 - réduction des extensions lentes
+
+## Maintenance V6.4.1
+- rapport de profilage plus robuste
+

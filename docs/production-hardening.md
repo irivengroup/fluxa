@@ -8,3 +8,8 @@ Documenter le durcissement de Fluxon en production.
 - runtime partiel
 - transport indisponible
 - schéma incomplet
+
+## Maintenance V6.4.1
+- commandes diagnostics durcies
+- cohérence namespace Fluxon vérifiée
+

@@ -280,3 +280,6 @@
 - [Production Hardening](production-hardening.md)
 
 > V6.4.0 introduit le profilage avancé et les diagnostics production.
+
+
+> V6.4.1 consolide le profilage, les diagnostics et la stabilité post-renommage Fluxon.

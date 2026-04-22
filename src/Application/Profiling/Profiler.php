@@ -15,7 +15,7 @@ final class Profiler
 
     public function record(string $step, float $timeMs, int $memoryBytes = 0): void
     {
-        $this->timeline->add($step, $timeMs, $memoryBytes);
+        $this->timeline->add($step, $timeMs >= 0 ? $timeMs : 0.0, $memoryBytes >= 0 ? $memoryBytes : 0);
     }
 
     /**
@@ -23,9 +23,20 @@ final class Profiler
      */
     public function report(): array
     {
+        $peak = memory_get_peak_usage(true);
+        if (!is_int($peak) || $peak < 0) {
+            $peak = 0;
+        }
+
         return [
             'timeline' => $this->timeline->all(),
-            'peak_memory_bytes' => memory_get_peak_usage(true),
+            'steps_count' => $this->timeline->count(),
+            'peak_memory_bytes' => $peak,
         ];
+    }
+
+    public function isEmpty(): bool
+    {
+        return $this->timeline->isEmpty();
     }
 }

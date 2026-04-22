@@ -14,7 +14,7 @@ final class ProfileTimeline
         $this->steps[] = [
             'step' => $step,
             'time_ms' => $timeMs,
-            'memory_bytes' => $memoryBytes,
+            'memory_bytes' => $memoryBytes >= 0 ? $memoryBytes : 0,
         ];
     }
 
@@ -24,5 +24,15 @@ final class ProfileTimeline
     public function all(): array
     {
         return $this->steps;
+    }
+
+    public function isEmpty(): bool
+    {
+        return $this->steps === [];
+    }
+
+    public function count(): int
+    {
+        return count($this->steps);
     }
 }

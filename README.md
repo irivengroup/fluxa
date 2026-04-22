@@ -1350,3 +1350,8 @@ Cette version prépare Fluxon pour une publication propre sur Packagist et une r
 ## V6.4.0 profilage avancé et diagnostics production
 
 Cette version ajoute un profiler, un runner de diagnostics et des outils de debug production.
+
+
+## V6.4.1 maintenance profilage et non-régression diagnostics
+
+Cette version stabilise le profilage, les diagnostics production et la cohérence Fluxon/autoload.
